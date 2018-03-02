@@ -590,3 +590,255 @@ HTTPWanPort:10088
 ******************************************
 EasyDSS_Solution流媒体解决方案服务启动成功~
 ******************************************
+加载config.json成功！
+This platform is linux
+EasyDss流媒体解决方案服务平台,访问地址为 http://:::10080
+/bin/sh: 1: kill: No such process
+
+upload_dir:
+upload_file_type:mp4|mpg|mpeg|wmv|avi|rmvb|mkv|flv|mov|3gpp|3gp|webm|m4v|mng|vob|m2ts|mp3|wav
+trans_process_num:5
+ts_time:5
+live_record_days:1
+live_is_check:1
+api_key:You_can_change_it
+RTMPWanPort:10085
+HTTPWanPort:10088
+加载系统配置参数成功！
+虚拟直播守护进程开启成功！
+直播分享页面在线统计开启成功！
+录像定期清理服务开启！
+******************************************
+EasyDSS_Solution流媒体解决方案服务启动成功~
+******************************************
+加载config.json成功！
+This platform is linux
+EasyDss流媒体解决方案服务平台,访问地址为 http://:::10080
+/bin/sh: 1: kill: No such process
+
+upload_dir:
+upload_file_type:mp4|mpg|mpeg|wmv|avi|rmvb|mkv|flv|mov|3gpp|3gp|webm|m4v|mng|vob|m2ts|mp3|wav
+trans_process_num:5
+ts_time:5
+live_record_days:1
+live_is_check:1
+api_key:You_can_change_it
+RTMPWanPort:10085
+HTTPWanPort:10088
+加载系统配置参数成功！
+虚拟直播守护进程开启成功！
+直播分享页面在线统计开启成功！
+录像定期清理服务开启！
+******************************************
+EasyDSS_Solution流媒体解决方案服务启动成功~
+******************************************
+加载config.json成功！
+This platform is linux
+EasyDss流媒体解决方案服务平台,访问地址为 http://:::10080
+/bin/sh: 1: kill: No such process
+
+upload_dir:
+upload_file_type:mp4|mpg|mpeg|wmv|avi|rmvb|mkv|flv|mov|3gpp|3gp|webm|m4v|mng|vob|m2ts|mp3|wav
+trans_process_num:5
+ts_time:5
+live_record_days:1
+live_is_check:1
+api_key:You_can_change_it
+RTMPWanPort:10085
+HTTPWanPort:10088
+加载系统配置参数成功！
+虚拟直播守护进程开启成功！
+直播分享页面在线统计开启成功！
+录像定期清理服务开启！
+******************************************
+EasyDSS_Solution流媒体解决方案服务启动成功~
+******************************************
+加载config.json成功！
+This platform is linux
+EasyDss流媒体解决方案服务平台,访问地址为 http://:::10080
+/bin/sh: 1: kill: No such process
+
+upload_dir:
+upload_file_type:mp4|mpg|mpeg|wmv|avi|rmvb|mkv|flv|mov|3gpp|3gp|webm|m4v|mng|vob|m2ts|mp3|wav
+trans_process_num:5
+ts_time:5
+live_record_days:1
+live_is_check:1
+api_key:You_can_change_it
+RTMPWanPort:10085
+HTTPWanPort:10088
+加载系统配置参数成功！
+虚拟直播守护进程开启成功！
+直播分享页面在线统计开启成功！
+录像定期清理服务开启！
+******************************************
+EasyDSS_Solution流媒体解决方案服务启动成功~
+******************************************
+smart-garden
+{ Error: EACCES: permission denied, open '/ee118d301df911e88fa53979875410c3.mp4'
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'open',
+  path: '/ee118d301df911e88fa53979875410c3.mp4' }
+Error: EACCES: permission denied, open '/ee118d301df911e88fa53979875410c3.mp4'
+(node:15392) [DEP0013] DeprecationWarning: Calling an asynchronous function without callback is deprecated.
+{ Error: EACCES: permission denied, open '/839bdea01dfa11e88fa53979875410c3.mp4'
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'open',
+  path: '/839bdea01dfa11e88fa53979875410c3.mp4' }
+Error: EACCES: permission denied, open '/839bdea01dfa11e88fa53979875410c3.mp4'
+(node:15392) [DEP0013] DeprecationWarning: Calling an asynchronous function without callback is deprecated.
+/run/user/1000/gvfs/smb-share:server=10.211.55.6,share=shared
+(node:15392) [DEP0013] DeprecationWarning: Calling an asynchronous function without callback is deprecated.
+Fri Mar 02 2018 17:19:59 GMT+0800 (CST) : video /run/user/1000/gvfs/smb-share:server=10.211.55.6,share=shared/e0c709101dfa11e88fa53979875410c3.mp4 trans started
+Fri Mar 02 2018 17:20:01 GMT+0800 (CST) : video e0c709101dfa11e88fa53979875410c3 trans ended
+/run/user/1000/gvfs/smb-share:server=10.211.55.6,share=shared
+/run/user/1000/gvfs/smb-share:server=10.211.55.6,share=shared
+加载config.json成功！
+This platform is linux
+EasyDss流媒体解决方案服务平台,访问地址为 http://:::10080
+/bin/sh: 1: kill: No such process
+
+upload_dir:/run/user/1000/gvfs/smb-share:server=10.211.55.6,share=shared
+upload_file_type:mp4|mpg|mpeg|wmv|avi|rmvb|mkv|flv|mov|3gpp|3gp|webm|m4v|mng|vob|m2ts|mp3|wav
+trans_process_num:5
+ts_time:5
+live_record_days:1
+live_is_check:1
+api_key:smart-garden
+RTMPWanPort:10085
+HTTPWanPort:10088
+加载系统配置参数成功！
+虚拟直播守护进程开启成功！
+直播分享页面在线统计开启成功！
+录像定期清理服务开启！
+******************************************
+EasyDSS_Solution流媒体解决方案服务启动成功~
+******************************************
+加载config.json成功！
+This platform is linux
+EasyDss流媒体解决方案服务平台,访问地址为 http://:::10080
+/bin/sh: 1: kill: No such process
+
+upload_dir:/run/user/1000/gvfs/smb-share:server=10.211.55.6,share=shared
+upload_file_type:mp4|mpg|mpeg|wmv|avi|rmvb|mkv|flv|mov|3gpp|3gp|webm|m4v|mng|vob|m2ts|mp3|wav
+trans_process_num:5
+ts_time:5
+live_record_days:1
+live_is_check:1
+api_key:smart-garden
+RTMPWanPort:10085
+HTTPWanPort:10088
+加载系统配置参数成功！
+虚拟直播守护进程开启成功！
+直播分享页面在线统计开启成功！
+录像定期清理服务开启！
+******************************************
+EasyDSS_Solution流媒体解决方案服务启动成功~
+******************************************
+加载config.json成功！
+This platform is linux
+EasyDss流媒体解决方案服务平台,访问地址为 http://:::10080
+/bin/sh: 1: kill: No such process
+
+upload_dir:/run/user/1000/gvfs/smb-share:server=10.211.55.6,share=shared
+upload_file_type:mp4|mpg|mpeg|wmv|avi|rmvb|mkv|flv|mov|3gpp|3gp|webm|m4v|mng|vob|m2ts|mp3|wav
+trans_process_num:5
+ts_time:5
+live_record_days:1
+live_is_check:1
+api_key:smart-garden
+RTMPWanPort:10085
+HTTPWanPort:10088
+加载系统配置参数成功！
+虚拟直播守护进程开启成功！
+直播分享页面在线统计开启成功！
+录像定期清理服务开启！
+******************************************
+EasyDSS_Solution流媒体解决方案服务启动成功~
+******************************************
+加载config.json成功！
+This platform is linux
+EasyDss流媒体解决方案服务平台,访问地址为 http://:::10080
+/bin/sh: 1: kill: No such process
+
+upload_dir:/run/user/1000/gvfs/smb-share:server=10.211.55.6,share=shared
+upload_file_type:mp4|mpg|mpeg|wmv|avi|rmvb|mkv|flv|mov|3gpp|3gp|webm|m4v|mng|vob|m2ts|mp3|wav
+trans_process_num:5
+ts_time:5
+live_record_days:1
+live_is_check:1
+api_key:smart-garden
+RTMPWanPort:10085
+HTTPWanPort:10088
+加载系统配置参数成功！
+虚拟直播守护进程开启成功！
+直播分享页面在线统计开启成功！
+录像定期清理服务开启！
+******************************************
+EasyDSS_Solution流媒体解决方案服务启动成功~
+******************************************
+加载config.json成功！
+This platform is linux
+EasyDss流媒体解决方案服务平台,访问地址为 http://:::10080
+/bin/sh: 1: kill: No such process
+
+upload_dir:/run/user/1000/gvfs/smb-share:server=10.211.55.6,share=shared
+upload_file_type:mp4|mpg|mpeg|wmv|avi|rmvb|mkv|flv|mov|3gpp|3gp|webm|m4v|mng|vob|m2ts|mp3|wav
+trans_process_num:5
+ts_time:5
+live_record_days:1
+live_is_check:1
+api_key:smart-garden
+RTMPWanPort:10085
+HTTPWanPort:10088
+加载系统配置参数成功！
+虚拟直播守护进程开启成功！
+直播分享页面在线统计开启成功！
+录像定期清理服务开启！
+******************************************
+EasyDSS_Solution流媒体解决方案服务启动成功~
+******************************************
+加载config.json成功！
+This platform is linux
+EasyDss流媒体解决方案服务平台,访问地址为 http://:::10080
+/bin/sh: 1: kill: No such process
+
+upload_dir:/run/user/1000/gvfs/smb-share:server=10.211.55.6,share=shared
+upload_file_type:mp4|mpg|mpeg|wmv|avi|rmvb|mkv|flv|mov|3gpp|3gp|webm|m4v|mng|vob|m2ts|mp3|wav
+trans_process_num:5
+ts_time:5
+live_record_days:1
+live_is_check:1
+api_key:smart-garden
+RTMPWanPort:10085
+HTTPWanPort:10088
+加载系统配置参数成功！
+虚拟直播守护进程开启成功！
+直播分享页面在线统计开启成功！
+录像定期清理服务开启！
+******************************************
+EasyDSS_Solution流媒体解决方案服务启动成功~
+******************************************
+加载config.json成功！
+This platform is linux
+EasyDss流媒体解决方案服务平台,访问地址为 http://:::10080
+/bin/sh: 1: kill: No such process
+
+upload_dir:/run/user/1000/gvfs/smb-share:server=10.211.55.6,share=shared
+upload_file_type:mp4|mpg|mpeg|wmv|avi|rmvb|mkv|flv|mov|3gpp|3gp|webm|m4v|mng|vob|m2ts|mp3|wav
+trans_process_num:5
+ts_time:5
+live_record_days:1
+live_is_check:1
+api_key:smart-garden
+RTMPWanPort:10085
+HTTPWanPort:10088
+加载系统配置参数成功！
+虚拟直播守护进程开启成功！
+直播分享页面在线统计开启成功！
+录像定期清理服务开启！
+******************************************
+EasyDSS_Solution流媒体解决方案服务启动成功~
+******************************************

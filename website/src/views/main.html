@@ -6,7 +6,7 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge,chrome=1" />
     <title>
-        Smart Garden
+        智慧园林网络服务平台
     </title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -38,17 +38,18 @@
         }
     </style>
     <script>
-        var getFlashVersion = function() {        
+        var getFlashVersion = function () {        
             try {            
                 if (typeof window.ActiveXObject != 'undefined') {               
-                    return parseInt((new ActiveXObject('ShockwaveFlash.ShockwaveFlash')).GetVariable("$version").split(" ")[1].split(",")[0], 10);             
+                    return parseInt((new ActiveXObject('ShockwaveFlash.ShockwaveFlash')).GetVariable("$version").split(
+                        " ")[1].split(",")[0], 10);             
                 } else {              
                     return parseInt(navigator.plugins["Shockwave Flash"].description.split(' ')[2], 10);             
                 }          
             } catch (e) {            
                 return 0;          
             }        
-        };        
+        };
     </script>
 </head>
 
@@ -57,7 +58,7 @@
     <!-- Site wrapper -->
     <div class="wrapper">
 
-        <header class="main-header">
+        <header class="main-header" style="display:none">
             <!-- Logo -->
             <%- logo %>
 
@@ -77,7 +78,9 @@
                             <li class="dropdown user user-menu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <img src="../img/user.jpg" class="user-image" alt="User Image">
-                                    <span class="hidden-xs"><%- user_role %></span>
+                                    <span class="hidden-xs">
+                                        <%- user_role %>
+                                    </span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <!-- User image -->
@@ -86,7 +89,9 @@
 
                                         <p>
                                             <%- user_role %>
-                                                <small><%- user_name %></small>
+                                                <small>
+                                                    <%- user_name %>
+                                                </small>
                                         </p>
                                     </li>
 
@@ -109,16 +114,34 @@
         <!-- =============================================== -->
 
         <!-- Left side column. contains the sidebar -->
-        <aside class="main-sidebar">
+        <aside class="main-sidebar" style="padding-top:0 !important;">
             <!-- sidebar: style can be found in sidebar.less -->
             <section class="sidebar">
                 <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu">
-                    <li class='treeview'><a href='#'><i class='fa fa-play-circle'></i><span>点播服务</span><span class='pull-right-container'><i class='fa fa-angle-left pull-right'></i></span></a>
+                    <li class='treeview'>
+                        <a href='#'>
+                            <i class='fa fa-play-circle'></i>
+                            <span>点播服务</span>
+                            <span class='pull-right-container'>
+                                <i class='fa fa-angle-left pull-right'></i>
+                            </span>
+                        </a>
                         <ul class='treeview-menu'>
-                            <li id='11'><a name='menu' menuId='11' flag='videoin' page='videoin.html' pageName='视频点播' href='#'><i class='fa  fa-caret-right'></i>视频点播</a></li>
-                            <li id='12'><a name='menu' menuId='12' flag='ums_video_upload' page='ums_video_upload.html' pageName='视频上传' href='#'><i class='fa  fa-caret-right'></i>视频上传</a></li>
-                            <li id='13'><a name='menu' menuId='13' flag='ums_video_list' page='panel.html?page=ums_video_list.html' pageName='视频列表' href='#'><i class='fa  fa-caret-right'></i>视频列表</a></li>
+                            <li id='11'>
+                                <a name='menu' menuId='11' flag='videoin' page='videoin.html' pageName='视频点播' href='#'>
+                                    <i class='fa  fa-caret-right'></i>视频点播</a>
+                            </li>
+                            <li id='12'>
+                                <a name='menu' menuId='12' flag='ums_video_upload' page='ums_video_upload.html' pageName='视频上传'
+                                    href='#'>
+                                    <i class='fa  fa-caret-right'></i>视频上传</a>
+                            </li>
+                            <li id='13'>
+                                <a name='menu' menuId='13' flag='ums_video_list' page='panel.html?page=ums_video_list.html' pageName='视频列表'
+                                    href='#'>
+                                    <i class='fa  fa-caret-right'></i>视频列表</a>
+                            </li>
                             <!-- <li id='15'><a name='menu' menuId='15' flag='vod_api' page='vod_api.html' pageName='点播接口' href='#'><i class='fa  fa-caret-right'></i>点播接口</a></li> -->
                         </ul>
                     </li>
@@ -132,13 +155,34 @@
                             <li id='24'><a name='menu' menuId='24' flag='live_api' page='live_api.html' pageName='直播接口' href='#'><i class='fa  fa-caret-right'></i>直播接口</a></li>
                         </ul>
                     </li> -->
-                    <li class='treeview'><a href='#'><i class='fa fa-cog'></i><span>系统管理</span><span class='pull-right-container'><i class='fa fa-angle-left pull-right'></i></span></a>
+                    <li class='treeview'>
+                        <a href='#'>
+                            <i class='fa fa-cog'></i>
+                            <span>系统管理</span>
+                            <span class='pull-right-container'>
+                                <i class='fa fa-angle-left pull-right'></i>
+                            </span>
+                        </a>
                         <ul class='treeview-menu'>
-                            <li id='31'><a name='menu' menuId='31' flag='ums_user' page='panel.html?page=ums_user.html' pageName='用户配置' href='#'><i class='fa  fa-caret-right'></i>用户配置</a></li>
-                            <li id='14'><a name='menu' menuId='14' flag='ums_config' page='panel.html?page=ums_config.html' pageName='服务配置' href='#'><i class='fa  fa-caret-right'></i>服务配置</a></li>
-                            <li id='32'><a name='menu' menuId='32' flag='sys_config' page='sys_config.html' pageName='系统配置' href='#'><i class='fa  fa-caret-right'></i>系统配置</a></li>
+                            <li id='31'>
+                                <a name='menu' menuId='31' flag='ums_user' page='panel.html?page=ums_user.html' pageName='用户配置'
+                                    href='#'>
+                                    <i class='fa  fa-caret-right'></i>用户配置</a>
+                            </li>
+                            <li id='14'>
+                                <a name='menu' menuId='14' flag='ums_config' page='panel.html?page=ums_config.html' pageName='服务配置'
+                                    href='#'>
+                                    <i class='fa  fa-caret-right'></i>服务配置</a>
+                            </li>
+                            <li id='32'>
+                                <a name='menu' menuId='32' flag='sys_config' page='sys_config.html' pageName='系统配置' href='#'>
+                                    <i class='fa  fa-caret-right'></i>系统配置</a>
+                            </li>
                             <!-- <li id='37'><a name='menu' menuId='37' flag='ums_flow' page='panel.html?page=ums_flow.html' pageName='流量统计' href='#'><i class='fa  fa-caret-right'></i>流量统计</a></li> -->
-                            <li id='36'><a name='menu' menuId='36' flag='help_doc' page='help_doc.html' pageName='帮助文档' href='#'><i class='fa  fa-caret-right'></i>帮助文档</a></li>
+                            <li id='36'>
+                                <a name='menu' menuId='36' flag='help_doc' page='help_doc.html' pageName='帮助文档' href='#'>
+                                    <i class='fa  fa-caret-right'></i>帮助文档</a>
+                            </li>
                             <!-- <li id='33'><a name='menu' menuId='33' flag='help_1' page='http://www.easydarwin.org/pdf/EasyDSS_Introduction.pdf' pageName='方案说明' href='#'><i class='fa  fa-caret-right'></i>方案说明</a></li>
                             <li id='34'><a name='menu' menuId='34' flag='help_2' page='../doc/EasyDSS_Solution_Manual.pdf' pageName='使用手册' href='#'><i class='fa  fa-caret-right'></i>使用手册</a></li>
                             <li id='35'><a name='menu' menuId='35' flag='help_3' page='../doc/EasyDSS_Solution_API/index.html' pageName='接口文档' href='#'><i class='fa  fa-caret-right'></i>接口文档</a></li </ul> -->
@@ -151,7 +195,7 @@
         <!-- =============================================== -->
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper" style="background-color:#f5f5f5;">
+        <div class="content-wrapper" style="background-color:#f5f5f5;padding-top:0 !important;">
             <div class="refresh" title="点击刷新当前窗口页面">
                 <a class="btn">
                     <i class="fa fa-repeat"></i>
@@ -180,7 +224,8 @@
                 <b>Version</b>
                 <%- version%>
             </div>
-            <span>Copyright &copy; 2017  <a href="http://www.easydss.com">www.easydss.com</a>.</span> All rights reserved.
+            <span>Copyright &copy; 2018
+                <a href="http://www.bjfu.edu.cn">www.bjfu.edu.cn</a>.</span> All rights reserved.
         </footer>
 
         <!-- 加载动画 -->
@@ -193,7 +238,8 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" id="close_icon" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span></button>
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                         <h4 class="modal-title">提示</h4>
                     </div>
                     <div class="modal-body">
@@ -233,10 +279,23 @@
     <!-- HiHome -->
     <script src="../js/oss.js"></script>
     <script>
-        $(".refresh").click(function() {
+        $(".refresh").click(function () {
             var src = document.getElementById("frame" + currentTab).src;
             document.getElementById("frame" + currentTab).src = src;
         });
+
+        function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+        window.onload = function () {
+            // setCookie('easydss','s%3AD3OF3XfQ5gGON8o7r0aF7tD-VDmvCVN_.jhEh9GZ8zWjjpZ8GN9C1NzD9Y%2FU9wVCjzh%2Fj7UUug5c',2);
+        }
     </script>
 </body>
 
