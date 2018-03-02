@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>EasyDSS</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<link rel="stylesheet" href="../../../plugins/adminlte-2.3.6/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../../plugins/adminlte-2.3.6/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../../../plugins/adminlte-2.3.6/ionicons-2.0.1/css/ionicons.min.css">
+<link rel="stylesheet" href="../../../plugins/adminlte-2.3.6/dist/css/AdminLTE.min.css">
+<link rel="stylesheet" href="../../../plugins/adminlte-2.3.6/dist/css/skins/skin-green.css">
+<link rel="stylesheet" href="../../../plugins/adminlte-2.3.6/dist/css/common.css">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+<script src="../../../plugins/adminlte-2.3.6/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="../../../plugins/adminlte-2.3.6/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../../plugins/adminlte-2.3.6/dist/js/app.js"></script>
+<script src="../../../plugins/adminlte-2.3.6/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<link rel="stylesheet" href="../../../plugins/adminlte-2.3.6/plugins/iCheck/all.css">
+<script src="../../../plugins/adminlte-2.3.6/plugins/moment/moment-with-locales.js"></script>
+<script src="../../../plugins/adminlte-2.3.6/plugins/iCheck/icheck.min.js"></script>
+<script src="../../../plugins/adminlte-2.3.6/plugins/md5/jquery.md5.js"></script>
+<script src="../../../plugins/adminlte-2.3.6/plugins/input-number/jquery.inputnumber.js"></script>
+<script src="../../../plugins/adminlte-2.3.6/plugins/ellipsis/jquery.ellipsis.js"></script>
+<link rel="stylesheet" href="../../../plugins/adminlte-2.3.6/plugins/gritter/jquery.gritter.css">
+<script src="../../../plugins/adminlte-2.3.6/plugins/gritter/jquery.gritter.js"></script>
+<link rel="stylesheet" href="../../../plugins/adminlte-2.3.6/plugins/loadmask/jquery.loadmask.css">
+<script src="../../../plugins/adminlte-2.3.6/plugins/loadmask/jquery.loadmask.min.js"></script>
+<script src="../../../plugins/adminlte-2.3.6/plugins/validator/validator.min.js"></script>
+<script src="../../../plugins/adminlte-2.3.6/plugins/bootbox/bootbox.min.js"></script>
+<script src="../../../plugins/adminlte-2.3.6/plugins/cookie/jquery.cookie.min.js"></script>
+<link rel="stylesheet" href="../../../plugins/adminlte-2.3.6/plugins/bootstrap-pagination/bootstrap-pagination.css" />
+<script src="../../../plugins/adminlte-2.3.6/plugins/bootstrap-pagination/bootstrap-pagination.js"></script>
+<script src="../../../plugins/easyui-1.5.1/easyloader.js"></script>
+<script src="../../js/swfobject.js"></script>
+<script src="../../../plugins/easyplayer/easyplayer.js"></script>
+<link rel="stylesheet" href="../../../plugins/video-js-5.19.2/video-js.css" />
+<script src="../../../plugins/video-js-5.19.2/video.js"></script>
+<script src="../../../plugins/video-js-5.19.2/videojs-contrib-hls4.js"></script>
+<script src="../../../plugins/adminlte-2.3.6/dist/js/common.js"></script>
+<script>
+    var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+    var isEdge = userAgent.indexOf("Edge") > -1
+    var head = document.getElementsByTagName('head')[0];
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    if (isEdge) {
+        script.src = "../../../plugins/cyberplayer/2.1.6/cyberplayer.js";
+    } else {
+        script.src = "../../../plugins/cyberplayer/2.1.7/cyberplayer.js";
+    }
+    head.appendChild(script);
+</script>
+    <link rel="stylesheet" href="../../../plugins/bootstrap-datepicker-1.7.1/css/bootstrap-datepicker3.css" />
+    <script src="../../../plugins/bootstrap-datepicker-1.7.1/js/bootstrap-datepicker.js"></script>
+    <script src="../../../plugins/bootstrap-datepicker-1.7.1/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+    <style>
+        .record-player-wrapper {
+            overflow: hidden;
+            position: relative;
+            margin: 20px auto;
+            width: 100%;
+            font-size: 12px;
+            max-width: 800px;
+            background-color: #CCC;
+        }
+        
+        .time-rule {
+            overflow: hidden;
+            position: relative;
+            height: 50px;
+            margin: 0 auto;
+            width: 100%;
+            font-size: 12px;
+            max-width: 1440px;
+            background-color: #CCC;
+        }
+        
+        .time-day {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 1440px;
+            cursor: pointer;
+        }
+        
+        .time-minute {
+            float: left;
+            width: 1px;
+            height: 8px;
+            margin: 0;
+        }
+        
+        .time-minute.active {
+            background-color: green;
+        }
+        
+        .time-text {
+            float: left;
+            width: 60px;
+            border-left: 1px solid #999;
+            border-top: 1px solid #999;
+            -ms-user-select: none;
+            user-select: none;
+            text-align: center;
+            height: 25px;
+            line-height: 25px;
+        }
+        
+        .time-00 {
+            border-left: 0;
+        }
+        
+        .time-cursor {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 30px;
+            width: 2px;
+            background-color: red;
+            text-align: center;
+        }
+        
+        .time-cursor-text {
+            position: absolute;
+            padding: 0 5px;
+            width: 60px;
+            left: -30px;
+            top: 30px;
+            border: 1px solid red;
+            height: 15px;
+            line-height: 15px;
+            cursor: move;
+            background-color: white;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
+</head>
+<body class="hold-transition skin-green sidebar-mini">
+    <style>
+        .player-wrapper {
+            overflow: hidden;
+        }
+    </style>
+    <script>
+        var host = "";
+        $.ajax({
+            url: '../../api/getDSSSeverURL',
+            cache: false,
+            async: false,
+            type: "get",
+            success: function(result) {
+                host = result;
+            }
+        });
+
+
+        $(document).on("click", ".main-header .sidebar-toggle", function() {
+            try {
+                $(".content-wrapper").one("transitionend", function() {
+                    localStorage["sidebar-collapse"] = $("body").hasClass("sidebar-collapse") ? "sidebar-collapse" : "";
+                })
+            } catch (e) {
+                console.log(e);
+            }
+        }).on("shown.bs.modal", "#play-dlg", function() {
+            var $this = $(this);
+            if (player) {
+                player.remove();
+                player = null;
+            }
+            $this.find(".modal-title").text($(this).data("videoTitle"));
+            player = cyberplayer("dvplay").setup({
+                flashplayer: "../../../plugins/cyberplayer/cyberplayer.flash.swf",
+                file: $this.data("videoUrl"),
+                image: $this.data("snapUrl") || "",
+                width: '100%',
+                height: Math.floor($this.find(".modal-body").width() * 9 / 16),
+                autostart: true,
+                repeat: false,
+                volume: 100,
+                starttime: 0,
+                controls: 'over',
+                controlbar: {
+                    barLogo: false
+                },
+                ak: '515d61b893134f40bd4297b75a03494b' // 公有云平台注册即可获得accessKey
+            });
+        }).on("hidden.bs.modal", "#play-dlg", function() {
+            $(this).find(".modal-title").text("");
+            if (player) {
+                player.remove();
+                player = null;
+            }
+        }).on("shown.bs.modal", "#easyplayer-dlg", function() {
+            var userAgent = navigator.userAgent;
+            var isOpera;
+            var isEdge;
+            if (userAgent != undefined) {
+                isEdge = userAgent.indexOf("Edge") > -1
+                isOpera = userAgent.indexOf("OPR") > -1;
+            } else {
+                isEdge = false;
+                isOpera = false;
+            }
+
+            var $this = $(this);
+            $this.find(".modal-title").text($(this).data("videoTitle"));
+            $("#easyplayer").remove();
+            $("#easyplayer-wrapper").append("<div id='easyplayer'></div>");
+            var w = $("#easyplayer").width();
+            var h = Math.floor(w * 9 / 16);
+            //Edge浏览器做特殊处理
+            if (isEdge) {
+                easyplayer == cyberplayer("easyplayer").setup({
+                    flashplayer: "../../../plugins/cyberplayer/2.1.6/cyberplayer.flash.swf",
+                    file: $this.data("videoUrl"),
+                    image: $this.data("snapUrl") || "",
+                    width: '100%',
+                    height: Math.floor($this.find(".modal-body").width() * 9 / 16),
+                    autostart: true,
+                    repeat: false,
+                    volume: 100,
+                    starttime: 0,
+                    controls: 'over',
+                    controlbar: {
+                        barLogo: false
+                    },
+                    ak: '515d61b893134f40bd4297b75a03494b' // 公有云平台注册即可获得accessKey
+                });
+            } else {
+                easyplayer = new EasyPlayer("easyplayer", 1, w, h, {
+                    flashplayer: '../../../plugins/easyplayer/easyplayer.swf',
+                    flashinstaller: '../../../plugins/easyplayer/AdobeFlashPlayerInstall.swf',
+                    attributes: {
+                        style: 'margin:0 auto;display:block;'
+                    }
+                });
+                easyplayer.on_player_ready = function() {
+                    easyplayer.set_bt(0.8);
+                    easyplayer.play();
+                }
+                easyplayer.on_player_metadata = function(metadata) {
+                    easyplayer.set_dar(0, 0);
+                    easyplayer.set_fs("screen", 100);
+                }
+                easyplayer.start($this.data("videoUrl"));
+            }
+
+        }).on("hide.bs.modal", "#easyplayer-dlg", function() {
+            var $this = $(this);
+            if (easyplayer) {
+                swfobject.removeSWF("easyplayer");
+                easyplayer = null;
+            }
+        }).on("shown.bs.modal", "#grind-player-dlg", function() {
+            var $this = $(this);
+            var src = $this.data("videoUrl");
+            if (src.indexOf("/") === 0) {
+                src = location.protocol + "//" + location.host + src;
+            }
+            var flashvars = {
+                src: encodeURI(encodeURI(src)),
+                plugin_m3u8: "flashlsOSMF.swf",
+                verbose: false,
+                javascriptCallbackFunction: "onGrindCallback",
+                mimeType: "application/vnd.apple.mpegurl"
+            }
+            var params = {
+                allowFullScreen: true,
+                allowScripAccess: "always",
+                bgcolor: "#000000"
+            }
+            var attrs = {
+                id: "grind-player",
+                name: "grind-player",
+                style: 'margin:0 auto;display:block;'
+            };
+            $this.find(".modal-title").text($(this).data("videoTitle"));
+            $this.find(".player-wrapper").append("<div id='grind-player'></div>");
+            var w = $("#grind-player").width();
+            var h = Math.floor(w * 9 / 16);
+            //Edge浏览器做特殊处理
+            if (isEdge) {
+                grindPlayer = cyberplayer("grind-player").setup({
+                    flashplayer: "../../../plugins/cyberplayer/2.1.6/cyberplayer.flash.swf",
+                    file: $this.data("videoUrl"),
+                    image: $this.data("snapUrl") || "",
+                    width: '100%',
+                    height: Math.floor($this.find(".modal-body").width() * 9 / 16),
+                    autostart: true,
+                    repeat: false,
+                    volume: 100,
+                    starttime: 0,
+                    controls: 'over',
+                    controlbar: {
+                        barLogo: false
+                    },
+                    ak: '515d61b893134f40bd4297b75a03494b' // 公有云平台注册即可获得accessKey
+                });
+            } else {
+                swfobject.embedSWF(
+                    "GrindPlayer.swf",
+                    "grind-player",
+                    w, h,
+                    "10.2",
+                    null, flashvars, params, attrs
+                );
+            }
+        }).on("hide.bs.modal", "#grind-player-dlg", function() {
+            var $this = $(this);
+            if (grindPlayer) {
+                if (isEdge) {
+                    grindPlayer.remove();
+                } else {
+                    swfobject.removeSWF("grind-player");
+                }
+                grindPlayer = null;
+            }
+        }).on("shown.bs.modal", "#videojs-dlg", function() {
+            var $this = $(this);
+            $this.find(".modal-title").text($(this).data("videoTitle"));
+            var src = $this.data("videoUrl");
+            var type = "application/x-mpegURL";
+            var techOrder = ["html5", "flash"];
+            if (src.indexOf("rtmp") === 0) {
+                type = "rtmp/mp4";
+                techOrder = ["flash"];
+            }
+            $.get("template/videojs-template.html").then(function(html) {
+                var $html = $(html);
+                $html.find("video").attr("id", "videojs").attr("poster", $this.data("snapUrl"));
+                $html.find("source").attr("src", $this.data("videoUrl")).attr("type", type);
+                $this.find(".player-wrapper").append($html);
+                player = videojs("videojs", {
+                    autoplay: true,
+                    techOrder: techOrder
+                }, function() {
+                    this.on('error', function(event) {
+                        var time = this.currentTime();
+
+                        if (this.error().code === 2) {
+                            this.error(null).pause().load().currentTime(time).play();
+                        }
+                    });
+                });
+            })
+
+        }).on("hide.bs.modal", "#videojs-dlg", function() {
+            var $this = $(this);
+            $(this).find(".modal-title").text("");
+            if (player) {
+                player.dispose();
+                player = null;
+                $this.find(".video-wrapper").remove();
+            }
+        })
+        videojs.options.flash.swf = '../../../plugins/video-js-5.19.2/video-js.swf';
+        var player = null;
+        var easyplayer = null;
+        var grindPlayer = null;
+
+        function onGrindCallback(playerId, e, obj) {
+            switch (e) {
+                case "onJavaScriptBridgeCreated":
+                    grindPlayer = document.getElementById(playerId);
+                    break;
+            }
+        }
+        $("body").addClass(localStorage["sidebar-collapse"]);
+        var serverInfo = {};
+        $(function() {
+            $.ajax(host + "/getserverinfo").then(function(ret) {
+                serverInfo = ret.EasyDarwin.Body;
+                $("#hardware-info").text(serverInfo.Hardware);
+                $("#interface-info").text(serverInfo.InterfaceVersion);
+                $("#running-time-info").text(serverInfo.RunningTime);
+                $("#software-info").text(serverInfo.Server);
+                var v = serverInfo.Server.substring(serverInfo.Server.lastIndexOf(" ") + 1);
+                var $v = $("<span class='logo-lg label label-warning' style='position: absolute;top:8px;right: 20px;font-size: 8px;'>{0}</span>".format(v));
+                $(".main-header .logo").append($v);
+            })
+        })
+    </script>
+    <div class="modal fade" id="videojs-dlg">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+                    <h4 class="modal-title text-success text-center"></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="player-wrapper"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="play-dlg">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+                    <h4 class="modal-title text-success text-center"></h4>
+                </div>
+                <div class="modal-body">
+                    <div id="dvplay" style="margin: 0 auto;height: auto;"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="easyplayer-dlg">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+                    <h4 class="modal-title text-success text-center"></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="player-wrapper"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="grind-player-dlg">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+                    <h4 class="modal-title text-success text-center"></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="player-wrapper"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper" style="background-color:white">
+        <section class="content">
+<div class="container-fluid no-padding">
+
+    <!-- ////////////////////////////// ids ////////////////////////////////////  -->
+    <div class="box box-success ids">
+        <div class="box-header">
+            <h4 class="text-success text-center">直播回看列表</h4>
+            <div class="form-inline">
+                <div class="input-group input-group-sm pull-right">
+                    <input type="text" id="table-search" class="form-control" placeholder="搜索">
+                    <span class="input-group-btn">
+						<button class="btn btn-success" type="submit" id="table-search-btn">
+							<i class="fa fa-search"></i>
+						</button>
+					</span>
+                </div>
+            </div>
+        </div>
+        <div class="box-body table-responsive">
+            <table class="table table-hover">
+            </table>
+        </div>
+        <div class="box-footer clearfix">
+            <nav class='pull-right'>
+                <ul class='pagination pagination-sm'></ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- /////////////////////////////// videos ////////////////////////////////  -->
+    <div class="box box-success videos hide">
+        <div class="box-header">
+            <h4 class="text-success text-center">录像-列表视图</h4>
+            <div class="form-inline">
+                <div class="form-group">
+                    <a class="btn btn-success btn-sm" id="video-close-btn">
+                        <i class="fa fa-chevron-left"></i> 返回
+                    </a>
+                </div>
+                <div class="form-group pull-right">
+                    <div class="input-group input-group-sm">
+                        <input type="text" class="form-control date" placeholder="选择日期">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-sm btn-default" onclick="$(this).closest('.input-group').find('.date').focus()">
+								<i class="fa fa-calendar"></i>
+							</button>
+                            <button type="button" class="btn btn-sm btn-default" id="toggle-records-btn">
+								<i class="fa fa-hand-o-right"></i> 时间轴视图
+							</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="box-body table-responsive">
+            <table class="table table-hover">
+                <tr>
+                    <th>Stream ID</th>
+                    <th>开始时间</th>
+                    <th>录像时长</th>
+                    <th>视频地址</th>
+                    <th>操作</th>
+                </tr>
+            </table>
+        </div>
+        <div class="box-footer clearfix">
+            <nav class='pull-right'>
+                <ul class='pagination pagination-sm'></ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- ///////////////////////// records /////////////////////////////  -->
+    <div class="box box-success records hide">
+        <div class="box-header">
+            <h4 class="text-success text-center">录像-时间轴视图</h4>
+            <div class="form-inline">
+                <div class="form-group">
+                    <a class="btn btn-success btn-sm" id="record-close-btn">
+                        <i class="fa fa-chevron-left"></i> 返回
+                    </a>
+                </div>
+                <div class="form-group pull-right">
+                    <div class="input-group input-group-sm">
+                        <input type="text" class="form-control date" placeholder="选择日期">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-sm btn-default" onclick="$(this).closest('.input-group').find('.date').focus()">
+								<i class="fa fa-calendar"></i>
+							</button>
+                            <button type="button" class="btn btn-sm btn-default" id="toggle-videos-btn">
+								<i class="fa fa-hand-o-right"></i> 列表视图
+							</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box-body table-responsive">
+            <div class="record-player-wrapper">
+                <div class="video-wrapper" style="padding-bottom:55%;position:relative;margin:0 auto;overflow:hidden;">
+                    <div class="video-inner" style="position:absolute;top:0;bottom:0;left:0;right:0;">
+                        <video id="record-videojs" class="video-js vjs-default-skin vjs-big-play-centered" style="width: 100%; height: 100%;" controls preload="none" poster="">
+							<!-- <source src="" type=""></source> -->
+							<p class="vjs-no-js">
+								To view this video please enable JavaScript, and consider upgrading to a web browser that
+								<a href="http://videojs.com/html5-video-support/" target="_blank">
+													supports HTML5 video
+													</a>
+							</p>
+						</video>
+                    </div>
+                </div>
+            </div>
+            <div class="time-rule">
+                <div class="time-day">
+                </div>
+                <div class="time-cursor">
+                    <div class="time-cursor-text">00:00</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+
+    function renderIDPager(ids) {
+        function pageChanged(idx, size) {
+            var $t = $(".box.ids table");
+            var _ids = ids.slice(idx * size, idx * size + size);
+            $(".box.ids table tr").remove();
+            if (_ids.length == 0) {
+                $(".box.ids table").append("<tr><td class='text-center' colspan='100'>没有数据</td></tr>")
+            }
+            $.each(_ids, function(i, id) {
+                var $tr = $("<tr role='button'><td class='text-success'> &nbsp;&nbsp;<i class='fa fa-folder'></i> &nbsp;&nbsp;{0}</td></tr>".format(id));
+                $tr.data("id", id);
+                $t.append($tr);
+            })
+            $t.find("td,th").ellipsis();
+        }
+        var pager = BootstrapPagination($(".box.ids .box-footer nav ul"), {
+            layoutScheme: "firstpage,pagenumber,lastpage",
+            total: ids.length,
+            pageIndex: 0,
+            pageGroupSize: 3,
+            pageSize: 10,
+            firstPageText: '<<',
+            lastPageText: '>>',
+            pageChanged: pageChanged
+        })
+        pager.pageIndex(0);
+    }
+
+    function renderVideoPager(videos) {
+        var id = $(".box.videos").data("id");
+
+        function pageChanged(idx, size) {
+            var $t = $(".box.videos table");
+            var _videos = videos.slice(idx * size, idx * size + size);
+            $(".box.videos table tr:gt(0)").remove();
+            if (_videos.length == 0) {
+                $(".box.videos table").append("<tr><td class='text-center' colspan='100'>没有数据, 请另选日期</td></tr>")
+            }
+            $.each(_videos, function(i, video) {
+                var startTime = moment(video["start_time"], "YYYYMMDDHHmmss").format("YYYY-MM-DD HH:mm:ss");
+                var url = "<a class='video-play-btn text-success' role='button'>{0}</a>".format(video["hls"]);
+                var btns = "<div class='btn-group'>";
+                btns += "<a class='btn btn-xs btn-success video-play-btn'><i class='fa fa-play'></i> 播放</a>";
+                btns += "</div>";
+                var $tr = $("<tr></tr>");
+                $tr.data("videoUrl", video["hls"]);
+                $tr.data("videoTitle", id + moment(video["start_time"], "YYYYMMDDHHmmss").format("(YYYY-MM-DD HH:mm:ss)"));
+                $tr.append("<td>{0}</td>".format(id));
+                $tr.append("<td>{0}</td>".format(startTime));
+                $tr.append("<td>{0}</td>".format(moment.utc(video["duration"] * 1000).format("HH:mm:ss")));
+                $tr.append("<td>{0}</td>".format(url));
+                $tr.append("<td>{0}</td>".format(btns))
+                $t.append($tr);
+            })
+            $t.find("td,th").ellipsis();
+        }
+        var pager = BootstrapPagination($(".box.videos .box-footer nav ul"), {
+            layoutScheme: "firstpage,pagenumber,lastpage",
+            total: videos.length,
+            pageIndex: 0,
+            pageGroupSize: 3,
+            pageSize: 10,
+            firstPageText: '<<',
+            lastPageText: '>>',
+            pageChanged: pageChanged
+        })
+        pager.pageIndex(0);
+    }
+
+    function loadIDData(q) {
+        $.ajax(host + "/query_devices").then(function(data) {
+            var ids = data.data.devices;
+            if (q && typeof q == "string") {
+                ids = ids.filter(function(val, idx, array) {
+                    return new RegExp(q, "i").test(val);
+                })
+            }
+            if (ids != undefined && ids != "") {
+                renderIDPager(ids);
+            }
+        })
+    }
+
+    function loadVideoData() {
+        var id = $(".box.videos").data("id");
+        var d = $(".box.videos .date").datepicker("getDate");
+        var period = moment(d).format("YYYYMMDD");
+        $.ajax(host + "/query_record_daily?id=" + id + "&period=" + period).then(function(data) {
+            console.log(data);
+            if (data.code != 0) {
+                return $.Deferred().reject();
+            }
+            renderVideoPager(data.data.list);
+        })
+    }
+    $(document).on("click", "#table-search-btn", function() {
+        var q = $("#table-search").val();
+        loadIDData(q);
+    }).on("keyup", "#table-search", function(e) {
+        if (e.keyCode == 13) {
+            $("#table-search-btn").trigger("click");
+        }
+    }).on("click", ".box.ids table tr[role=button]", function() {
+        var id = $(this).data("id");
+        $(".box.ids").addClass("hide");
+        $(".box.videos").removeClass("hide");
+        $(".box.videos,.box.records").data("id", id).data("gFlags", {});
+        $(".box.videos .box-header h4").text("录像({0})-列表视图".format(id))
+        $(".box.records .box-header h4").text("录像({0})-时间轴视图".format(id));
+        $(".box.videos .date,.box.records .date").datepicker("update");
+        onChangeDate();
+        loadVideoData();
+    }).on("click", "#video-close-btn,#record-close-btn", function() {
+        $(".box.videos,.box.records").addClass("hide");
+        $(".box.ids").removeClass("hide");
+        renderPlayer();
+    }).on("click", ".video-play-btn", function() {
+        var $tr = $(this).closest("tr");
+        var title = $tr.data("videoTitle");
+        var url = $tr.data("videoUrl");
+        if (!url) {
+            $.gritter.add("没有播放地址");
+            return;
+        }
+        $("#videojs-dlg").data("videoUrl", host + url).data("videoTitle", title).modal('show');
+    }).on("click", "#toggle-records-btn,#toggle-videos-btn", function() {
+        $(".box.videos,.box.records").toggleClass("hide");
+        var $curMinute = $(".time-day .time-" + moment().format("HH-mm"));
+        var left = $curMinute.position().left + $(".time-day").position().left;
+        $(".time-cursor")[0].style.left = left + "px";
+        onTimeUpdate();
+        renderPlayer();
+    });
+
+    /////////////////// timer ///////////////////////////////////
+    var recordPlayer = null;
+    var videoHtml = "";
+
+    function onTimeUpdate() {
+        if ($(".time-cursor").position().left >= 1440 + $(".time-day").position().left) {
+            $(".time-cursor")[0].style.left = (1440 - 1 + $(".time-day").position().left) + "px";
+        }
+        var m = moment().hour(0).minute($(".time-cursor").position().left - $(".time-day").position().left);
+        $(".time-cursor-text").text(m.format("HH:mm")).data("changed", true);
+    }
+
+    function onChangeDate() {
+        $(".time-minute").removeClass("active").removeData("hls").removeData("snap");
+        var d = $(".box.records .date").datepicker("getDate");
+        var period = moment(d).format("YYYYMMDD");
+        var list = [];
+        var id = $(".box.records").data("id");
+        $.ajax(host + "/query_record_daily", {
+            async: false,
+            data: {
+                id: id,
+                period: period
+            }
+        }).then(function(data) {
+            list = data.data.list;
+        })
+        $.each(list, function(i, a) {
+            var m = moment(a.start_time, "YYYYMMDDHHmmss");
+            var s = parseInt(a.duration);
+            for (var i = 1; i <= s; i++) {
+                m.add(1, "seconds");
+                $(".time-" + m.format("HH-mm")).addClass("active").data("hls", a.hls).data("snap", a.snap);
+            }
+        })
+        renderPlayer();
+    }
+
+    function onChangeTime() {
+        var m = moment().hour(0).minute($(".time-cursor").position().left - $(".time-day").position().left);
+        var $minute = $(".time-" + m.format("HH-mm"));
+        renderPlayer(host + $minute.data("hls"));
+    }
+
+    function renderTimeTexts() {
+        $(".time-day .time-text").remove();
+        for (var i = 0; i < 24; i++) {
+            var $text = $("<div class='time-text'></div>");
+            var m = moment().hour(i).minute(0).second(0);
+            $text.text(m.format("HH:mm"));
+            $text.addClass("time-" + m.format("HH"));
+            $(".time-day").append($text);
+        }
+    }
+
+    function renderTimeMinutes() {
+        $(".time-day .time-minute").remove();
+        for (var i = 0; i < 1440; i++) {
+            var $minute = $("<div class='time-minute'></div>");
+            var m = moment().hour(0).minute(i);
+            $minute.addClass("time-" + m.format("HH-mm"));
+            $(".time-day").append($minute);
+        }
+    }
+
+    function renderPlayer(src) {
+        if (recordPlayer) {
+            recordPlayer.dispose();
+            $(".video-inner").html(videoHtml);
+            recordPlayer = null;
+        }
+        if (!src) return;
+        if (src.indexOf("/") === 0) {
+            src = location.protocol + "//" + location.host + src;
+        }
+        if (src.indexOf("rtmp") === 0) {
+            $("#record-videojs").append("<source src='" + src + "' type='rtmp/mp4'></source>");
+            recordPlayer = videojs("record-videojs", {
+                notSupportedMessage: '您的浏览器没有安装或开启Flash',
+                techOrder: ["flash"],
+                autoplay: true
+            });
+            recordPlayer.on("error", function(e) {
+                var $e = $(".record-player-wrapper .vjs-error .vjs-error-display .vjs-modal-dialog-content");
+                var $a = $("<a href='http://www.adobe.com/go/getflashplayer' target='_blank'></a>").text($e.text());
+                $e.empty().append($a);
+            })
+        } else {
+            var timeout = 10000;
+            var step = 500;
+            var cnt = 0;
+
+            function test() {
+                cnt += step;
+                $.ajax(src, {
+                    type: 'HEAD',
+                    global: false,
+                    complete: function(xhr, ts) {
+                        if (cnt > timeout) {
+                            $(".record-player-wrapper").unmask();
+                            $.gritter.add("请求数据失败");
+                            return;
+                        }
+                        //xhr.status == 0 , when cross domain request not found
+                        if (xhr.status == 404 || xhr.status == 0 || (xhr.status != 200 && !isPC())) {
+                            console.log("video is no ready, waiting...");
+                            setTimeout(test, step);
+                        } else {
+                            $(".record-player-wrapper").unmask();
+                            $("#record-videojs").append("<source src='" + src + "' type='application/x-mpegURL'></source>");
+                            recordPlayer = videojs("record-videojs", {
+                                autoplay: true
+                            });
+                        }
+                    }
+                })
+            }
+            $(".record-player-wrapper").mask("加载中...", 100);
+            test();
+        }
+    }
+    $(function() {
+
+        $(".box.videos .date").datepicker({
+            language: "zh-CN",
+            autoclose: true,
+            format: "yyyy-mm-dd",
+            todayHighlight: false,
+            beforeShowDay: function(date) {
+                var id = $(".box.videos").data("id");
+                if (!id) return;
+                var gFlags = $(".box.videos").data("gFlags");
+                var period = moment(date).format("YYYYMM");
+                if (!gFlags[period]) {
+                    $.ajax(host + "/query_record_monthly", {
+                        async: false,
+                        data: {
+                            id: id,
+                            period: period
+                        }
+                    }).then(function(data) {
+                        if (data.code != 0) {
+                            return $.Deferred().reject();
+                        }
+                        gFlags[period] = data.data.flags || "0000000000000000000000000000000";
+                    }).fail(function() {
+                        gFlags[period] = "0000000000000000000000000000000";
+                    });
+                }
+                var flags = gFlags[period];
+                var d = moment(date).date();
+                var flag = flags[d - 1];
+                if (flag == '0') {
+                    return {
+                        classes: "text-gray",
+                        tooltip: "没有录像",
+                        enabled: false
+                    };
+                } else {
+                    return {
+                        classes: "text-green text-bold",
+                        tooltip: "有录像"
+                    };
+                }
+            }
+        }).datepicker("setDate", new Date()).on("changeDate", function(e) {
+            loadVideoData();
+        })
+
+        $(".box.records .date").datepicker({
+            language: "zh-CN",
+            autoclose: true,
+            format: "yyyy-mm-dd",
+            todayHighlight: false,
+            beforeShowDay: function(date) {
+                var id = $(".box.records").data("id");
+                if (!id) return;
+                var gFlags = $(".box.records").data("gFlags");
+                var period = moment(date).format("YYYYMM");
+                if (!gFlags[period]) {
+                    $.ajax(host + "/query_record_monthly", {
+                        async: false,
+                        data: {
+                            id: id,
+                            period: period
+                        }
+                    }).then(function(data) {
+                        if (data.code != 0) {
+                            return $.Deferred().reject();
+                        }
+                        gFlags[period] = data.data.flags || "0000000000000000000000000000000";
+                    }).fail(function() {
+                        gFlags[period] = "0000000000000000000000000000000";
+                    });
+                }
+                var flags = gFlags[period];
+                var d = moment(date).date();
+                var flag = flags[d - 1];
+                if (flag == '0') {
+                    return {
+                        classes: "text-gray",
+                        tooltip: "没有录像",
+                        enabled: false
+                    };
+                } else {
+                    return {
+                        classes: "text-green text-bold",
+                        tooltip: "有录像"
+                    };
+                }
+            }
+        }).datepicker("setDate", new Date()).on("changeDate", function(e) {
+            onChangeDate();
+        })
+
+        ////////////////// timer ///////////////////////////
+        videoHtml = $(".video-inner").html();
+        renderTimeMinutes();
+        renderTimeTexts();
+
+        var queryID = getQueryString("id");
+        if (queryID != null && queryID != "") {
+            $("#video-close-btn").hide();
+            $(".box.ids").addClass("hide");
+            $(".box.videos").removeClass("hide");
+            $(".box.videos,.box.records").data("id", queryID).data("gFlags", {});
+            $(".box.videos .box-header h4").text("直播录像({0})-分享列表视图".format(queryID))
+            $(".box.records .box-header h4").text("直播录像({0})-时间轴视图".format(queryID));
+            // $(".box.records .date").datepicker("setDate", new Date());
+            // $(".box.videos .date").datepicker("setDate", new Date());
+            $(".box.videos .date,.box.records .date").datepicker("update");
+            onChangeDate();
+            loadVideoData();
+        } else {
+            loadIDData();
+        }
+
+    })
+
+    //timer
+    $(document).on("mousedown", ".time-cursor-text,.time-day", function(e) {
+        $(this).data("pageX", e.pageX);
+    }).on("mouseup", function(e) {
+        if ($(".time-cursor-text").data("changed")) {
+            onChangeTime();
+            $(".time-cursor-text").removeData("changed");
+        }
+        $(".time-cursor-text,.time-day").removeData("pageX");
+    }).on("mousemove", function(e) {
+        var pageX = $(".time-cursor-text").data("pageX");
+        if (pageX != undefined) {
+            $(".time-cursor-text").data("pageX", e.pageX);
+            var moveX = e.pageX - pageX;
+            var left = $(".time-cursor").position().left + moveX;
+            left = left < 0 ? 0 : left;
+            left = left > ($(".time-rule").innerWidth() - 1) ? ($(".time-rule").innerWidth() - 1) : left;
+            $(".time-cursor")[0].style.left = left + "px";
+
+            onTimeUpdate();
+        }
+        pageX = $(".time-day").data("pageX");
+        var curLeft = $(".time-day").position().left;
+        if (pageX != undefined && ($(".time-rule").innerWidth() < $(".time-day").outerWidth() || curLeft < 0)) {
+            $(".time-day").data("pageX", e.pageX);
+            var moveX = e.pageX - pageX;
+            var left = $(".time-day").position().left + moveX;
+            left = left > 0 ? 0 : left;
+
+            var minLeft = $(".time-rule").innerWidth() - $(".time-day").outerWidth();
+            left = left < minLeft ? minLeft : left;
+            $(".time-day")[0].style.left = left + "px";
+
+            onTimeUpdate();
+        }
+    }).on("mousedown", ".time-minute", function(e) {
+        var left = $(this).position().left + $(".time-day").position().left;
+        $(".time-cursor")[0].style.left = left + "px";
+        onTimeUpdate();
+    })
+</script>
+</section>
+<!-- content-wrapper -->
+</div>
+<!-- wrapper-->
+</body>
+
+</html>

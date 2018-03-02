@@ -1,0 +1,324 @@
+<table id="dg" style="width:100%;height:368px;"></table>
+<div id="toolbar">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="showAddData()">创建直播</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="showEditData(-1)">直播编辑</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="CURD.deleteData()">删除直播</a>
+    <!--<a href="javascript:void(0)" class="easyui-linkbutton" plain="true" onclick="showInfoData(-1)">直播信息</a>-->
+    <a href="javascript:void(0)" class="easyui-linkbutton" plain="true" onclick="showData(-1)">直播详情</a>
+</div>
+<div id="dlg" class="easyui-dialog" style="width:400px;" closed="true" buttons="#dlg-buttons">
+    <form id="fm" method="post" novalidate style="margin:0;padding:20px 50px">
+        <input id="operate" name="operate" hidden="true">
+        <div style="margin-bottom:10px">
+            <input name="live_name" class="easyui-textbox" label="直播名称" style="width:100%" required>
+        </div>
+        <div style="margin-bottom:10px" id="e_live_uuid">
+            <input name="live_uuid" class="easyui-textbox" label="直播流ID" style="width:100%">
+        </div>
+        <div style="margin-bottom:10px">
+            <input name="time_start" class="easyui-datetimebox" label="有效开始时间" style="width:100%;">
+        </div>
+        <div style="margin-bottom:10px">
+            <input name="time_end" class="easyui-datetimebox" label="有效结束时间" style="width:100%;">
+        </div>
+        <div style="margin-bottom:10px">
+            <input name="live_intro" class="easyui-textbox" label="直播描述" style="width:100%;height:80px;" data-options="multiline:true">
+        </div>
+        <div style="margin-bottom:10px" id="live_cover">
+            <input name="imageData" id="imageData" hidden="true">
+        </div>
+    </form>
+</div>
+<div id="dlg-buttons">
+    <a href="javascript:void(0)" class="easyui-linkbutton c6" iconCls="icon-ok" onclick="saveData()" style="width:90px">确定</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')" style="width:90px">取消</a>
+</div>
+<div id="dlg-info" class="easyui-dialog" style="width:550px;max-height:410px;" closed="true" buttons="#dlg-info-buttons">
+    <form id="fm-info" method="post" novalidate style="margin:0;padding:20px 50px">
+        <input name="live_uuid" hidden="true">
+        <div style="margin-bottom:10px">
+            <input name="live_name" class="easyui-textbox" label="直播名称" style="width:100%;ready-only:true" readonly="true">
+        </div>
+        <div style="margin-bottom:10px">
+            <input name="time_start" class="easyui-datetimebox" label="有效开始时间" style="width:100%;" readonly="true">
+        </div>
+        <div style="margin-bottom:10px">
+            <input name="time_end" class="easyui-datetimebox" label="有效结束时间" style="width:100%;" readonly="true">
+        </div>
+        <div style="margin-bottom:10px">
+            <input name="live_intro" class="easyui-textbox" label="直播描述" style="width:100%;height:80px;" data-options="multiline:true" readonly="true">
+        </div>
+        <div style="margin-bottom:10px">
+            <input name="live_url" class="easyui-textbox" label="推流地址" style="width:100%;height:100px;" data-options="multiline:true" readonly="true">
+        </div>
+        <div style="margin-bottom:1px;">
+            <div id="qrcode" style="margin:auto;text-align:center"></div>
+        </div>
+    </form>
+</div>
+<div id="dlg-info-buttons">
+    <a href="javascript:void(0)" class="easyui-linkbutton c4" onclick="showData(-1)" style="width:90px">观看直播</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="javascript:$('#dlg-info').dialog('close')" style="width:90px">关闭</a>
+</div>
+<script type="text/javascript" src="../js/jquery.qrcode.js"></script>
+<script type="text/javascript" src="../js/jquery.cropit.js"></script>
+<style>
+    .cropit-preview {
+        width: 300px;
+        height: 168px;
+        background: lightgray;
+        cursor: move;
+    }
+</style>
+<script type="text/javascript">
+    function initCover() {
+        $("#image-cropper").remove();
+        var coverHtml = "<div id='image-cropper'>封面设置" +
+            "<div class='cropit-preview'></div>" +
+            "<input type='range' class='cropit-image-zoom-input' />" +
+            "<input type='file' class='cropit-image-input' /></div>";
+        $("#live_cover").append(coverHtml);
+        $('#image-cropper').cropit();
+        $(".cropit-preview-image").attr("src", "");
+        $(".cropit-preview-image").attr("onerror", "javascript:this.src=''");
+    }
+
+    function showAddData() {
+        $("#e_live_uuid").show();
+        $("#image-cropper").remove();
+        CURD.showAddData();
+    }
+
+    function showEditData(row) {
+        initCover();
+        var host = "http://" + location.host.split(":")[0] + ":<%- HTTPWanPort%>/hls/";
+        if (row == -1) {
+            row = $('#dg').datagrid('getSelected');
+        }
+        if (row != -1 && row) {
+            $(".cropit-preview-image").attr("src", host + row.live_uuid + ".png" + "?random=" + Math.random());
+            $('#dlg').dialog('open').dialog('center').dialog('setTitle', '直播编辑');
+            $('#operate').val('update');
+            $("#e_live_uuid").hide();
+            CURD.initData();
+            $('#fm').form('load', row);
+        } else {
+            alertInfo();
+        }
+    }
+
+    function saveData() {
+        var imageData = $('#image-cropper').cropit('export');
+        $("#imageData").val(imageData);
+        CURD.saveData();
+    }
+
+    CURD.url = "operLive";
+    CURD.id = "live_uuid";
+    //数据表格分页查询
+    $('#dg').datagrid({
+        url: CURD.url,
+        queryParams: {
+            operate: 'retrieve'
+        },
+        rownumbers: true,
+        singleSelect: true,
+        pagination: true,
+        pagePosition: 'bottom',
+        pageList: [10, 20, 30, 40, 50],
+        fitColumns: true,
+        emptyMsg: "暂无数据",
+        columns: [
+            [{
+                field: CURD.id,
+                title: '直播流ID',
+                width: 130,
+                // sortable: true
+                formatter: function(value, row, index) {
+                    return "<div title='" + value + "' class='easyui-tooltip'>" + value + "</div>"
+                }
+            }, {
+                field: 'live_name',
+                title: '直播名称',
+                width: 100,
+                // sortable: true
+                formatter: function(value, row, index) {
+                    return "<div title='" + value + "' class='easyui-tooltip'>" + value + "</div>"
+                }
+            }, {
+                field: 'time_start',
+                title: '有效开始时间',
+                width: 100,
+                // sortable: true
+                formatter: function(value, row, index) {
+                    return "<div title='" + value + "' class='easyui-tooltip'>" + value + "</div>"
+                }
+            }, {
+                field: 'time_end',
+                title: '有效截止时间',
+                width: 100,
+                // sortable: true
+            }, {
+                field: 'live_url',
+                title: '推流地址',
+                width: 100,
+                // sortable: true
+                formatter: function(value, row, index) {
+                    return "<div title='" + value + "' class='easyui-tooltip'>" + value + "</div>"
+                }
+            }, {
+                field: 'live_intro',
+                title: '直播描述',
+                width: 100,
+                // sortable: true
+                formatter: function(value, row, index) {
+                    return "<div title='" + value + "' class='easyui-tooltip'>" + value + "</div>"
+                }
+            }, {
+                field: 'share_count',
+                title: '在线分享数',
+                width: 80,
+                // sortable: true
+                formatter: function(value, row, index) {
+                    return formatShareCount(value, row, index);
+                }
+            }, {
+                field: 'live_state',
+                title: '直播状态',
+                width: 50,
+                // sortable: true
+                formatter: function(value, row, index) {
+                    if (value == 0) {
+                        return "已禁用";
+                    } else if (value == 1) {
+                        return "有效";
+                    } else if (value == 2) {
+                        return "直播中";
+                    }
+
+                }
+            }, {
+                field: 'createtime',
+                title: '添加时间',
+                width: 50
+            }, {
+                field: 'altertime',
+                title: '更新时间',
+                width: 50
+            }, {
+                field: 'operate',
+                title: '操作',
+                width: 100,
+                // sortable: true
+                formatter: function(value, row, index) {
+                    var operate = "";
+                    if (row.live_state == 0) {
+                        operate = '<a href="javascript:void(0)" style="color:darkgreen;font-weight:900;" onclick="activeData(\'' + row.live_uuid + '\')">激活</a>';
+                    } else if (row.live_state == 1) {
+                        operate = '<a href="javascript:void(0)" style="color:darkgray;font-weight:900;" onclick="disableData(\'' + row.live_uuid + '\')">禁用</a>';
+                    } else if (row.live_state == 2) {
+                        operate = '<a href="javascript:void(0)" style="color:darkgray;font-weight:900;"  onclick="disableData(\'' + row.live_uuid + '\')">禁用</a>';
+                    }
+                    return operate;
+                }
+            }]
+        ],
+        toolbar: "#toolbar",
+        onDblClickRow: function(index, row) {
+            showData(row);
+        }
+    });
+
+    function showError(error) {
+        $.messager.alert('日志', error, 'error');
+    }
+
+    function disableData(uuid) {
+        $.post(CURD.url, {
+            id: uuid,
+            operate: "disable",
+        }, function(data) {
+            if (data.result == 1) {
+                showSuccess(data.msg);
+                $('#dg').datagrid('reload');
+            } else {
+                showError(data.msg);
+            }
+        }, 'json');
+    }
+
+    function activeData(uuid) {
+        $.post(CURD.url, {
+            id: uuid,
+            operate: "active",
+        }, function(data) {
+            if (data.result == 1) {
+                showSuccess(data.msg);
+                $('#dg').datagrid('reload');
+            } else {
+                showError(data.msg);
+            }
+        }, 'json');
+    }
+
+    function formatShareCount(val, row, idx) {
+        var ret;
+        ret = "<span class='text-gray' id ='s" + row.live_uuid + "'>获取中</span>";
+        getLiveShareCount(row.live_uuid);
+        setInterval("getLiveShareCount('" + row.live_uuid + "')", 5000);
+        return ret;
+    }
+
+
+    function getLiveShareCount(id) {
+        $.ajax({
+            url: '../../api/getLiveShareCount',
+            data: {
+                live_uuid: id
+            },
+            type: 'get',
+            success: function(data) {
+                if (data.result == 0) {
+                    $("#s" + id).text(0);
+                } else {
+                    data = data.msg;
+                    $("#s" + id).text(data);
+                }
+            }
+        })
+    }
+
+    function showInfoData(row) {
+        if (row == -1) {
+            row = $('#dg').datagrid('getSelected');
+        }
+        if (row != -1 && row) {
+            $('#dlg-info').dialog('open').dialog('center').dialog('setTitle', '直播信息');
+            CURD.initData();
+            $('#fm-info').form('load', row);
+            //更新值
+            var rtmpServer = "rtmp://" + location.host.split(":")[0] + ":10085";
+            var rtmpUrl = rtmpServer + "/hls/" + $("#_easyui_textbox_input5").val();
+            $("#_easyui_textbox_input5").val(rtmpUrl);
+            $('#qrcode').empty();
+            $('#qrcode').qrcode({
+                width: 300,
+                height: 300,
+                text: rtmpUrl
+            });
+        } else {
+            alertInfo();
+        }
+    }
+
+    function showData(row) {
+        if (row == -1) {
+            row = $('#dg').datagrid('getSelected');
+        }
+        if (row != -1 && row) {
+            window.parent.openPage(row.live_uuid, "live_detail.html?live_uuid=" + row.live_uuid, "直播-" + row.live_name);
+        } else {
+            alertInfo();
+        }
+    }
+</script>

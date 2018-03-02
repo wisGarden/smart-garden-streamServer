@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>easydss流媒体服务</title>
+    <style>
+        .easydssFrame {
+            position: absolute;
+            bottom: 0;
+            top: 0;
+            width: 99%;
+            height: 100%;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="_root_panel" stitle="" class="panel-body panel-body-noheader panel-body-noborder">
+    </div>
+
+    <iframe id="easydssFrame" class="easydssFrame" src="<%- page %>" name="easydssFrame" frameborder='0' allowfullscreen></iframe>
+</body>
+
+</html>
+<script type="text/javascript" src="../../plugins/jquery-easyui-1.5.1/jquery.min.js "></script>
+<script type="text/javascript">
+    $(document).ready(function(e) {
+        // var height = $(window).height();
+        // $("#easydssFrame").attr('style', 'width: 100%;border-width: 0;height:' + (height - 40) + 'px');
+    });
+</script>

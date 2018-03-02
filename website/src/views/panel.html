@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>工作界面</title>
+    <% include header_easyui.html %>
+</head>
+
+<body>
+    <div id="_root_panel" style="overflow: auto;border: 0; width: 100%; min-height: 350px;" title="" class="panel-body panel-body-noheader panel-body-noborder">
+    </div>
+</body>
+<script>
+    $('#_root_panel').panel({
+        href: '<%- page %>',
+        onLoad: function(data) {
+            if ("normal" == "<%- flag %>") {
+                $('#_root_panel').html(data);
+            }
+        }
+    });
+</script>
+
+</html>

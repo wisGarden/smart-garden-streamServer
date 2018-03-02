@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>点播接口</title>
+    <% include header.html %>
+        <style>
+            .api_header {
+                cursor: pointer;
+            }
+        </style>
+</head>
+
+<body class="hold-transition skin-blue-light">
+    <div class="wrapper" style="padding:20px;">
+        <!-- add page content start -->
+        <div class="row">
+            <div class="box box-default collapsed-box">
+                <div class="box-header with-border api_header">
+                    <h3 class="box-title">1. 视频点播列表接口</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool"><i class="fa fa-plus"></i></button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body " style="display: none;">
+
+                    <form class="form-horizontal" style="margin:auto">
+                        <div class="form-group">
+                            <label for="api_1" class="col-sm-2 control-label">接口地址</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="api_1" readonly="true" value="http://<%-host%>:10080/api/videolist">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="post_1" class="col-sm-2 control-label">请求方式</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="post_1" readonly="true" value="post|get">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="page_1" class="col-sm-2 control-label">page[必填]</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" id="page_1" placeholder="page>=1,且为整数" value="1" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="rows_1" class="col-sm-2 control-label">rows[必填]</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" id="rows_1" placeholder="rows>=1,且为整数" value="30" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="file_uuid_1" class="col-sm-2 control-label">file_uuid[可选]</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="file_uuid_1" placeholder="file_uuid参数可以查询唯一指定的视频信息">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="file_name_1" class="col-sm-2 control-label">file_name[可选]</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="file_name_1" placeholder="file_name可以模糊匹配一个或是多个视频信息">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row pull-right">
+                                <button type="button" id="btn_api_1" class="btn btn-block btn-success btn-sm" style="width:100px;margin-right:30px;">发起请求</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row" id="result_1" style="margin-left:20px;margin-right:20px;overflow-x:auto;font-size:12px;">
+
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="box box-default collapsed-box">
+                <div class="box-header with-border api_header">
+                    <h3 class="box-title">2. 视频状态获取及自主上传通知转码接口</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool"><i class="fa fa-plus"></i></button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body " style="display: none;">
+
+                    <form class="form-horizontal" style="margin:auto">
+                        <div class="form-group">
+                            <label for="api_2" class="col-sm-2 control-label">接口地址</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="api_2" readonly="true" value="http://<%-host%>:10080/api/videoinfo">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="post_2" class="col-sm-2 control-label">请求方式</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="post_2" readonly="true" value="post|get">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="file_uuid_2" class="col-sm-2 control-label">file_uuid[必填]</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="file_uuid_2" placeholder="输入file_uuid查询唯一指定的视频信息" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row pull-right">
+                                <button type="button" id="btn_api_2" class="btn btn-block btn-success btn-sm" style="width:100px;margin-right:30px;">发起请求</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row" style="margin-left:20px;margin-right:20px;overflow-x:auto;font-size:12px;">
+                                说明：返回的trans_state 0:转码中 1:尚未开始 2:转码成功 -1:发生错误
+                                <br/> file_uuid 如果传入此格式：xxxxxxxx.mp4 ,表示该视频是用户自主上传到该目录，会进行通知转码并返回视频状态信息
+                            </div>
+                            <div class="row" id="result_2" style="margin-left:20px;margin-right:20px;overflow-x:auto;font-size:12px;">
+
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="box box-default collapsed-box">
+                <div class="box-header with-border api_header">
+                    <h3 class="box-title">3. 点播视频删除接口</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool"><i class="fa fa-plus"></i></button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body " style="display: none;">
+                    <form class="form-horizontal" style="margin:auto">
+                        <div class="form-group">
+                            <label for="api_3" class="col-sm-2 control-label">接口地址</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="api_3" readonly="true" value="http://<%-host%>:10080/api/videodelete">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="post_3" class="col-sm-2 control-label">请求方式</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="post_3" readonly="true" value="post|get">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="file_uuid_3" class="col-sm-2 control-label">file_uuid[必填]</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="file_uuid_3" placeholder="输入file_uuid" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="api_key_3" class="col-sm-2 control-label">api_key[必填]</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="api_key_3" value="<%-api_key%>" placeholder="输入接口调用密钥" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row pull-right">
+                                <button type="button" id="btn_api_3" class="btn btn-block btn-success btn-sm" style="width:100px;margin-right:30px;">发起请求</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row" id="result_3" style="margin-left:20px;margin-right:20px;overflow-x:auto;font-size:12px;">
+
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="box box-default collapsed-box">
+                <div class="box-header with-border api_header">
+                    <h3 class="box-title">4. 视频信息编辑接口</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool"><i class="fa fa-plus"></i></button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body " style="display: none;">
+                    <form class="form-horizontal" style="margin:auto">
+                        <div class="form-group">
+                            <label for="api_4" class="col-sm-2 control-label">接口地址</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="api_4" readonly="true" value="http://<%-host%>:10080/api/videoedit">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="post_4" class="col-sm-2 control-label">请求方式</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="post_4" readonly="true" value="post|get">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="file_uuid_4" class="col-sm-2 control-label">file_uuid[必填]</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="file_uuid_4" placeholder="输入file_uuid" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="api_key_4" class="col-sm-2 control-label">api_key[必填]</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="api_key_4" value="<%-api_key%>" placeholder="输入接口调用密钥" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="file_name_4" class="col-sm-2 control-label">file_name[可选]</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="file_name_4" placeholder="视频显示名称" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="file_path_4" class="col-sm-2 control-label">file_path[可选]</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="file_path_4" placeholder="视频路径 如:/test/test.mp4" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row pull-right">
+                                <button type="button" id="btn_api_4" class="btn btn-block btn-success btn-sm" style="width:100px;margin-right:30px;">发起请求</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row" id="result_4" style="margin-left:20px;margin-right:20px;overflow-x:auto;font-size:12px;">
+
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="box box-default collapsed-box">
+                <div class="box-header with-border api_header">
+                    <h3 class="box-title">5. 点播视频封面设置接口</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool"><i class="fa fa-plus"></i></button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body " style="display: none;">
+                    <form class="form-horizontal" id="form_5" style="margin:auto">
+                        <div class="form-group">
+                            <label for="api_5" class="col-sm-2 control-label">接口地址</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="api_5" readonly="true" value="http://<%-host%>:10080/api/setSnap">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="post_5" class="col-sm-2 control-label">请求方式</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="post_5" readonly="true" value="get">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="file_uuid_5" class="col-sm-2 control-label">file_uuid[必填]</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="file_uuid_5" placeholder="输入file_uuid" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="currentTime_5" class="col-sm-2 control-label">currentTime[必填]</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="currentTime_5" placeholder="输入需要截图的时间点：类型：float,单位:秒" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row pull-right">
+                                <button type="button" id="btn_api_5" class="btn btn-block btn-success btn-sm" style="width:100px;margin-right:30px;">发起请求</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row" id="result_5" style="margin-left:20px;margin-right:20px;overflow-x:auto;font-size:12px;">
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- add page content end -->
+    </div>
+</body>
+
+</html>
+<% include footer.html %>
+    <script>
+        $(".api_header").click(function() {
+            if ($(this).parent().attr("class").endsWith("collapsed-box")) {
+                $(this).parent().removeClass("collapsed-box");
+                $(this).parent().children("div:eq(1)").show();
+                $(this).children("div").children("button").children("i").attr("class", "fa fa-minus");
+            } else {
+                $(this).parent().addClass("collapsed-box");
+                $(this).parent().children("div:eq(1)").hide();
+                $(this).children("div").children("button").children("i").attr("class", "fa fa-plus");
+            }
+        });
+        $("#btn_api_1").click(function() {
+            $("#result_1").text("");
+            var page_1 = $("#page_1").val();
+            var rows_1 = $("#rows_1").val();
+            var file_uuid_1 = $("#file_uuid_1").val();
+            var file_name_1 = $("#file_name_1").val();
+            $.ajax({
+                url: '../api/videolist',
+                type: 'post',
+                data: {
+                    page: page_1,
+                    rows: rows_1,
+                    file_uuid: file_uuid_1,
+                    file_name: file_name_1
+                },
+                success: function(data) {
+                    $("#result_1").text(JSON.stringify(data));
+                    window.parent.alertSuccess("接口调用成功！");
+                }
+            });
+        });
+        $("#btn_api_2").click(function() {
+            $("#result_2").text("");
+            var file_uuid_2 = $("#file_uuid_2").val();
+            $.ajax({
+                url: '../api/videoinfo',
+                type: 'post',
+                data: {
+                    file_uuid: file_uuid_2
+                },
+                success: function(data) {
+                    $("#result_2").text(JSON.stringify(data));
+                    window.parent.alertSuccess("接口调用成功！");
+                }
+            });
+        });
+
+        $("#btn_api_3").click(function() {
+            $("#result_3").text("");
+            var file_uuid_3 = $("#file_uuid_3").val();
+            var api_key_3 = $("#api_key_3").val();
+            $.ajax({
+                url: '../api/videodelete',
+                type: 'post',
+                data: {
+                    file_uuid: file_uuid_3,
+                    api_key: api_key_3
+                },
+                success: function(data) {
+                    $("#result_3").text(JSON.stringify(data));
+                    window.parent.alertSuccess("接口调用成功！");
+                }
+            });
+        });
+
+
+        $("#btn_api_4").click(function() {
+            $("#result_4").text("");
+            var file_uuid_4 = $("#file_uuid_4").val();
+            var api_key_4 = $("#api_key_4").val();
+            var file_path_4 = $("#file_path_4").val();
+            var file_name_4 = $("#file_name_4").val();
+            $.ajax({
+                url: '../api/videoedit',
+                type: 'get',
+                data: {
+                    file_uuid: file_uuid_4,
+                    api_key: api_key_4,
+                    file_path: file_path_4,
+                    file_name: file_name_4
+                },
+                success: function(data) {
+                    $("#result_4").text(JSON.stringify(data));
+                    window.parent.alertSuccess("接口调用成功！");
+                }
+            });
+        });
+
+        $("#btn_api_5").click(function() {
+            $("#result_5").text("");
+            var file_uuid_5 = $("#file_uuid_5").val();
+            var currentTime_5 = $("#currentTime_5").val();
+            $.ajax({
+                url: '../api/setSnap',
+                type: 'get',
+                data: {
+                    file_uuid: file_uuid_5,
+                    currentTime: currentTime_5
+                },
+                success: function(data) {
+                    $("#result_5").text(JSON.stringify(data));
+                    window.parent.alertSuccess("接口调用成功！");
+                }
+            });
+        });
+    </script>

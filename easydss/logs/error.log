@@ -1,0 +1,610 @@
+2018/01/09 14:50:04 [error] 3959#3959: ********************** EasyDSS **********************
+2018/01/09 14:50:04 [error] 3959#3959:  	 Platform: Linux 				
+2018/01/09 14:50:04 [error] 3959#3959:  	 Process Name[7]: easydss 			
+2018/01/09 14:50:04 [error] 3959#3959:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/09 14:50:04 [error] 3959#3959:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/09 14:50:04 [error] 3959#3959:  	 Validity Time Left: 00000055 day(s) 			
+2018/01/09 14:50:04 [error] 3959#3959: *****************************************************
+2018/01/09 14:50:04 [notice] 3959#3959: signal process started
+2018/01/09 14:50:04 [error] 3959#3959: open() "/home/parallels/Desktop/EasyDSS_Solution_1.2.0.1801060036/easydss/logs/easydss.pid" failed (2: No such file or directory)
+2018/01/09 14:50:04 [error] 3985#3985: ********************** EasyDSS **********************
+2018/01/09 14:50:04 [error] 3985#3985:  	 Platform: Linux 				
+2018/01/09 14:50:04 [error] 3985#3985:  	 Process Name[7]: easydss 			
+2018/01/09 14:50:04 [error] 3985#3985:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/09 14:50:04 [error] 3985#3985:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/09 14:50:04 [error] 3985#3985:  	 Validity Time Left: 00000055 day(s) 			
+2018/01/09 14:50:04 [error] 3985#3985: *****************************************************
+2018/01/09 14:55:04 [error] 3987#3987: *1 open() "/home/parallels/Desktop/EasyDSS_Solution_1.2.0.1801060036/easydss/www/hls/88888.png" failed (2: No such file or directory), client: 10.211.55.2, server: , request: "GET /hls/88888.png?random=0.1703059389572823 HTTP/1.1", host: "10.211.55.6:10088", referrer: "http://10.211.55.6:10080/admin/live_detail.html?live_uuid=88888"
+2018/01/09 15:07:37 [error] 3987#3987: *256 open() "/home/parallels/Desktop/EasyDSS_Solution_1.2.0.1801060036/easydss/www/hls/88888.png" failed (2: No such file or directory), client: 10.211.55.2, server: , request: "GET /hls/88888.png?random=0.04002610702003073 HTTP/1.1", host: "10.211.55.6:10088", referrer: "http://10.211.55.6:10080/api/live_share/88888"
+2018/01/09 15:10:58 [error] 3987#3987: *376 [lua] on_publish.lua:18: on_publish(): sign=&tm=, client: 127.0.0.1, server: , request: "POST /on/notify HTTP/1.0", host: "localhost"
+2018/01/09 15:12:47 [error] 3987#3987: *446 [lua] on_publish.lua:18: on_publish(): sign=&tm=, client: 127.0.0.1, server: , request: "POST /on/notify HTTP/1.0", host: "localhost"
+2018/01/09 15:12:55 [error] 3987#3987: *454 easydarwin monitor: stream "" already publishing, client: 10.211.55.2, server: 0.0.0.0:10085
+2018/01/09 15:12:55 [error] 3987#3987: *456 [lua] on_publish.lua:18: on_publish(): sign=&tm=, client: 127.0.0.1, server: , request: "POST /on/notify HTTP/1.0", host: "localhost"
+2018/01/09 15:13:49 [error] 3987#3987: *489 easydarwin monitor: stream "" already publishing, client: 10.211.55.2, server: 0.0.0.0:10085
+2018/01/09 15:13:49 [error] 3987#3987: *491 [lua] on_publish.lua:18: on_publish(): sign=&tm=, client: 127.0.0.1, server: , request: "POST /on/notify HTTP/1.0", host: "localhost"
+2018/01/09 15:14:27 [error] 3987#3987: *516 easydarwin monitor: stream "88888" already publishing, client: 10.211.55.2, server: 0.0.0.0:10085
+2018/01/09 15:14:27 [error] 3987#3987: *518 [lua] on_publish.lua:18: on_publish(): sign=153294ea652d79fdde544c5e26ae773f3daf2b31194a&tm=2018010914545049, client: 127.0.0.1, server: , request: "POST /on/notify HTTP/1.0", host: "localhost"
+2018/01/09 15:14:28 [error] 3987#3987: *516 hls: no path www/hls/88888/20180109/20180109151427/, client: 10.211.55.2, server: 0.0.0.0:10085
+2018/01/09 15:14:57 [error] 3987#3987: *551 [lua] on_publish.lua:18: on_publish(): sign=153294ea652d79fdde544c5e26ae773f3daf2b31194a&tm=2018010914545049, client: 127.0.0.1, server: , request: "POST /on/notify HTTP/1.0", host: "localhost"
+2018/01/09 15:15:27 [error] 3987#3987: *579 [lua] on_publish.lua:18: on_publish(): sign=153294ea652d79fdde544c5e26ae773f3daf2b31194a&tm=2018010914545049, client: 127.0.0.1, server: , request: "POST /on/notify HTTP/1.0", host: "localhost"
+2018/01/09 15:15:57 [error] 3987#3987: *600 [lua] on_publish.lua:18: on_publish(): sign=153294ea652d79fdde544c5e26ae773f3daf2b31194a&tm=2018010914545049, client: 127.0.0.1, server: , request: "POST /on/notify HTTP/1.0", host: "localhost"
+2018/01/09 15:16:27 [error] 3987#3987: *621 [lua] on_publish.lua:18: on_publish(): sign=153294ea652d79fdde544c5e26ae773f3daf2b31194a&tm=2018010914545049, client: 127.0.0.1, server: , request: "POST /on/notify HTTP/1.0", host: "localhost"
+2018/01/09 15:16:52 [error] 3987#3987: *637 easydarwin monitor: stream "88888" already publishing, client: 10.211.55.2, server: 0.0.0.0:10085
+2018/01/09 15:16:52 [error] 3987#3987: *639 [lua] on_publish.lua:18: on_publish(): sign=153294ea652d79fdde544c5e26ae773f3daf2b31194a&tm=2018010914545049, client: 127.0.0.1, server: , request: "POST /on/notify HTTP/1.0", host: "localhost"
+2018/01/09 15:16:53 [error] 3987#3987: *637 hls: no path www/hls/88888/20180109/20180109151652/, client: 10.211.55.2, server: 0.0.0.0:10085
+2018/01/09 15:17:22 [error] 3987#3987: *661 [lua] on_publish.lua:18: on_publish(): sign=153294ea652d79fdde544c5e26ae773f3daf2b31194a&tm=2018010914545049, client: 127.0.0.1, server: , request: "POST /on/notify HTTP/1.0", host: "localhost"
+2018/01/09 15:17:52 [error] 3987#3987: *681 [lua] on_publish.lua:18: on_publish(): sign=153294ea652d79fdde544c5e26ae773f3daf2b31194a&tm=2018010914545049, client: 127.0.0.1, server: , request: "POST /on/notify HTTP/1.0", host: "localhost"
+2018/01/09 15:18:22 [error] 3987#3987: *705 [lua] on_publish.lua:18: on_publish(): sign=153294ea652d79fdde544c5e26ae773f3daf2b31194a&tm=2018010914545049, client: 127.0.0.1, server: , request: "POST /on/notify HTTP/1.0", host: "localhost"
+2018/01/09 15:18:52 [error] 3987#3987: *725 [lua] on_publish.lua:18: on_publish(): sign=153294ea652d79fdde544c5e26ae773f3daf2b31194a&tm=2018010914545049, client: 127.0.0.1, server: , request: "POST /on/notify HTTP/1.0", host: "localhost"
+2018/01/09 15:19:22 [error] 3987#3987: *746 [lua] on_publish.lua:18: on_publish(): sign=153294ea652d79fdde544c5e26ae773f3daf2b31194a&tm=2018010914545049, client: 127.0.0.1, server: , request: "POST /on/notify HTTP/1.0", host: "localhost"
+2018/01/09 15:19:38 [error] 3987#3987: *758 open() "/home/parallels/Desktop/EasyDSS_Solution_1.2.0.1801060036/easydss/www/hls/88888.png" failed (2: No such file or directory), client: 10.211.55.2, server: , request: "GET /hls/88888.png?random=0.6857525730970866 HTTP/1.1", host: "10.211.55.6:10088", referrer: "http://10.211.55.6:10080/admin/live_detail.html?live_uuid=88888"
+2018/01/09 15:19:42 [error] 3987#3987: *761 open() "/home/parallels/Desktop/EasyDSS_Solution_1.2.0.1801060036/easydss/www/hls/88888.png" failed (2: No such file or directory), client: 10.211.55.2, server: , request: "GET /hls/88888.png?random=0.8141225018353312 HTTP/1.1", host: "10.211.55.6:10088", referrer: "http://10.211.55.6:10080/api/live_share/88888"
+2018/01/10 10:39:07 [error] 16544#16544: ********************** EasyDSS **********************
+2018/01/10 10:39:07 [error] 16544#16544:  	 Platform: Linux 				
+2018/01/10 10:39:07 [error] 16544#16544:  	 Process Name[7]: easydss 			
+2018/01/10 10:39:07 [error] 16544#16544:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/10 10:39:07 [error] 16544#16544:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/10 10:39:07 [error] 16544#16544:  	 Validity Time Left: 00000054 day(s) 			
+2018/01/10 10:39:07 [error] 16544#16544: *****************************************************
+2018/01/10 10:39:07 [notice] 16544#16544: signal process started
+2018/01/10 10:39:07 [error] 16544#16544: open() "/home/parallels/Desktop/EasyDSS_Solution_1.2.0.1801060036/easydss/logs/easydss.pid" failed (2: No such file or directory)
+2018/01/10 10:39:07 [error] 16570#16570: ********************** EasyDSS **********************
+2018/01/10 10:39:07 [error] 16570#16570:  	 Platform: Linux 				
+2018/01/10 10:39:07 [error] 16570#16570:  	 Process Name[7]: easydss 			
+2018/01/10 10:39:07 [error] 16570#16570:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/10 10:39:07 [error] 16570#16570:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/10 10:39:07 [error] 16570#16570:  	 Validity Time Left: 00000054 day(s) 			
+2018/01/10 10:39:07 [error] 16570#16570: *****************************************************
+2018/01/10 10:39:10 [error] 16572#16572: *1 directory index of "/home/parallels/Desktop/EasyDSS_Solution_1.2.0.1801060036/easydss/www/" is forbidden, client: 10.211.55.2, server: , request: "GET / HTTP/1.1", host: "10.211.55.6:10088"
+2018/01/10 10:39:10 [error] 16572#16572: *3 open() "/home/parallels/Desktop/EasyDSS_Solution_1.2.0.1801060036/easydss/www/robots.txt" failed (2: No such file or directory), client: 10.211.55.2, server: , request: "GET /robots.txt HTTP/1.1", host: "10.211.55.6:10088"
+2018/01/10 10:43:18 [error] 17362#17362: ********************** EasyDSS **********************
+2018/01/10 10:43:18 [error] 17362#17362:  	 Platform: Linux 				
+2018/01/10 10:43:18 [error] 17362#17362:  	 Process Name[7]: easydss 			
+2018/01/10 10:43:18 [error] 17362#17362:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/10 10:43:18 [error] 17362#17362:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/10 10:43:18 [error] 17362#17362:  	 Validity Time Left: 00000054 day(s) 			
+2018/01/10 10:43:18 [error] 17362#17362: *****************************************************
+2018/01/10 10:43:18 [notice] 17362#17362: signal process started
+2018/01/11 11:07:16 [error] 16205#16205: ********************** EasyDSS **********************
+2018/01/11 11:07:16 [error] 16205#16205:  	 Platform: Linux 				
+2018/01/11 11:07:16 [error] 16205#16205:  	 Process Name[7]: easydss 			
+2018/01/11 11:07:16 [error] 16205#16205:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/11 11:07:16 [error] 16205#16205:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/11 11:07:16 [error] 16205#16205:  	 Validity Time Left: 00000053 day(s) 			
+2018/01/11 11:07:16 [error] 16205#16205: *****************************************************
+2018/01/11 11:07:16 [notice] 16205#16205: signal process started
+2018/01/11 11:07:16 [error] 16205#16205: open() "/home/parallels/Desktop/EasyDSS_Solution_1.2.0.1801060036/easydss/logs/easydss.pid" failed (2: No such file or directory)
+2018/01/11 11:07:16 [error] 16231#16231: ********************** EasyDSS **********************
+2018/01/11 11:07:16 [error] 16231#16231:  	 Platform: Linux 				
+2018/01/11 11:07:16 [error] 16231#16231:  	 Process Name[7]: easydss 			
+2018/01/11 11:07:16 [error] 16231#16231:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/11 11:07:16 [error] 16231#16231:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/11 11:07:16 [error] 16231#16231:  	 Validity Time Left: 00000053 day(s) 			
+2018/01/11 11:07:16 [error] 16231#16231: *****************************************************
+2018/01/11 11:18:56 [error] 18794#18794: ********************** EasyDSS **********************
+2018/01/11 11:18:56 [error] 18794#18794:  	 Platform: Linux 				
+2018/01/11 11:18:56 [error] 18794#18794:  	 Process Name[7]: easydss 			
+2018/01/11 11:18:56 [error] 18794#18794:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/11 11:18:56 [error] 18794#18794:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/11 11:18:56 [error] 18794#18794:  	 Validity Time Left: 00000053 day(s) 			
+2018/01/11 11:18:56 [error] 18794#18794: *****************************************************
+2018/01/11 11:18:56 [notice] 18794#18794: signal process started
+2018/01/11 15:37:37 [error] 9054#9054: ********************** EasyDSS **********************
+2018/01/11 15:37:37 [error] 9054#9054:  	 Platform: Linux 				
+2018/01/11 15:37:37 [error] 9054#9054:  	 Process Name[7]: easydss 			
+2018/01/11 15:37:37 [error] 9054#9054:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/11 15:37:37 [error] 9054#9054:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/11 15:37:37 [error] 9054#9054:  	 Validity Time Left: 00000053 day(s) 			
+2018/01/11 15:37:37 [error] 9054#9054: *****************************************************
+2018/01/11 15:37:37 [notice] 9054#9054: signal process started
+2018/01/11 15:37:37 [error] 9054#9054: open() "/home/parallels/Desktop/EasyDSS_Solution_1.2.0.1801060036/easydss/logs/easydss.pid" failed (2: No such file or directory)
+2018/01/11 15:37:37 [error] 9080#9080: ********************** EasyDSS **********************
+2018/01/11 15:37:37 [error] 9080#9080:  	 Platform: Linux 				
+2018/01/11 15:37:37 [error] 9080#9080:  	 Process Name[7]: easydss 			
+2018/01/11 15:37:37 [error] 9080#9080:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/11 15:37:37 [error] 9080#9080:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/11 15:37:37 [error] 9080#9080:  	 Validity Time Left: 00000053 day(s) 			
+2018/01/11 15:37:37 [error] 9080#9080: *****************************************************
+2018/01/11 16:41:41 [error] 21212#21212: ********************** EasyDSS **********************
+2018/01/11 16:41:41 [error] 21212#21212:  	 Platform: Linux 				
+2018/01/11 16:41:41 [error] 21212#21212:  	 Process Name[7]: easydss 			
+2018/01/11 16:41:41 [error] 21212#21212:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/11 16:41:41 [error] 21212#21212:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/11 16:41:41 [error] 21212#21212:  	 Validity Time Left: 00000053 day(s) 			
+2018/01/11 16:41:41 [error] 21212#21212: *****************************************************
+2018/01/11 16:41:41 [notice] 21212#21212: signal process started
+2018/01/15 14:17:43 [error] 2933#2933: ********************** EasyDSS **********************
+2018/01/15 14:17:43 [error] 2933#2933:  	 Platform: Linux 				
+2018/01/15 14:17:43 [error] 2933#2933:  	 Process Name[7]: easydss 			
+2018/01/15 14:17:43 [error] 2933#2933:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/15 14:17:43 [error] 2933#2933:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/15 14:17:43 [error] 2933#2933:  	 Validity Time Left: 00000049 day(s) 			
+2018/01/15 14:17:43 [error] 2933#2933: *****************************************************
+2018/01/15 14:17:43 [notice] 2933#2933: signal process started
+2018/01/15 14:17:43 [alert] 2933#2933: kill(9081, 15) failed (3: No such process)
+2018/01/15 14:17:43 [error] 2959#2959: ********************** EasyDSS **********************
+2018/01/15 14:17:43 [error] 2959#2959:  	 Platform: Linux 				
+2018/01/15 14:17:43 [error] 2959#2959:  	 Process Name[7]: easydss 			
+2018/01/15 14:17:43 [error] 2959#2959:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/15 14:17:43 [error] 2959#2959:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/15 14:17:43 [error] 2959#2959:  	 Validity Time Left: 00000049 day(s) 			
+2018/01/15 14:17:43 [error] 2959#2959: *****************************************************
+2018/01/15 14:19:26 [error] 20830#20830: ********************** EasyDSS **********************
+2018/01/15 14:19:26 [error] 20830#20830:  	 Platform: Linux 				
+2018/01/15 14:19:26 [error] 20830#20830:  	 Process Name[7]: easydss 			
+2018/01/15 14:19:26 [error] 20830#20830:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/15 14:19:26 [error] 20830#20830:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/15 14:19:26 [error] 20830#20830:  	 Validity Time Left: 00000049 day(s) 			
+2018/01/15 14:19:26 [error] 20830#20830: *****************************************************
+2018/01/15 14:19:26 [notice] 20830#20830: signal process started
+2018/01/15 16:57:16 [error] 2425#2425: ********************** EasyDSS **********************
+2018/01/15 16:57:16 [error] 2425#2425:  	 Platform: Linux 				
+2018/01/15 16:57:16 [error] 2425#2425:  	 Process Name[7]: easydss 			
+2018/01/15 16:57:16 [error] 2425#2425:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/15 16:57:16 [error] 2425#2425:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/15 16:57:16 [error] 2425#2425:  	 Validity Time Left: 00000049 day(s) 			
+2018/01/15 16:57:16 [error] 2425#2425: *****************************************************
+2018/01/15 16:57:16 [notice] 2425#2425: signal process started
+2018/01/15 16:57:16 [error] 2425#2425: open() "/home/parallels/Desktop/EasyDSS_Solution_1.2.0.1801060036/easydss/logs/easydss.pid" failed (2: No such file or directory)
+2018/01/15 16:57:16 [error] 2451#2451: ********************** EasyDSS **********************
+2018/01/15 16:57:16 [error] 2451#2451:  	 Platform: Linux 				
+2018/01/15 16:57:16 [error] 2451#2451:  	 Process Name[7]: easydss 			
+2018/01/15 16:57:16 [error] 2451#2451:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/15 16:57:16 [error] 2451#2451:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/15 16:57:16 [error] 2451#2451:  	 Validity Time Left: 00000049 day(s) 			
+2018/01/15 16:57:16 [error] 2451#2451: *****************************************************
+2018/01/15 17:13:22 [error] 5787#5787: ********************** EasyDSS **********************
+2018/01/15 17:13:22 [error] 5787#5787:  	 Platform: Linux 				
+2018/01/15 17:13:22 [error] 5787#5787:  	 Process Name[7]: easydss 			
+2018/01/15 17:13:22 [error] 5787#5787:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/15 17:13:22 [error] 5787#5787:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/15 17:13:22 [error] 5787#5787:  	 Validity Time Left: 00000049 day(s) 			
+2018/01/15 17:13:22 [error] 5787#5787: *****************************************************
+2018/01/15 17:13:22 [notice] 5787#5787: signal process started
+2018/01/18 09:24:13 [error] 2989#2989: ********************** EasyDSS **********************
+2018/01/18 09:24:13 [error] 2989#2989:  	 Platform: Linux 				
+2018/01/18 09:24:13 [error] 2989#2989:  	 Process Name[7]: easydss 			
+2018/01/18 09:24:13 [error] 2989#2989:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/18 09:24:13 [error] 2989#2989:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/18 09:24:13 [error] 2989#2989:  	 Validity Time Left: 00000046 day(s) 			
+2018/01/18 09:24:13 [error] 2989#2989: *****************************************************
+2018/01/18 09:24:13 [notice] 2989#2989: signal process started
+2018/01/18 09:24:13 [error] 2989#2989: open() "/home/parallels/Desktop/EasyDSS_Solution_1.2.0.1801060036/easydss/logs/easydss.pid" failed (2: No such file or directory)
+2018/01/18 09:24:13 [error] 3015#3015: ********************** EasyDSS **********************
+2018/01/18 09:24:13 [error] 3015#3015:  	 Platform: Linux 				
+2018/01/18 09:24:13 [error] 3015#3015:  	 Process Name[7]: easydss 			
+2018/01/18 09:24:13 [error] 3015#3015:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/18 09:24:13 [error] 3015#3015:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/18 09:24:13 [error] 3015#3015:  	 Validity Time Left: 00000046 day(s) 			
+2018/01/18 09:24:13 [error] 3015#3015: *****************************************************
+2018/01/18 09:26:42 [error] 3854#3854: ********************** EasyDSS **********************
+2018/01/18 09:26:42 [error] 3854#3854:  	 Platform: Linux 				
+2018/01/18 09:26:42 [error] 3854#3854:  	 Process Name[7]: easydss 			
+2018/01/18 09:26:42 [error] 3854#3854:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/18 09:26:42 [error] 3854#3854:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/18 09:26:42 [error] 3854#3854:  	 Validity Time Left: 00000046 day(s) 			
+2018/01/18 09:26:42 [error] 3854#3854: *****************************************************
+2018/01/18 09:26:42 [notice] 3854#3854: signal process started
+2018/01/18 09:29:35 [error] 4709#4709: ********************** EasyDSS **********************
+2018/01/18 09:29:35 [error] 4709#4709:  	 Platform: Linux 				
+2018/01/18 09:29:35 [error] 4709#4709:  	 Process Name[7]: easydss 			
+2018/01/18 09:29:35 [error] 4709#4709:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/18 09:29:35 [error] 4709#4709:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/18 09:29:35 [error] 4709#4709:  	 Validity Time Left: 00000046 day(s) 			
+2018/01/18 09:29:35 [error] 4709#4709: *****************************************************
+2018/01/18 09:29:35 [notice] 4709#4709: signal process started
+2018/01/18 09:29:35 [error] 4709#4709: open() "/home/parallels/Desktop/EasyDSS_Solution_1.2.0.1801060036/easydss/logs/easydss.pid" failed (2: No such file or directory)
+2018/01/18 09:29:35 [error] 4735#4735: ********************** EasyDSS **********************
+2018/01/18 09:29:35 [error] 4735#4735:  	 Platform: Linux 				
+2018/01/18 09:29:35 [error] 4735#4735:  	 Process Name[7]: easydss 			
+2018/01/18 09:29:35 [error] 4735#4735:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/18 09:29:35 [error] 4735#4735:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/18 09:29:35 [error] 4735#4735:  	 Validity Time Left: 00000046 day(s) 			
+2018/01/18 09:29:35 [error] 4735#4735: *****************************************************
+2018/01/18 09:30:59 [error] 5019#5019: ********************** EasyDSS **********************
+2018/01/18 09:30:59 [error] 5019#5019:  	 Platform: Linux 				
+2018/01/18 09:30:59 [error] 5019#5019:  	 Process Name[7]: easydss 			
+2018/01/18 09:30:59 [error] 5019#5019:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/18 09:30:59 [error] 5019#5019:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/18 09:30:59 [error] 5019#5019:  	 Validity Time Left: 00000046 day(s) 			
+2018/01/18 09:30:59 [error] 5019#5019: *****************************************************
+2018/01/18 09:30:59 [notice] 5019#5019: signal process started
+2018/01/19 10:32:56 [error] 13217#13217: ********************** EasyDSS **********************
+2018/01/19 10:32:56 [error] 13217#13217:  	 Platform: Linux 				
+2018/01/19 10:32:56 [error] 13217#13217:  	 Process Name[7]: easydss 			
+2018/01/19 10:32:56 [error] 13217#13217:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/19 10:32:56 [error] 13217#13217:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/19 10:32:56 [error] 13217#13217:  	 Validity Time Left: 00000045 day(s) 			
+2018/01/19 10:32:56 [error] 13217#13217: *****************************************************
+2018/01/19 10:32:56 [notice] 13217#13217: signal process started
+2018/01/19 10:32:56 [error] 13217#13217: open() "/home/parallels/Desktop/EasyDSS_Solution_1.2.0.1801060036/easydss/logs/easydss.pid" failed (2: No such file or directory)
+2018/01/19 10:32:56 [error] 13243#13243: ********************** EasyDSS **********************
+2018/01/19 10:32:56 [error] 13243#13243:  	 Platform: Linux 				
+2018/01/19 10:32:56 [error] 13243#13243:  	 Process Name[7]: easydss 			
+2018/01/19 10:32:56 [error] 13243#13243:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/19 10:32:56 [error] 13243#13243:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/19 10:32:56 [error] 13243#13243:  	 Validity Time Left: 00000045 day(s) 			
+2018/01/19 10:32:56 [error] 13243#13243: *****************************************************
+2018/01/19 10:46:37 [error] 15798#15798: ********************** EasyDSS **********************
+2018/01/19 10:46:37 [error] 15798#15798:  	 Platform: Linux 				
+2018/01/19 10:46:37 [error] 15798#15798:  	 Process Name[7]: easydss 			
+2018/01/19 10:46:37 [error] 15798#15798:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/19 10:46:37 [error] 15798#15798:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/19 10:46:37 [error] 15798#15798:  	 Validity Time Left: 00000045 day(s) 			
+2018/01/19 10:46:37 [error] 15798#15798: *****************************************************
+2018/01/19 10:46:37 [notice] 15798#15798: signal process started
+2018/01/22 15:47:38 [error] 5913#5913: ********************** EasyDSS **********************
+2018/01/22 15:47:38 [error] 5913#5913:  	 Platform: Linux 				
+2018/01/22 15:47:38 [error] 5913#5913:  	 Process Name[7]: easydss 			
+2018/01/22 15:47:38 [error] 5913#5913:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/22 15:47:38 [error] 5913#5913:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/22 15:47:38 [error] 5913#5913:  	 Validity Time Left: 00000042 day(s) 			
+2018/01/22 15:47:38 [error] 5913#5913: *****************************************************
+2018/01/22 15:47:38 [notice] 5913#5913: signal process started
+2018/01/22 15:47:38 [error] 5913#5913: open() "/home/parallels/Desktop/EasyDSS_Solution_1.2.0.1801060036/easydss/logs/easydss.pid" failed (2: No such file or directory)
+2018/01/22 15:47:38 [error] 5939#5939: ********************** EasyDSS **********************
+2018/01/22 15:47:38 [error] 5939#5939:  	 Platform: Linux 				
+2018/01/22 15:47:38 [error] 5939#5939:  	 Process Name[7]: easydss 			
+2018/01/22 15:47:38 [error] 5939#5939:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/22 15:47:38 [error] 5939#5939:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/22 15:47:38 [error] 5939#5939:  	 Validity Time Left: 00000042 day(s) 			
+2018/01/22 15:47:38 [error] 5939#5939: *****************************************************
+2018/01/22 17:17:35 [error] 22518#22518: ********************** EasyDSS **********************
+2018/01/22 17:17:35 [error] 22518#22518:  	 Platform: Linux 				
+2018/01/22 17:17:35 [error] 22518#22518:  	 Process Name[7]: easydss 			
+2018/01/22 17:17:35 [error] 22518#22518:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/22 17:17:35 [error] 22518#22518:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/22 17:17:35 [error] 22518#22518:  	 Validity Time Left: 00000042 day(s) 			
+2018/01/22 17:17:35 [error] 22518#22518: *****************************************************
+2018/01/22 17:17:35 [notice] 22518#22518: signal process started
+2018/01/25 09:23:32 [error] 4418#4418: ********************** EasyDSS **********************
+2018/01/25 09:23:32 [error] 4418#4418:  	 Platform: Linux 				
+2018/01/25 09:23:32 [error] 4418#4418:  	 Process Name[7]: easydss 			
+2018/01/25 09:23:32 [error] 4418#4418:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/25 09:23:32 [error] 4418#4418:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/25 09:23:32 [error] 4418#4418:  	 Validity Time Left: 00000039 day(s) 			
+2018/01/25 09:23:32 [error] 4418#4418: *****************************************************
+2018/01/25 09:23:32 [notice] 4418#4418: signal process started
+2018/01/25 09:23:32 [error] 4418#4418: open() "/home/parallels/Desktop/EasyDSS_Solution_1.2.0.1801060036/easydss/logs/easydss.pid" failed (2: No such file or directory)
+2018/01/25 09:23:32 [error] 4444#4444: ********************** EasyDSS **********************
+2018/01/25 09:23:32 [error] 4444#4444:  	 Platform: Linux 				
+2018/01/25 09:23:32 [error] 4444#4444:  	 Process Name[7]: easydss 			
+2018/01/25 09:23:32 [error] 4444#4444:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/25 09:23:32 [error] 4444#4444:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/25 09:23:32 [error] 4444#4444:  	 Validity Time Left: 00000039 day(s) 			
+2018/01/25 09:23:32 [error] 4444#4444: *****************************************************
+2018/01/25 10:15:13 [error] 14402#14402: ********************** EasyDSS **********************
+2018/01/25 10:15:13 [error] 14402#14402:  	 Platform: Linux 				
+2018/01/25 10:15:13 [error] 14402#14402:  	 Process Name[7]: easydss 			
+2018/01/25 10:15:13 [error] 14402#14402:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/25 10:15:13 [error] 14402#14402:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/25 10:15:13 [error] 14402#14402:  	 Validity Time Left: 00000039 day(s) 			
+2018/01/25 10:15:13 [error] 14402#14402: *****************************************************
+2018/01/25 10:15:13 [notice] 14402#14402: signal process started
+2018/01/25 11:03:37 [error] 2745#2745: ********************** EasyDSS **********************
+2018/01/25 11:03:37 [error] 2745#2745:  	 Platform: Linux 				
+2018/01/25 11:03:37 [error] 2745#2745:  	 Process Name[7]: easydss 			
+2018/01/25 11:03:37 [error] 2745#2745:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/25 11:03:37 [error] 2745#2745:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/25 11:03:37 [error] 2745#2745:  	 Validity Time Left: 00000039 day(s) 			
+2018/01/25 11:03:37 [error] 2745#2745: *****************************************************
+2018/01/25 11:03:37 [notice] 2745#2745: signal process started
+2018/01/25 11:03:37 [alert] 2745#2745: kill(4449, 15) failed (3: No such process)
+2018/01/25 11:03:37 [error] 2786#2786: ********************** EasyDSS **********************
+2018/01/25 11:03:37 [error] 2786#2786:  	 Platform: Linux 				
+2018/01/25 11:03:37 [error] 2786#2786:  	 Process Name[7]: easydss 			
+2018/01/25 11:03:37 [error] 2786#2786:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/25 11:03:37 [error] 2786#2786:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/25 11:03:37 [error] 2786#2786:  	 Validity Time Left: 00000039 day(s) 			
+2018/01/25 11:03:37 [error] 2786#2786: *****************************************************
+2018/01/25 16:12:27 [error] 5053#5053: ********************** EasyDSS **********************
+2018/01/25 16:12:27 [error] 5053#5053:  	 Platform: Linux 				
+2018/01/25 16:12:27 [error] 5053#5053:  	 Process Name[7]: easydss 			
+2018/01/25 16:12:27 [error] 5053#5053:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/25 16:12:27 [error] 5053#5053:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/25 16:12:27 [error] 5053#5053:  	 Validity Time Left: 00000039 day(s) 			
+2018/01/25 16:12:27 [error] 5053#5053: *****************************************************
+2018/01/25 16:12:27 [notice] 5053#5053: signal process started
+2018/01/25 16:12:27 [alert] 5053#5053: kill(2791, 15) failed (3: No such process)
+2018/01/25 16:12:27 [error] 5079#5079: ********************** EasyDSS **********************
+2018/01/25 16:12:27 [error] 5079#5079:  	 Platform: Linux 				
+2018/01/25 16:12:27 [error] 5079#5079:  	 Process Name[7]: easydss 			
+2018/01/25 16:12:27 [error] 5079#5079:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/25 16:12:27 [error] 5079#5079:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/25 16:12:27 [error] 5079#5079:  	 Validity Time Left: 00000039 day(s) 			
+2018/01/25 16:12:27 [error] 5079#5079: *****************************************************
+2018/01/25 16:50:12 [error] 8727#8727: ********************** EasyDSS **********************
+2018/01/25 16:50:12 [error] 8727#8727:  	 Platform: Linux 				
+2018/01/25 16:50:12 [error] 8727#8727:  	 Process Name[7]: easydss 			
+2018/01/25 16:50:12 [error] 8727#8727:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/25 16:50:12 [error] 8727#8727:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/25 16:50:12 [error] 8727#8727:  	 Validity Time Left: 00000039 day(s) 			
+2018/01/25 16:50:12 [error] 8727#8727: *****************************************************
+2018/01/25 16:50:12 [notice] 8727#8727: signal process started
+2018/01/25 23:23:15 [error] 2944#2944: ********************** EasyDSS **********************
+2018/01/25 23:23:15 [error] 2944#2944:  	 Platform: Linux 				
+2018/01/25 23:23:15 [error] 2944#2944:  	 Process Name[7]: easydss 			
+2018/01/25 23:23:15 [error] 2944#2944:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/25 23:23:15 [error] 2944#2944:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/25 23:23:15 [error] 2944#2944:  	 Validity Time Left: 00000039 day(s) 			
+2018/01/25 23:23:15 [error] 2944#2944: *****************************************************
+2018/01/25 23:23:15 [notice] 2944#2944: signal process started
+2018/01/25 23:23:15 [alert] 2944#2944: kill(5080, 15) failed (3: No such process)
+2018/01/25 23:23:20 [error] 2978#2978: ********************** EasyDSS **********************
+2018/01/25 23:23:20 [error] 2978#2978:  	 Platform: Linux 				
+2018/01/25 23:23:20 [error] 2978#2978:  	 Process Name[7]: easydss 			
+2018/01/25 23:23:20 [error] 2978#2978:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/25 23:23:20 [error] 2978#2978:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/25 23:23:20 [error] 2978#2978:  	 Validity Time Left: 00000039 day(s) 			
+2018/01/25 23:23:20 [error] 2978#2978: *****************************************************
+2018/01/25 23:23:20 [notice] 2978#2978: signal process started
+2018/01/25 23:23:20 [alert] 2978#2978: kill(5080, 15) failed (3: No such process)
+2018/01/25 23:23:21 [error] 3004#3004: ********************** EasyDSS **********************
+2018/01/25 23:23:21 [error] 3004#3004:  	 Platform: Linux 				
+2018/01/25 23:23:21 [error] 3004#3004:  	 Process Name[7]: easydss 			
+2018/01/25 23:23:21 [error] 3004#3004:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/25 23:23:21 [error] 3004#3004:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/25 23:23:21 [error] 3004#3004:  	 Validity Time Left: 00000039 day(s) 			
+2018/01/25 23:23:21 [error] 3004#3004: *****************************************************
+2018/01/26 00:37:10 [error] 16641#16641: ********************** EasyDSS **********************
+2018/01/26 00:37:10 [error] 16641#16641:  	 Platform: Linux 				
+2018/01/26 00:37:10 [error] 16641#16641:  	 Process Name[7]: easydss 			
+2018/01/26 00:37:10 [error] 16641#16641:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/26 00:37:10 [error] 16641#16641:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/26 00:37:10 [error] 16641#16641:  	 Validity Time Left: 00000039 day(s) 			
+2018/01/26 00:37:10 [error] 16641#16641: *****************************************************
+2018/01/26 00:37:10 [notice] 16641#16641: signal process started
+2018/01/26 09:14:49 [error] 4184#4184: ********************** EasyDSS **********************
+2018/01/26 09:14:49 [error] 4184#4184:  	 Platform: Linux 				
+2018/01/26 09:14:49 [error] 4184#4184:  	 Process Name[7]: easydss 			
+2018/01/26 09:14:49 [error] 4184#4184:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/26 09:14:49 [error] 4184#4184:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/26 09:14:49 [error] 4184#4184:  	 Validity Time Left: 00000038 day(s) 			
+2018/01/26 09:14:49 [error] 4184#4184: *****************************************************
+2018/01/26 09:14:49 [notice] 4184#4184: signal process started
+2018/01/26 09:14:49 [error] 4184#4184: open() "/home/parallels/Desktop/EasyDSS_Solution_1.2.0.1801060036/easydss/logs/easydss.pid" failed (2: No such file or directory)
+2018/01/26 09:14:49 [error] 4210#4210: ********************** EasyDSS **********************
+2018/01/26 09:14:49 [error] 4210#4210:  	 Platform: Linux 				
+2018/01/26 09:14:49 [error] 4210#4210:  	 Process Name[7]: easydss 			
+2018/01/26 09:14:49 [error] 4210#4210:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/26 09:14:49 [error] 4210#4210:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/26 09:14:49 [error] 4210#4210:  	 Validity Time Left: 00000038 day(s) 			
+2018/01/26 09:14:49 [error] 4210#4210: *****************************************************
+2018/01/26 10:03:11 [error] 11694#11694: ********************** EasyDSS **********************
+2018/01/26 10:03:11 [error] 11694#11694:  	 Platform: Linux 				
+2018/01/26 10:03:11 [error] 11694#11694:  	 Process Name[7]: easydss 			
+2018/01/26 10:03:11 [error] 11694#11694:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/26 10:03:11 [error] 11694#11694:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/26 10:03:11 [error] 11694#11694:  	 Validity Time Left: 00000038 day(s) 			
+2018/01/26 10:03:11 [error] 11694#11694: *****************************************************
+2018/01/26 10:03:11 [notice] 11694#11694: signal process started
+2018/01/28 16:01:42 [error] 2734#2734: ********************** EasyDSS **********************
+2018/01/28 16:01:42 [error] 2734#2734:  	 Platform: Linux 				
+2018/01/28 16:01:42 [error] 2734#2734:  	 Process Name[7]: easydss 			
+2018/01/28 16:01:42 [error] 2734#2734:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/28 16:01:42 [error] 2734#2734:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/28 16:01:42 [error] 2734#2734:  	 Validity Time Left: 00000036 day(s) 			
+2018/01/28 16:01:42 [error] 2734#2734: *****************************************************
+2018/01/28 16:01:42 [notice] 2734#2734: signal process started
+2018/01/28 16:01:42 [error] 2734#2734: open() "/home/parallels/Desktop/EasyDSS_Solution_1.2.0.1801060036/easydss/logs/easydss.pid" failed (2: No such file or directory)
+2018/01/28 16:01:42 [error] 2760#2760: ********************** EasyDSS **********************
+2018/01/28 16:01:42 [error] 2760#2760:  	 Platform: Linux 				
+2018/01/28 16:01:42 [error] 2760#2760:  	 Process Name[7]: easydss 			
+2018/01/28 16:01:42 [error] 2760#2760:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/28 16:01:42 [error] 2760#2760:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/28 16:01:42 [error] 2760#2760:  	 Validity Time Left: 00000036 day(s) 			
+2018/01/28 16:01:42 [error] 2760#2760: *****************************************************
+2018/01/28 16:04:19 [error] 2762#2762: *8 open() "/home/parallels/Desktop/EasyDSS_Solution_1.2.0.1801060036/easydss/www/hls/demo.png" failed (2: No such file or directory), client: 192.168.0.102, server: , request: "GET /hls/demo.png?random=0.7077347821602584 HTTP/1.1", host: "192.168.0.103:10088", referrer: "http://192.168.0.103:10080/admin/live_detail.html?live_uuid=demo"
+2018/01/28 16:06:30 [error] 3991#3991: ********************** EasyDSS **********************
+2018/01/28 16:06:30 [error] 3991#3991:  	 Platform: Linux 				
+2018/01/28 16:06:30 [error] 3991#3991:  	 Process Name[7]: easydss 			
+2018/01/28 16:06:30 [error] 3991#3991:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/01/28 16:06:30 [error] 3991#3991:  	 Start Time: 2018-01-04 08:00:00 			
+2018/01/28 16:06:30 [error] 3991#3991:  	 Validity Time Left: 00000036 day(s) 			
+2018/01/28 16:06:30 [error] 3991#3991: *****************************************************
+2018/01/28 16:06:30 [notice] 3991#3991: signal process started
+2018/02/26 16:41:01 [error] 24199#24199: ********************** EasyDSS **********************
+2018/02/26 16:41:01 [error] 24199#24199:  	 Platform: Linux 				
+2018/02/26 16:41:01 [error] 24199#24199:  	 Process Name[7]: easydss 			
+2018/02/26 16:41:01 [error] 24199#24199:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/02/26 16:41:01 [error] 24199#24199:  	 Start Time: 2018-01-04 08:00:00 			
+2018/02/26 16:41:01 [error] 24199#24199:  	 Validity Time Left: 00000007 day(s) 			
+2018/02/26 16:41:01 [error] 24199#24199: *****************************************************
+2018/02/26 16:41:01 [notice] 24199#24199: signal process started
+2018/02/26 16:41:01 [error] 24199#24199: open() "/home/parallels/Desktop/EasyDSS_Solution_1.2.0.1801060036/easydss/logs/easydss.pid" failed (2: No such file or directory)
+2018/02/26 16:41:01 [error] 24225#24225: ********************** EasyDSS **********************
+2018/02/26 16:41:01 [error] 24225#24225:  	 Platform: Linux 				
+2018/02/26 16:41:01 [error] 24225#24225:  	 Process Name[7]: easydss 			
+2018/02/26 16:41:01 [error] 24225#24225:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/02/26 16:41:01 [error] 24225#24225:  	 Start Time: 2018-01-04 08:00:00 			
+2018/02/26 16:41:01 [error] 24225#24225:  	 Validity Time Left: 00000007 day(s) 			
+2018/02/26 16:41:01 [error] 24225#24225: *****************************************************
+2018/02/26 16:57:55 [error] 24227#24227: *9 open() "/home/parallels/Desktop/EasyDSS_Solution_1.2.0.1801060036/easydss/www/robots.txt" failed (2: No such file or directory), client: 192.168.199.208, server: , request: "GET /robots.txt HTTP/1.1", host: "192.168.199.222:10088"
+2018/02/26 16:58:32 [error] 24227#24227: *7 open() "/home/parallels/Desktop/EasyDSS_Solution_1.2.0.1801060036/easydss/www/query_video" failed (2: No such file or directory), client: 192.168.199.208, server: , request: "GET /query_video HTTP/1.1", host: "192.168.199.222:10088"
+2018/02/26 17:03:42 [error] 24227#24227: *18 directory index of "/home/parallels/Desktop/EasyDSS_Solution_1.2.0.1801060036/easydss/www/" is forbidden, client: 192.168.199.208, server: , request: "GET / HTTP/1.1", host: "192.168.199.222:10088"
+2018/02/26 17:14:58 [error] 30406#30406: ********************** EasyDSS **********************
+2018/02/26 17:14:58 [error] 30406#30406:  	 Platform: Linux 				
+2018/02/26 17:14:58 [error] 30406#30406:  	 Process Name[7]: easydss 			
+2018/02/26 17:14:58 [error] 30406#30406:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/02/26 17:14:58 [error] 30406#30406:  	 Start Time: 2018-01-04 08:00:00 			
+2018/02/26 17:14:58 [error] 30406#30406:  	 Validity Time Left: 00000007 day(s) 			
+2018/02/26 17:14:58 [error] 30406#30406: *****************************************************
+2018/02/26 17:14:58 [notice] 30406#30406: signal process started
+2018/02/26 17:22:35 [error] 32544#32544: ********************** EasyDSS **********************
+2018/02/26 17:22:35 [error] 32544#32544:  	 Platform: Linux 				
+2018/02/26 17:22:35 [error] 32544#32544:  	 Process Name[7]: easydss 			
+2018/02/26 17:22:35 [error] 32544#32544:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/02/26 17:22:35 [error] 32544#32544:  	 Start Time: 2018-01-04 08:00:00 			
+2018/02/26 17:22:35 [error] 32544#32544:  	 Validity Time Left: 00000007 day(s) 			
+2018/02/26 17:22:35 [error] 32544#32544: *****************************************************
+2018/02/26 17:22:35 [notice] 32544#32544: signal process started
+2018/02/26 17:22:35 [error] 32544#32544: open() "/home/parallels/Desktop/EasyDSS_Solution_1.2.0.1801060036/easydss/logs/easydss.pid" failed (2: No such file or directory)
+2018/02/26 17:22:35 [error] 32570#32570: ********************** EasyDSS **********************
+2018/02/26 17:22:35 [error] 32570#32570:  	 Platform: Linux 				
+2018/02/26 17:22:35 [error] 32570#32570:  	 Process Name[7]: easydss 			
+2018/02/26 17:22:35 [error] 32570#32570:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/02/26 17:22:35 [error] 32570#32570:  	 Start Time: 2018-01-04 08:00:00 			
+2018/02/26 17:22:35 [error] 32570#32570:  	 Validity Time Left: 00000007 day(s) 			
+2018/02/26 17:22:35 [error] 32570#32570: *****************************************************
+2018/02/26 17:23:19 [error] 403#403: ********************** EasyDSS **********************
+2018/02/26 17:23:19 [error] 403#403:  	 Platform: Linux 				
+2018/02/26 17:23:19 [error] 403#403:  	 Process Name[7]: easydss 			
+2018/02/26 17:23:19 [error] 403#403:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/02/26 17:23:19 [error] 403#403:  	 Start Time: 2018-01-04 08:00:00 			
+2018/02/26 17:23:19 [error] 403#403:  	 Validity Time Left: 00000007 day(s) 			
+2018/02/26 17:23:19 [error] 403#403: *****************************************************
+2018/02/26 17:23:19 [notice] 403#403: signal process started
+2018/02/26 17:25:05 [error] 814#814: ********************** EasyDSS **********************
+2018/02/26 17:25:05 [error] 814#814:  	 Platform: Linux 				
+2018/02/26 17:25:05 [error] 814#814:  	 Process Name[7]: easydss 			
+2018/02/26 17:25:05 [error] 814#814:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/02/26 17:25:05 [error] 814#814:  	 Start Time: 2018-01-04 08:00:00 			
+2018/02/26 17:25:05 [error] 814#814:  	 Validity Time Left: 00000007 day(s) 			
+2018/02/26 17:25:05 [error] 814#814: *****************************************************
+2018/02/26 17:25:05 [notice] 814#814: signal process started
+2018/02/26 17:25:05 [error] 814#814: open() "/home/parallels/Desktop/EasyDSS_Solution_1.2.0.1801060036/easydss/logs/easydss.pid" failed (2: No such file or directory)
+2018/03/01 16:12:22 [error] 6923#6923: ********************** EasyDSS **********************
+2018/03/01 16:12:22 [error] 6923#6923:  	 Platform: Linux 				
+2018/03/01 16:12:22 [error] 6923#6923:  	 Process Name[7]: easydss 			
+2018/03/01 16:12:22 [error] 6923#6923:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/03/01 16:12:22 [error] 6923#6923:  	 Start Time: 2018-01-04 08:00:00 			
+2018/03/01 16:12:22 [error] 6923#6923:  	 Validity Time Left: 00000004 day(s) 			
+2018/03/01 16:12:22 [error] 6923#6923: *****************************************************
+2018/03/01 16:12:22 [notice] 6923#6923: signal process started
+2018/03/01 16:12:22 [error] 6923#6923: open() "/home/parallels/Desktop/EasyDSS_Solution_1.2.0.1801060036/easydss/logs/easydss.pid" failed (2: No such file or directory)
+2018/03/01 16:12:22 [error] 6949#6949: ********************** EasyDSS **********************
+2018/03/01 16:12:22 [error] 6949#6949:  	 Platform: Linux 				
+2018/03/01 16:12:22 [error] 6949#6949:  	 Process Name[7]: easydss 			
+2018/03/01 16:12:22 [error] 6949#6949:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/03/01 16:12:22 [error] 6949#6949:  	 Start Time: 2018-01-04 08:00:00 			
+2018/03/01 16:12:22 [error] 6949#6949:  	 Validity Time Left: 00000004 day(s) 			
+2018/03/01 16:12:22 [error] 6949#6949: *****************************************************
+2018/03/01 17:20:45 [error] 22570#22570: ********************** EasyDSS **********************
+2018/03/01 17:20:45 [error] 22570#22570:  	 Platform: Linux 				
+2018/03/01 17:20:45 [error] 22570#22570:  	 Process Name[7]: easydss 			
+2018/03/01 17:20:45 [error] 22570#22570:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/03/01 17:20:45 [error] 22570#22570:  	 Start Time: 2018-01-04 08:00:00 			
+2018/03/01 17:20:45 [error] 22570#22570:  	 Validity Time Left: 00000004 day(s) 			
+2018/03/01 17:20:45 [error] 22570#22570: *****************************************************
+2018/03/01 17:20:45 [notice] 22570#22570: signal process started
+2018/03/01 17:20:55 [error] 22669#22669: ********************** EasyDSS **********************
+2018/03/01 17:20:55 [error] 22669#22669:  	 Platform: Linux 				
+2018/03/01 17:20:55 [error] 22669#22669:  	 Process Name[7]: easydss 			
+2018/03/01 17:20:55 [error] 22669#22669:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/03/01 17:20:55 [error] 22669#22669:  	 Start Time: 2018-01-04 08:00:00 			
+2018/03/01 17:20:55 [error] 22669#22669:  	 Validity Time Left: 00000004 day(s) 			
+2018/03/01 17:20:55 [error] 22669#22669: *****************************************************
+2018/03/01 17:20:55 [notice] 22669#22669: signal process started
+2018/03/01 17:20:55 [alert] 22669#22669: kill(6950, 15) failed (3: No such process)
+2018/03/02 09:31:07 [error] 6646#6646: ********************** EasyDSS **********************
+2018/03/02 09:31:07 [error] 6646#6646:  	 Platform: Linux 				
+2018/03/02 09:31:07 [error] 6646#6646:  	 Process Name[7]: easydss 			
+2018/03/02 09:31:07 [error] 6646#6646:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/03/02 09:31:07 [error] 6646#6646:  	 Start Time: 2018-01-04 08:00:00 			
+2018/03/02 09:31:07 [error] 6646#6646:  	 Validity Time Left: 00000003 day(s) 			
+2018/03/02 09:31:07 [error] 6646#6646: *****************************************************
+2018/03/02 09:31:07 [notice] 6646#6646: signal process started
+2018/03/02 09:31:07 [alert] 6646#6646: kill(6950, 15) failed (3: No such process)
+2018/03/02 09:31:07 [error] 6674#6674: ********************** EasyDSS **********************
+2018/03/02 09:31:07 [error] 6674#6674:  	 Platform: Linux 				
+2018/03/02 09:31:07 [error] 6674#6674:  	 Process Name[7]: easydss 			
+2018/03/02 09:31:07 [error] 6674#6674:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/03/02 09:31:07 [error] 6674#6674:  	 Start Time: 2018-01-04 08:00:00 			
+2018/03/02 09:31:07 [error] 6674#6674:  	 Validity Time Left: 00000003 day(s) 			
+2018/03/02 09:31:07 [error] 6674#6674: *****************************************************
+2018/03/02 09:33:11 [error] 7097#7097: ********************** EasyDSS **********************
+2018/03/02 09:33:11 [error] 7097#7097:  	 Platform: Linux 				
+2018/03/02 09:33:11 [error] 7097#7097:  	 Process Name[7]: easydss 			
+2018/03/02 09:33:11 [error] 7097#7097:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/03/02 09:33:11 [error] 7097#7097:  	 Start Time: 2018-01-04 08:00:00 			
+2018/03/02 09:33:11 [error] 7097#7097:  	 Validity Time Left: 00000003 day(s) 			
+2018/03/02 09:33:11 [error] 7097#7097: *****************************************************
+2018/03/02 09:33:11 [notice] 7097#7097: signal process started
+2018/03/02 09:37:52 [error] 8202#8202: ********************** EasyDSS **********************
+2018/03/02 09:37:52 [error] 8202#8202:  	 Platform: Linux 				
+2018/03/02 09:37:52 [error] 8202#8202:  	 Process Name[7]: easydss 			
+2018/03/02 09:37:52 [error] 8202#8202:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/03/02 09:37:52 [error] 8202#8202:  	 Start Time: 2018-01-04 08:00:00 			
+2018/03/02 09:37:52 [error] 8202#8202:  	 Validity Time Left: 00000003 day(s) 			
+2018/03/02 09:37:52 [error] 8202#8202: *****************************************************
+2018/03/02 09:37:52 [notice] 8202#8202: signal process started
+2018/03/02 09:37:52 [error] 8202#8202: open() "/home/parallels/Desktop/EasyDSS_Solution_1.2.0.1801060036/easydss/logs/easydss.pid" failed (2: No such file or directory)
+2018/03/02 09:37:52 [error] 8228#8228: ********************** EasyDSS **********************
+2018/03/02 09:37:52 [error] 8228#8228:  	 Platform: Linux 				
+2018/03/02 09:37:52 [error] 8228#8228:  	 Process Name[7]: easydss 			
+2018/03/02 09:37:52 [error] 8228#8228:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/03/02 09:37:52 [error] 8228#8228:  	 Start Time: 2018-01-04 08:00:00 			
+2018/03/02 09:37:52 [error] 8228#8228:  	 Validity Time Left: 00000003 day(s) 			
+2018/03/02 09:37:52 [error] 8228#8228: *****************************************************
+2018/03/02 09:43:16 [error] 9671#9671: ********************** EasyDSS **********************
+2018/03/02 09:43:16 [error] 9671#9671:  	 Platform: Linux 				
+2018/03/02 09:43:16 [error] 9671#9671:  	 Process Name[7]: easydss 			
+2018/03/02 09:43:16 [error] 9671#9671:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/03/02 09:43:16 [error] 9671#9671:  	 Start Time: 2018-01-04 08:00:00 			
+2018/03/02 09:43:16 [error] 9671#9671:  	 Validity Time Left: 00000003 day(s) 			
+2018/03/02 09:43:16 [error] 9671#9671: *****************************************************
+2018/03/02 09:43:16 [notice] 9671#9671: signal process started
+2018/03/02 09:43:17 [error] 9712#9712: ********************** EasyDSS **********************
+2018/03/02 09:43:17 [error] 9712#9712:  	 Platform: Linux 				
+2018/03/02 09:43:17 [error] 9712#9712:  	 Process Name[7]: easydss 			
+2018/03/02 09:43:17 [error] 9712#9712:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/03/02 09:43:17 [error] 9712#9712:  	 Start Time: 2018-01-04 08:00:00 			
+2018/03/02 09:43:17 [error] 9712#9712:  	 Validity Time Left: 00000003 day(s) 			
+2018/03/02 09:43:17 [error] 9712#9712: *****************************************************
+2018/03/02 09:43:17 [notice] 9712#9712: signal process started
+2018/03/02 09:43:17 [error] 9712#9712: open() "/home/parallels/Desktop/EasyDSS_Solution_1.2.0.1801060036/easydss/logs/easydss.pid" failed (2: No such file or directory)
+2018/03/02 09:43:18 [error] 9743#9743: ********************** EasyDSS **********************
+2018/03/02 09:43:18 [error] 9743#9743:  	 Platform: Linux 				
+2018/03/02 09:43:18 [error] 9743#9743:  	 Process Name[7]: easydss 			
+2018/03/02 09:43:18 [error] 9743#9743:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/03/02 09:43:18 [error] 9743#9743:  	 Start Time: 2018-01-04 08:00:00 			
+2018/03/02 09:43:18 [error] 9743#9743:  	 Validity Time Left: 00000003 day(s) 			
+2018/03/02 09:43:18 [error] 9743#9743: *****************************************************
+2018/03/02 09:49:57 [error] 11254#11254: ********************** EasyDSS **********************
+2018/03/02 09:49:57 [error] 11254#11254:  	 Platform: Linux 				
+2018/03/02 09:49:57 [error] 11254#11254:  	 Process Name[7]: easydss 			
+2018/03/02 09:49:57 [error] 11254#11254:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/03/02 09:49:57 [error] 11254#11254:  	 Start Time: 2018-01-04 08:00:00 			
+2018/03/02 09:49:57 [error] 11254#11254:  	 Validity Time Left: 00000003 day(s) 			
+2018/03/02 09:49:57 [error] 11254#11254: *****************************************************
+2018/03/02 09:49:57 [notice] 11254#11254: signal process started
+2018/03/02 09:49:58 [error] 11285#11285: ********************** EasyDSS **********************
+2018/03/02 09:49:58 [error] 11285#11285:  	 Platform: Linux 				
+2018/03/02 09:49:58 [error] 11285#11285:  	 Process Name[7]: easydss 			
+2018/03/02 09:49:58 [error] 11285#11285:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/03/02 09:49:58 [error] 11285#11285:  	 Start Time: 2018-01-04 08:00:00 			
+2018/03/02 09:49:58 [error] 11285#11285:  	 Validity Time Left: 00000003 day(s) 			
+2018/03/02 09:49:58 [error] 11285#11285: *****************************************************
+2018/03/02 09:49:58 [notice] 11285#11285: signal process started
+2018/03/02 09:49:58 [error] 11285#11285: open() "/home/parallels/Desktop/EasyDSS_Solution_1.2.0.1801060036/easydss/logs/easydss.pid" failed (2: No such file or directory)
+2018/03/02 09:49:58 [error] 11319#11319: ********************** EasyDSS **********************
+2018/03/02 09:49:58 [error] 11319#11319:  	 Platform: Linux 				
+2018/03/02 09:49:58 [error] 11319#11319:  	 Process Name[7]: easydss 			
+2018/03/02 09:49:58 [error] 11319#11319:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/03/02 09:49:58 [error] 11319#11319:  	 Start Time: 2018-01-04 08:00:00 			
+2018/03/02 09:49:58 [error] 11319#11319:  	 Validity Time Left: 00000003 day(s) 			
+2018/03/02 09:49:58 [error] 11319#11319: *****************************************************
+2018/03/02 09:51:41 [error] 11798#11798: ********************** EasyDSS **********************
+2018/03/02 09:51:41 [error] 11798#11798:  	 Platform: Linux 				
+2018/03/02 09:51:41 [error] 11798#11798:  	 Process Name[7]: easydss 			
+2018/03/02 09:51:41 [error] 11798#11798:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/03/02 09:51:41 [error] 11798#11798:  	 Start Time: 2018-01-04 08:00:00 			
+2018/03/02 09:51:41 [error] 11798#11798:  	 Validity Time Left: 00000003 day(s) 			
+2018/03/02 09:51:41 [error] 11798#11798: *****************************************************
+2018/03/02 09:51:41 [notice] 11798#11798: signal process started
+2018/03/02 10:06:25 [error] 14794#14794: ********************** EasyDSS **********************
+2018/03/02 10:06:25 [error] 14794#14794:  	 Platform: Linux 				
+2018/03/02 10:06:25 [error] 14794#14794:  	 Process Name[7]: easydss 			
+2018/03/02 10:06:25 [error] 14794#14794:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/03/02 10:06:25 [error] 14794#14794:  	 Start Time: 2018-01-04 08:00:00 			
+2018/03/02 10:06:25 [error] 14794#14794:  	 Validity Time Left: 00000003 day(s) 			
+2018/03/02 10:06:25 [error] 14794#14794: *****************************************************
+2018/03/02 10:06:25 [notice] 14794#14794: signal process started
+2018/03/02 10:06:25 [error] 14794#14794: open() "/home/parallels/Desktop/EasyDSS_Solution_1.2.0.1801060036/easydss/logs/easydss.pid" failed (2: No such file or directory)
+2018/03/02 10:06:25 [error] 14820#14820: ********************** EasyDSS **********************
+2018/03/02 10:06:25 [error] 14820#14820:  	 Platform: Linux 				
+2018/03/02 10:06:25 [error] 14820#14820:  	 Process Name[7]: easydss 			
+2018/03/02 10:06:25 [error] 14820#14820:  	 Coding Time: 2016-04-12 10:00:00 			
+2018/03/02 10:06:25 [error] 14820#14820:  	 Start Time: 2018-01-04 08:00:00 			
+2018/03/02 10:06:25 [error] 14820#14820:  	 Validity Time Left: 00000003 day(s) 			
+2018/03/02 10:06:25 [error] 14820#14820: *****************************************************

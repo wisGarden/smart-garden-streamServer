@@ -1,0 +1,592 @@
+加载config.json成功！
+This platform is linux
+EasyDss流媒体解决方案服务平台,访问地址为 http://:::10080
+创建数据库开始！
+创建数据库结束！
+upload_dir:
+upload_file_type:mp4|mpg|mpeg|wmv|avi|rmvb|mkv|flv|mov|3gpp|3gp|webm|m4v|mng|vob|m2ts|mp3|wav
+trans_process_num:5
+ts_time:5
+live_record_days:0
+live_is_check:1
+api_key:You_can_change_it
+RTMPWanPort:10085
+HTTPWanPort:10088
+加载系统配置参数成功！
+虚拟直播守护进程开启成功！
+直播分享页面在线统计开启成功！
+录像定期清理服务开启！
+******************************************
+EasyDSS_Solution流媒体解决方案服务启动成功~
+******************************************
+/home/parallels/Desktop/upload
+Tue Jan 09 2018 14:54:08 GMT+0800 (CST) : video /home/parallels/Desktop/upload/e3c886d0f50911e79d2461db9a9eddfc.mp4 trans started
+Tue Jan 09 2018 14:54:10 GMT+0800 (CST) : video e3c886d0f50911e79d2461db9a9eddfc trans ended
+加载config.json成功！
+This platform is linux
+EasyDss流媒体解决方案服务平台,访问地址为 http://:::10080
+/bin/sh: 1: kill: No such process
+
+upload_dir:/home/parallels/Desktop/upload
+upload_file_type:mp4|mpg|mpeg|wmv|avi|rmvb|mkv|flv|mov|3gpp|3gp|webm|m4v|mng|vob|m2ts|mp3|wav
+trans_process_num:5
+ts_time:5
+live_record_days:0
+live_is_check:1
+api_key:You_can_change_it
+RTMPWanPort:10085
+HTTPWanPort:10088
+加载系统配置参数成功！
+虚拟直播守护进程开启成功！
+直播分享页面在线统计开启成功！
+录像定期清理服务开启！
+******************************************
+EasyDSS_Solution流媒体解决方案服务启动成功~
+******************************************
+加载config.json成功！
+This platform is linux
+EasyDss流媒体解决方案服务平台,访问地址为 http://:::10080
+/bin/sh: 1: kill: No such process
+
+upload_dir:/home/parallels/Desktop/upload
+upload_file_type:mp4|mpg|mpeg|wmv|avi|rmvb|mkv|flv|mov|3gpp|3gp|webm|m4v|mng|vob|m2ts|mp3|wav
+trans_process_num:5
+ts_time:5
+live_record_days:0
+live_is_check:1
+api_key:You_can_change_it
+RTMPWanPort:10085
+HTTPWanPort:10088
+加载系统配置参数成功！
+虚拟直播守护进程开启成功！
+直播分享页面在线统计开启成功！
+录像定期清理服务开启！
+******************************************
+EasyDSS_Solution流媒体解决方案服务启动成功~
+******************************************
+Thu Jan 11 2018 11:09:31 GMT+0800 (CST) : video /home/parallels/Desktop/upload/d6c03db0f67c11e7ad6cd9d8dce94fe9.mp4 trans started
+Thu Jan 11 2018 11:09:32 GMT+0800 (CST) : video /home/parallels/Desktop/upload/d6bfc880f67c11e7ad6cd9d8dce94fe9.mp4 trans started
+Thu Jan 11 2018 11:09:34 GMT+0800 (CST) : video d6bfc880f67c11e7ad6cd9d8dce94fe9 trans ended
+Thu Jan 11 2018 11:09:34 GMT+0800 (CST) : video d6c03db0f67c11e7ad6cd9d8dce94fe9 trans ended
+1
+清理文件删除录像目录：/home/parallels/Desktop/EasyDSS_Solution_1.2.0.1801060036/easydss/www/hls/88888/20180109
+加载config.json成功！
+This platform is linux
+EasyDss流媒体解决方案服务平台,访问地址为 http://:::10080
+/bin/sh: 1: kill: No such process
+
+upload_dir:/home/parallels/Desktop/upload
+upload_file_type:mp4|mpg|mpeg|wmv|avi|rmvb|mkv|flv|mov|3gpp|3gp|webm|m4v|mng|vob|m2ts|mp3|wav
+trans_process_num:5
+ts_time:5
+live_record_days:1
+live_is_check:1
+api_key:You_can_change_it
+RTMPWanPort:10085
+HTTPWanPort:10088
+加载系统配置参数成功！
+虚拟直播守护进程开启成功！
+直播分享页面在线统计开启成功！
+录像定期清理服务开启！
+******************************************
+EasyDSS_Solution流媒体解决方案服务启动成功~
+******************************************
+(node:9066) [DEP0013] DeprecationWarning: Calling an asynchronous function without callback is deprecated.
+Thu Jan 11 2018 16:13:57 GMT+0800 (CST) : video /home/parallels/Desktop/upload/5b9e93e0f6a711e79bcc017f15134620.wmv trans started
+Thu Jan 11 2018 16:16:05 GMT+0800 (CST) : video 5b9e93e0f6a711e79bcc017f15134620 trans error
+Thu Jan 11 2018 16:16:32 GMT+0800 (CST) : video /home/parallels/Desktop/upload/b77774c0f6a711e79bcc017f15134620.wmv trans started
+Thu Jan 11 2018 16:22:52 GMT+0800 (CST) : video /home/parallels/Desktop/upload/99924c90f6a811e79bcc017f15134620.mp4 trans started
+Thu Jan 11 2018 16:22:59 GMT+0800 (CST) : video b77774c0f6a711e79bcc017f15134620 trans ended
+Thu Jan 11 2018 16:33:11 GMT+0800 (CST) : video 99924c90f6a811e79bcc017f15134620 trans ended
+加载config.json成功！
+This platform is linux
+EasyDss流媒体解决方案服务平台,访问地址为 http://:::10080
+/bin/sh: 1: kill: No such process
+
+upload_dir:/home/parallels/Desktop/upload
+upload_file_type:mp4|mpg|mpeg|wmv|avi|rmvb|mkv|flv|mov|3gpp|3gp|webm|m4v|mng|vob|m2ts|mp3|wav
+trans_process_num:5
+ts_time:5
+live_record_days:1
+live_is_check:1
+api_key:You_can_change_it
+RTMPWanPort:10085
+HTTPWanPort:10088
+加载系统配置参数成功！
+虚拟直播守护进程开启成功！
+直播分享页面在线统计开启成功！
+录像定期清理服务开启！
+******************************************
+EasyDSS_Solution流媒体解决方案服务启动成功~
+******************************************
+加载config.json成功！
+This platform is linux
+EasyDss流媒体解决方案服务平台,访问地址为 http://:::10080
+/bin/sh: 1: kill: No such process
+
+upload_dir:/home/parallels/Desktop/upload
+upload_file_type:mp4|mpg|mpeg|wmv|avi|rmvb|mkv|flv|mov|3gpp|3gp|webm|m4v|mng|vob|m2ts|mp3|wav
+trans_process_num:5
+ts_time:5
+live_record_days:1
+live_is_check:1
+api_key:You_can_change_it
+RTMPWanPort:10085
+HTTPWanPort:10088
+加载系统配置参数成功！
+虚拟直播守护进程开启成功！
+直播分享页面在线统计开启成功！
+录像定期清理服务开启！
+******************************************
+EasyDSS_Solution流媒体解决方案服务启动成功~
+******************************************
+加载config.json成功！
+This platform is linux
+EasyDss流媒体解决方案服务平台,访问地址为 http://:::10080
+upload_dir:/home/parallels/Desktop/upload
+upload_file_type:mp4|mpg|mpeg|wmv|avi|rmvb|mkv|flv|mov|3gpp|3gp|webm|m4v|mng|vob|m2ts|mp3|wav
+trans_process_num:5
+ts_time:5
+live_record_days:1
+live_is_check:1
+api_key:You_can_change_it
+RTMPWanPort:10085
+HTTPWanPort:10088
+加载系统配置参数成功！
+虚拟直播守护进程开启成功！
+直播分享页面在线统计开启成功！
+录像定期清理服务开启！
+******************************************
+EasyDSS_Solution流媒体解决方案服务启动成功~
+******************************************
+加载config.json成功！
+This platform is linux
+EasyDss流媒体解决方案服务平台,访问地址为 http://:::10080
+/bin/sh: 1: kill: No such process
+
+upload_dir:/home/parallels/Desktop/upload
+upload_file_type:mp4|mpg|mpeg|wmv|avi|rmvb|mkv|flv|mov|3gpp|3gp|webm|m4v|mng|vob|m2ts|mp3|wav
+trans_process_num:5
+ts_time:5
+live_record_days:1
+live_is_check:1
+api_key:You_can_change_it
+RTMPWanPort:10085
+HTTPWanPort:10088
+加载系统配置参数成功！
+虚拟直播守护进程开启成功！
+直播分享页面在线统计开启成功！
+录像定期清理服务开启！
+******************************************
+EasyDSS_Solution流媒体解决方案服务启动成功~
+******************************************
+加载config.json成功！
+This platform is linux
+EasyDss流媒体解决方案服务平台,访问地址为 http://:::10080
+/bin/sh: 1: kill: No such process
+
+upload_dir:/home/parallels/Desktop/upload
+upload_file_type:mp4|mpg|mpeg|wmv|avi|rmvb|mkv|flv|mov|3gpp|3gp|webm|m4v|mng|vob|m2ts|mp3|wav
+trans_process_num:5
+ts_time:5
+live_record_days:1
+live_is_check:1
+api_key:You_can_change_it
+RTMPWanPort:10085
+HTTPWanPort:10088
+加载系统配置参数成功！
+虚拟直播守护进程开启成功！
+直播分享页面在线统计开启成功！
+录像定期清理服务开启！
+******************************************
+EasyDSS_Solution流媒体解决方案服务启动成功~
+******************************************
+/run/user/1000/gvfs/smb-share:server=192.168.199.222,share=shared
+(node:13229) [DEP0013] DeprecationWarning: Calling an asynchronous function without callback is deprecated.
+Fri Jan 19 2018 10:34:10 GMT+0800 (CST) : video /run/user/1000/gvfs/smb-share:server=192.168.199.222,share=shared/39ee0f80fcc111e78a679d1c9f767348.mp4 trans started
+Fri Jan 19 2018 10:34:12 GMT+0800 (CST) : video 39ee0f80fcc111e78a679d1c9f767348 trans ended
+加载config.json成功！
+This platform is linux
+EasyDss流媒体解决方案服务平台,访问地址为 http://:::10080
+/bin/sh: 1: kill: No such process
+
+upload_dir:
+upload_file_type:mp4|mpg|mpeg|wmv|avi|rmvb|mkv|flv|mov|3gpp|3gp|webm|m4v|mng|vob|m2ts|mp3|wav
+trans_process_num:5
+ts_time:5
+live_record_days:1
+live_is_check:1
+api_key:You_can_change_it
+RTMPWanPort:10085
+HTTPWanPort:10088
+加载系统配置参数成功！
+虚拟直播守护进程开启成功！
+直播分享页面在线统计开启成功！
+录像定期清理服务开启！
+******************************************
+EasyDSS_Solution流媒体解决方案服务启动成功~
+******************************************
+/run/user/1000/gvfs/smb-share:server=192.168.199.221,share=shared
+/run/user/1000/gvfs/smb-share:server=192.168.199.165,share=video
+(node:5925) [DEP0013] DeprecationWarning: Calling an asynchronous function without callback is deprecated.
+Mon Jan 22 2018 15:53:04 GMT+0800 (CST) : video /run/user/1000/gvfs/smb-share:server=192.168.199.165,share=video/3d673940ff4911e7b91ebf1b75d3add5.mp4 trans started
+Mon Jan 22 2018 15:53:16 GMT+0800 (CST) : video 3d673940ff4911e7b91ebf1b75d3add5 trans ended
+加载config.json成功！
+This platform is linux
+EasyDss流媒体解决方案服务平台,访问地址为 http://:::10080
+/bin/sh: 1: kill: No such process
+
+upload_dir:
+upload_file_type:mp4|mpg|mpeg|wmv|avi|rmvb|mkv|flv|mov|3gpp|3gp|webm|m4v|mng|vob|m2ts|mp3|wav
+trans_process_num:5
+ts_time:5
+live_record_days:1
+live_is_check:1
+api_key:You_can_change_it
+RTMPWanPort:10085
+HTTPWanPort:10088
+加载系统配置参数成功！
+虚拟直播守护进程开启成功！
+直播分享页面在线统计开启成功！
+录像定期清理服务开启！
+******************************************
+EasyDSS_Solution流媒体解决方案服务启动成功~
+******************************************
+/run/user/1000/gvfs/smb-share:server=192.168.199.166,share=video
+加载config.json成功！
+This platform is linux
+EasyDss流媒体解决方案服务平台,访问地址为 http://:::10080
+/bin/sh: 1: kill: No such process
+
+upload_dir:
+upload_file_type:mp4|mpg|mpeg|wmv|avi|rmvb|mkv|flv|mov|3gpp|3gp|webm|m4v|mng|vob|m2ts|mp3|wav
+trans_process_num:5
+ts_time:5
+live_record_days:1
+live_is_check:1
+api_key:You_can_change_it
+RTMPWanPort:10085
+HTTPWanPort:10088
+加载系统配置参数成功！
+虚拟直播守护进程开启成功！
+直播分享页面在线统计开启成功！
+录像定期清理服务开启！
+******************************************
+EasyDSS_Solution流媒体解决方案服务启动成功~
+******************************************
+/run/user/1000/gvfs/smb-share:server=192.168.199.166,share=video
+(node:2765) [DEP0013] DeprecationWarning: Calling an asynchronous function without callback is deprecated.
+(node:2765) [DEP0013] DeprecationWarning: Calling an asynchronous function without callback is deprecated.
+{ Error: EIO: i/o error, write errno: -5, code: 'EIO', syscall: 'write' }
+Error: EIO: i/o error, write
+{ Error: EIO: i/o error, write errno: -5, code: 'EIO', syscall: 'write' }
+Error: EIO: i/o error, write
+(node:2765) [DEP0013] DeprecationWarning: Calling an asynchronous function without callback is deprecated.
+{ Error: EIO: i/o error, write errno: -5, code: 'EIO', syscall: 'write' }
+Error: EIO: i/o error, write
+{ Error: EIO: i/o error, write errno: -5, code: 'EIO', syscall: 'write' }
+Error: EIO: i/o error, write
+(node:2765) [DEP0013] DeprecationWarning: Calling an asynchronous function without callback is deprecated.
+/home/parallels/Desktop/upload
+Thu Jan 25 2018 11:20:40 GMT+0800 (CST) : video /home/parallels/Desktop/upload/b2779a90017e11e8895a734ee1bad023.wmv trans started
+Thu Jan 25 2018 12:03:07 GMT+0800 (CST) : video b2779a90017e11e8895a734ee1bad023 trans ended
+/run/user/1000/gvfs/smb-share:server=192.168.199.203,share=video
+(node:2765) [DEP0013] DeprecationWarning: Calling an asynchronous function without callback is deprecated.
+加载config.json成功！
+This platform is linux
+EasyDss流媒体解决方案服务平台,访问地址为 http://:::10080
+/bin/sh: 1: kill: No such process
+
+upload_dir:
+upload_file_type:mp4|mpg|mpeg|wmv|avi|rmvb|mkv|flv|mov|3gpp|3gp|webm|m4v|mng|vob|m2ts|mp3|wav
+trans_process_num:5
+ts_time:5
+live_record_days:1
+live_is_check:1
+api_key:You_can_change_it
+RTMPWanPort:10085
+HTTPWanPort:10088
+加载系统配置参数成功！
+虚拟直播守护进程开启成功！
+直播分享页面在线统计开启成功！
+录像定期清理服务开启！
+******************************************
+EasyDSS_Solution流媒体解决方案服务启动成功~
+******************************************
+/run/user/1000/gvfs/smb-share:server=192.168.199.203,share=video
+加载config.json成功！
+This platform is linux
+EasyDss流媒体解决方案服务平台,访问地址为 http://:::10080
+/bin/sh: 1: kill: No such process
+
+upload_dir:
+upload_file_type:mp4|mpg|mpeg|wmv|avi|rmvb|mkv|flv|mov|3gpp|3gp|webm|m4v|mng|vob|m2ts|mp3|wav
+trans_process_num:5
+ts_time:5
+live_record_days:1
+live_is_check:1
+api_key:You_can_change_it
+RTMPWanPort:10085
+HTTPWanPort:10088
+加载系统配置参数成功！
+虚拟直播守护进程开启成功！
+直播分享页面在线统计开启成功！
+录像定期清理服务开启！
+******************************************
+EasyDSS_Solution流媒体解决方案服务启动成功~
+******************************************
+/run/user/1000/gvfs/smb-share:server=192.168.0.14,share=shared
+(node:2990) [DEP0013] DeprecationWarning: Calling an asynchronous function without callback is deprecated.
+Thu Jan 25 2018 23:27:28 GMT+0800 (CST) : video /run/user/1000/gvfs/smb-share:server=192.168.0.14,share=shared/3f59a15001e411e896a355ed53d0a4a8.mp4 trans started
+Thu Jan 25 2018 23:27:30 GMT+0800 (CST) : video 3f59a15001e411e896a355ed53d0a4a8 trans ended
+(node:2990) [DEP0013] DeprecationWarning: Calling an asynchronous function without callback is deprecated.
+Thu Jan 25 2018 23:27:53 GMT+0800 (CST) : video /run/user/1000/gvfs/smb-share:server=192.168.0.14,share=shared/4e0127f001e411e896a355ed53d0a4a8.mp4 trans started
+Thu Jan 25 2018 23:27:55 GMT+0800 (CST) : video 4e0127f001e411e896a355ed53d0a4a8 trans ended
+(node:2990) [DEP0013] DeprecationWarning: Calling an asynchronous function without callback is deprecated.
+Thu Jan 25 2018 23:30:42 GMT+0800 (CST) : video /run/user/1000/gvfs/smb-share:server=192.168.0.14,share=shared/b20cba7001e411e896a355ed53d0a4a8.mp4 trans started
+Thu Jan 25 2018 23:30:45 GMT+0800 (CST) : video b20cba7001e411e896a355ed53d0a4a8 trans ended
+加载config.json成功！
+This platform is linux
+EasyDss流媒体解决方案服务平台,访问地址为 http://:::10080
+/bin/sh: 1: kill: No such process
+
+upload_dir:
+upload_file_type:mp4|mpg|mpeg|wmv|avi|rmvb|mkv|flv|mov|3gpp|3gp|webm|m4v|mng|vob|m2ts|mp3|wav
+trans_process_num:5
+ts_time:5
+live_record_days:1
+live_is_check:1
+api_key:You_can_change_it
+RTMPWanPort:10085
+HTTPWanPort:10088
+加载系统配置参数成功！
+虚拟直播守护进程开启成功！
+直播分享页面在线统计开启成功！
+录像定期清理服务开启！
+******************************************
+EasyDSS_Solution流媒体解决方案服务启动成功~
+******************************************
+/run/user/1000/gvfs/smb-share:server=192.168.199.203,share=video
+加载config.json成功！
+This platform is linux
+EasyDss流媒体解决方案服务平台,访问地址为 http://:::10080
+/bin/sh: 1: kill: No such process
+
+upload_dir:
+upload_file_type:mp4|mpg|mpeg|wmv|avi|rmvb|mkv|flv|mov|3gpp|3gp|webm|m4v|mng|vob|m2ts|mp3|wav
+trans_process_num:5
+ts_time:5
+live_record_days:1
+live_is_check:1
+api_key:You_can_change_it
+RTMPWanPort:10085
+HTTPWanPort:10088
+加载系统配置参数成功！
+虚拟直播守护进程开启成功！
+直播分享页面在线统计开启成功！
+录像定期清理服务开启！
+******************************************
+EasyDSS_Solution流媒体解决方案服务启动成功~
+******************************************
+加载config.json成功！
+This platform is linux
+EasyDss流媒体解决方案服务平台,访问地址为 http://:::10080
+/bin/sh: 1: kill: No such process
+
+upload_dir:
+upload_file_type:mp4|mpg|mpeg|wmv|avi|rmvb|mkv|flv|mov|3gpp|3gp|webm|m4v|mng|vob|m2ts|mp3|wav
+trans_process_num:5
+ts_time:5
+live_record_days:1
+live_is_check:1
+api_key:You_can_change_it
+RTMPWanPort:10085
+HTTPWanPort:10088
+加载系统配置参数成功！
+虚拟直播守护进程开启成功！
+直播分享页面在线统计开启成功！
+录像定期清理服务开启！
+******************************************
+EasyDSS_Solution流媒体解决方案服务启动成功~
+******************************************
+error accessToken
+加载config.json成功！
+This platform is linux
+EasyDss流媒体解决方案服务平台,访问地址为 http://:::10080
+/bin/sh: 1: kill: No such process
+
+upload_dir:
+upload_file_type:mp4|mpg|mpeg|wmv|avi|rmvb|mkv|flv|mov|3gpp|3gp|webm|m4v|mng|vob|m2ts|mp3|wav
+trans_process_num:5
+ts_time:5
+live_record_days:1
+live_is_check:1
+api_key:You_can_change_it
+RTMPWanPort:10085
+HTTPWanPort:10088
+加载系统配置参数成功！
+虚拟直播守护进程开启成功！
+直播分享页面在线统计开启成功！
+录像定期清理服务开启！
+******************************************
+EasyDSS_Solution流媒体解决方案服务启动成功~
+******************************************
+加载config.json成功！
+This platform is linux
+EasyDss流媒体解决方案服务平台,访问地址为 http://:::10080
+/bin/sh: 1: kill: No such process
+
+upload_dir:
+upload_file_type:mp4|mpg|mpeg|wmv|avi|rmvb|mkv|flv|mov|3gpp|3gp|webm|m4v|mng|vob|m2ts|mp3|wav
+trans_process_num:5
+ts_time:5
+live_record_days:1
+live_is_check:1
+api_key:You_can_change_it
+RTMPWanPort:10085
+HTTPWanPort:10088
+加载系统配置参数成功！
+虚拟直播守护进程开启成功！
+直播分享页面在线统计开启成功！
+录像定期清理服务开启！
+******************************************
+EasyDSS_Solution流媒体解决方案服务启动成功~
+******************************************
+/run/user/1000/gvfs/smb-share:server=10.211.55.6,share=shared
+(node:6935) [DEP0013] DeprecationWarning: Calling an asynchronous function without callback is deprecated.
+Thu Mar 01 2018 16:54:35 GMT+0800 (CST) : video /run/user/1000/gvfs/smb-share:server=10.211.55.6,share=shared/29a1f0a01d2e11e8a745651493b6c9d2.mp4 trans started
+Thu Mar 01 2018 16:54:36 GMT+0800 (CST) : video 29a1f0a01d2e11e8a745651493b6c9d2 trans ended
+
+<--- Last few GCs --->
+
+[6935:0x353cfc0]  2958995 ms: Scavenge 25.3 (30.7) -> 24.7 (30.7) MB, 11.5 / 0.7 ms  allocation failure 
+[6935:0x353cfc0]  3083636 ms: Scavenge 25.5 (30.7) -> 25.0 (30.7) MB, 16.3 / 0.0 ms  allocation failure 
+[6935:0x353cfc0]  3208050 ms: Scavenge 25.7 (30.7) -> 25.2 (30.7) MB, 302.8 / 7.0 ms  allocation failure 
+[6935:0x353cfc0]  3335148 ms: Scavenge 26.0 (30.7) -> 25.4 (30.7) MB, 280.4 / 17.5 ms  allocation failure 
+
+
+<--- JS stacktrace --->
+
+==== JS stack trace =========================================
+
+Security context: 0x19094c325ec1 <JSObject>
+    2: resolve [path.js:~1171] [pc=0x1b33252cf3cd](this=0x34f9319f5de1 <Object map = 0x10abc2c891>)
+    3: arguments adaptor frame: 2->0
+    5: /* anonymous */ [/home/parallels/Desktop/EasyDSS_Solution_1.2.0.1801060036/easydss.js:1] [bytecode=0x35131fb26df1 offset=67](this=0x327ca1cdcc69 <Object map = 0x71724d7b259>,e=0x2253e9182311 <undefined>,t=0x2253e9182311 <undefined>)
+    6: arguments adap...
+
+FATAL ERROR: Committing semi space failed. Allocation failed - process out of memory
+ 1: node::Abort() [./node/node]
+ 2: 0x12190dc [./node/node]
+ 3: v8::Utils::ReportOOMFailure(char const*, bool) [./node/node]
+ 4: v8::internal::V8::FatalProcessOutOfMemory(char const*, bool) [./node/node]
+ 5: v8::internal::Heap::PerformGarbageCollection(v8::internal::GarbageCollector, v8::GCCallbackFlags) [./node/node]
+ 6: v8::internal::Heap::CollectGarbage(v8::internal::AllocationSpace, v8::internal::GarbageCollectionReason, v8::GCCallbackFlags) [./node/node]
+ 7: v8::internal::Factory::NewFillerObject(int, bool, v8::internal::AllocationSpace) [./node/node]
+ 8: v8::internal::Runtime_AllocateInNewSpace(int, v8::internal::Object**, v8::internal::Isolate*) [./node/node]
+ 9: 0x1b332510463d
+加载config.json成功！
+This platform is linux
+EasyDss流媒体解决方案服务平台,访问地址为 http://:::10080
+/bin/sh: 1: kill: No such process
+
+upload_dir:
+upload_file_type:mp4|mpg|mpeg|wmv|avi|rmvb|mkv|flv|mov|3gpp|3gp|webm|m4v|mng|vob|m2ts|mp3|wav
+trans_process_num:5
+ts_time:5
+live_record_days:1
+live_is_check:1
+api_key:You_can_change_it
+RTMPWanPort:10085
+HTTPWanPort:10088
+加载系统配置参数成功！
+虚拟直播守护进程开启成功！
+直播分享页面在线统计开启成功！
+录像定期清理服务开启！
+******************************************
+EasyDSS_Solution流媒体解决方案服务启动成功~
+******************************************
+加载config.json成功！
+This platform is linux
+EasyDss流媒体解决方案服务平台,访问地址为 http://:::10080
+/bin/sh: 1: kill: No such process
+
+upload_dir:
+upload_file_type:mp4|mpg|mpeg|wmv|avi|rmvb|mkv|flv|mov|3gpp|3gp|webm|m4v|mng|vob|m2ts|mp3|wav
+trans_process_num:5
+ts_time:5
+live_record_days:1
+live_is_check:1
+api_key:You_can_change_it
+RTMPWanPort:10085
+HTTPWanPort:10088
+加载系统配置参数成功！
+虚拟直播守护进程开启成功！
+直播分享页面在线统计开启成功！
+录像定期清理服务开启！
+******************************************
+EasyDSS_Solution流媒体解决方案服务启动成功~
+******************************************
+加载config.json成功！
+This platform is linux
+EasyDss流媒体解决方案服务平台,访问地址为 http://:::10080
+/bin/sh: 1: kill: No such process
+
+upload_dir:
+upload_file_type:mp4|mpg|mpeg|wmv|avi|rmvb|mkv|flv|mov|3gpp|3gp|webm|m4v|mng|vob|m2ts|mp3|wav
+trans_process_num:5
+ts_time:5
+live_record_days:1
+live_is_check:1
+api_key:You_can_change_it
+RTMPWanPort:10085
+HTTPWanPort:10088
+加载系统配置参数成功！
+虚拟直播守护进程开启成功！
+直播分享页面在线统计开启成功！
+录像定期清理服务开启！
+******************************************
+EasyDSS_Solution流媒体解决方案服务启动成功~
+******************************************
+加载config.json成功！
+This platform is linux
+EasyDss流媒体解决方案服务平台,访问地址为 http://:::10080
+/bin/sh: 1: kill: No such process
+
+upload_dir:
+upload_file_type:mp4|mpg|mpeg|wmv|avi|rmvb|mkv|flv|mov|3gpp|3gp|webm|m4v|mng|vob|m2ts|mp3|wav
+trans_process_num:5
+ts_time:5
+live_record_days:1
+live_is_check:1
+api_key:You_can_change_it
+RTMPWanPort:10085
+HTTPWanPort:10088
+加载系统配置参数成功！
+虚拟直播守护进程开启成功！
+直播分享页面在线统计开启成功！
+录像定期清理服务开启！
+******************************************
+EasyDSS_Solution流媒体解决方案服务启动成功~
+******************************************
+加载config.json成功！
+This platform is linux
+EasyDss流媒体解决方案服务平台,访问地址为 http://:::10080
+/bin/sh: 1: kill: No such process
+
+upload_dir:
+upload_file_type:mp4|mpg|mpeg|wmv|avi|rmvb|mkv|flv|mov|3gpp|3gp|webm|m4v|mng|vob|m2ts|mp3|wav
+trans_process_num:5
+ts_time:5
+live_record_days:1
+live_is_check:1
+api_key:You_can_change_it
+RTMPWanPort:10085
+HTTPWanPort:10088
+加载系统配置参数成功！
+虚拟直播守护进程开启成功！
+直播分享页面在线统计开启成功！
+录像定期清理服务开启！
+******************************************
+EasyDSS_Solution流媒体解决方案服务启动成功~
+******************************************

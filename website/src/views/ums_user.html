@@ -1,0 +1,203 @@
+<table id="dg" style="width:100%;height:368px;"></table>
+<div id="toolbar">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="CURD.showAddData()">添加</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="CURD.showEditData(-1)">编辑</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="CURD.deleteData()">删除</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" plain="true" onclick="openChangePwd()">设置密码</a>
+</div>
+<div id="dlg" class="easyui-dialog" style="width:400px;" closed="true" buttons="#dlg-buttons">
+    <form id="fm" method="post" novalidate style="margin:0;padding:20px 50px">
+        <input id="operate" name="operate" hidden="true">
+        <input name="user_uuid" hidden="true">
+        <div style="margin-bottom:10px">
+            <input name="user_account" class="easyui-textbox" required="true" label="用户账号" style="width:100%;">
+        </div>
+        <div style="margin-bottom:10px">
+            <input name="user_name" class="easyui-textbox" required="true" label="用户名称" style="width:100%;">
+        </div>
+    </form>
+</div>
+<div id="dlg-buttons">
+    <a href="javascript:void(0)" class="easyui-linkbutton c6" iconCls="icon-ok" onclick="CURD.saveData()" style="width:90px">确定</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')" style="width:90px">取消</a>
+</div>
+
+
+<div id="dlg_pwd" class="easyui-dialog" style="width:400px;" closed="true" buttons="#dlg-buttons-pwd">
+    <form id="fm-pwd" method="post" novalidate style="margin:0;padding:20px 50px">
+        <input name="user_uuid" hidden="true">
+        <div style="margin-bottom:10px">
+            <input name="user_password" type="password" class="easyui-textbox" required="true" label="用户密码" style="width:100%;">
+        </div>
+    </form>
+</div>
+<div id="dlg-buttons-pwd">
+    <a href="javascript:void(0)" class="easyui-linkbutton c6" iconCls="icon-ok" onclick="changePwd()" style="width:90px">确定</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg_pwd').dialog('close')" style="width:90px">取消</a>
+</div>
+
+
+<script type="text/javascript">
+    CURD.url = "operUser";
+    CURD.id = "user_uuid";
+    //数据表格分页查询
+    $('#dg').datagrid({
+        url: CURD.url,
+        queryParams: {
+            operate: 'retrieve'
+        },
+        rownumbers: true,
+        singleSelect: true,
+        pagination: true,
+        pagePosition: 'bottom',
+        pageList: [10, 20, 30, 40, 50],
+        fitColumns: true,
+        emptyMsg: "暂无数据",
+        columns: [
+            [{
+                field: 'user_uuid',
+                title: '用户UUID',
+                hidden: true,
+                width: 100
+            }, {
+                field: 'user_account',
+                title: '账号',
+                width: 100
+            }, {
+                field: 'user_name',
+                title: '用户名称',
+                width: 100
+            }, {
+                field: 'altertime',
+                title: '更新时间',
+                width: 150
+            }]
+        ],
+        toolbar: "#toolbar",
+        onDblClickRow: function(index, row) {
+            CURD.showEditData(row);
+        }
+    });
+
+    //-----------------------------------其它操作----------------------------------
+    var tree = "#menu_tree";
+    $(tree).tree({
+        url: 'getRole.json',
+        animate: true,
+        checkbox: true,
+    });
+
+    function openUserRole() {
+        var row = $('#dg').datagrid('getSelected');
+        if (row) {
+            $('#dlg_power_menu').dialog('open').dialog('center');
+            clearMenuChecked();
+            current_id = row.user_uuid;
+            //获得权限
+            $.ajax({
+                url: "userRole",
+                method: "get",
+                data: {
+                    user_uuid: current_id
+                },
+                success: function(data) {
+                    $.each(data.msg, function(i, v) {
+                        $(tree).tree("check", $(tree).tree("find", v.role_id).target);
+                    });
+                }
+            });
+        } else {
+            alertInfo();
+        }
+    }
+
+    function clearMenuChecked() {
+        $.each($(tree).tree("getChecked"), function(index, node) {
+            $('#menu_tree').tree('uncheck', node.target);
+        });
+    }
+
+    var current_id;
+
+    function setRoleMenu() {
+        var m_ids = [];
+        $.each($(tree).tree("getChecked"), function(index, node) {
+            m_ids.push(node.id);
+        });
+        $.ajax({
+            url: "userRole",
+            method: "post",
+            data: {
+                user_uuid: current_id,
+                role_ids: m_ids.join()
+            },
+            success: function(data) {
+                if (data.result == 1) {
+                    showSuccess(data.msg);
+                    $('#dlg_power_menu').dialog('close');
+                } else {
+                    showError(data.msg);
+                }
+            }
+        });
+    }
+
+    function openChangePwd() {
+        var row = $('#dg').datagrid('getSelected');
+        if (row) {
+
+
+            $('#dlg_pwd').dialog('open').dialog('center').dialog('setTitle', '设置密码');
+            $("#dlg_pwd input[name='user_uuid']").val(row.user_uuid);
+        } else {
+            alertInfo();
+        }
+
+    }
+
+    function openResetPwd() {
+        var row = $('#dg').datagrid('getSelected');
+        if (row) {
+            $.messager.confirm('初始密码', '确认将密码恢复为初始密"admin"吗?', function(r) {
+                if (r) {
+                    $.ajax({
+                        url: "userPwdReset",
+                        method: "post",
+                        data: {
+                            user_uuid: row.user_uuid
+                        },
+                        success: function(data) {
+                            if (data.result == 1) {
+                                showSuccess(data.msg);
+                                $('#dlg_power_menu').dialog('close');
+                            } else {
+                                showError(data.msg);
+                            }
+                        }
+                    });
+                }
+            });
+        } else {
+            alertInfo();
+        }
+    }
+
+    function changePwd() {
+        $('#fm-pwd').form('submit', {
+            url: "userPwdSet",
+            onSubmit: function() {
+                return $(this).form('validate');
+            },
+            success: function(data) {
+                var data = JSON.parse(data);
+                if (data.result == 1) {
+                    showSuccess(data.msg);
+                    $('#dlg_pwd').dialog('close');
+                } else {
+                    showError(data.msg);
+                }
+            }
+        });
+
+    }
+</script>

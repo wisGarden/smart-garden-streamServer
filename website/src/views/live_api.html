@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>直播接口</title>
+    <% include header.html %>
+        <style>
+            .api_header {
+                cursor: pointer;
+            }
+        </style>
+</head>
+
+<body class="hold-transition skin-blue-light">
+    <div id="apis" class="wrapper" style="padding:20px;">
+    </div>
+</body>
+
+</html>
+<% include footer.html %>
+    <script>
+        $.ajax({
+            url: '../html/easydss/template/api_template.html',
+            type: 'get',
+            success: function(html) {
+                var index = 1;
+                live_apis.forEach(function(api) {
+                    $("#apis").append(html.format({
+                        index: index,
+                        title: api.title,
+                        type: api.type,
+                        support: api.support,
+                        url: api.url.startsWith("api") ? "http://{ip}:{port}/" + api.url : api.url,
+                        desc: api.desc
+                    }));
+                    if (api.type == "") {
+                        $("#btn_api_" + index).remove();
+                    }
+                    //初始入参
+                    var d_id = "#data_{0}".format(index);
+                    var d_html = $(d_id).html();
+                    $(d_id).empty();
+                    var data_index = 1;
+                    var data = {};
+                    api.data.forEach(function(api_data) {
+                        $(d_id).append(d_html.format({
+                            data_prompt: api_data.required ? "[必填]" : "",
+                            data_index: data_index,
+                            data_id: api_data.id,
+                            data_default: api_data.default,
+                            data_desc: api_data.desc,
+                            data_readonly: api_data.readonly ? "readonly" : "",
+                            data_required: api_data.required ? "required" : ""
+                        }));
+                        data_index++;
+                    }, this);
+                    //初始接口调用
+                    initRequest(index, api, ".form_data_{0}".format(index));
+                    index++;
+                }, this);
+                initClick();
+
+            }
+        });
+
+        function initClick() {
+            $(".api_header").click(function() {
+                if ($(this).parent().attr("class").endsWith("collapsed-box")) {
+                    $(this).parent().removeClass("collapsed-box");
+                    $(this).parent().children("div:eq(1)").show();
+                    $(this).children("div").children("button").children("i").attr("class", "fa fa-minus");
+                } else {
+                    $(this).parent().addClass("collapsed-box");
+                    $(this).parent().children("div:eq(1)").hide();
+                    $(this).children("div").children("button").children("i").attr("class", "fa fa-plus");
+                }
+            });
+        }
+
+        function initRequest(index, api, data_id) {
+            $("#btn_api_{0}".format(index)).click(function() {
+                var data = {};
+                var check = true;
+                $("#result_{0}".format(index)).text("");
+                $(data_id).each(function(i, e) {
+                    if ($(e).attr('required') !== undefined && $(e).val().trim() == "") {
+                        window.parent.alertWarning($(e).attr('name') + "必填");
+                        $(e).focus();
+                        check = false;
+                        return;
+                    }
+                    data[$(e).attr('name')] = $(e).val();
+                }, this);
+                if (!check) return;
+                $.ajax({
+                    url: "../" + api.url,
+                    type: api.type,
+                    data: data,
+                    success: function(result) {
+                        $("#result_{0}".format(index)).text(JSON.stringify(result));
+                        window.parent.alertSuccess("接口调用成功！");
+                    }
+                });
+            });
+        }
+
+
+        String.prototype.format = function(args) {
+            var result = this;
+            if (arguments.length > 0) {
+                if (arguments.length == 1 && typeof(args) == "object") {
+                    for (var key in args) {
+                        if (args[key] != undefined) {
+                            var reg = new RegExp("({" + key + "})", "g");
+                            result = result.replace(reg, args[key]);
+                        }
+                    }
+                } else {
+                    for (var i = 0; i < arguments.length; i++) {
+                        if (arguments[i] != undefined) {
+                            //var reg = new RegExp("({[" + i + "]})", "g");//这个在索引大于9时会有问题  
+                            var reg = new RegExp("({)" + i + "(})", "g");
+                            result = result.replace(reg, arguments[i]);
+                        }
+                    }
+                }
+            }
+            return result;
+        }
+
+        var _post = "post";
+        var _get = "get";
+        var live_apis = [{
+            title: '直播流列表获取接口',
+            type: _post,
+            support: "post",
+            url: 'api/operLiveRetrieve',
+            data: [{
+                id: 'page',
+                desc: '当前页码',
+                default: '1',
+                readonly: false,
+                required: true
+            }, {
+                id: 'rows',
+                desc: '每页显示行数',
+                default: '30',
+                readonly: false,
+                required: true
+            }],
+            desc: ""
+        }, {
+            title: '直播流详情接口',
+            type: _post,
+            support: "post",
+            url: 'api/live_detail',
+            data: [{
+                id: 'id',
+                desc: '直播流UUID',
+                default: '',
+                readonly: false,
+                required: true
+            }],
+            desc: "说明:根据直播流ID获取直播流单个详情"
+        }, {
+            title: '直播流创建接口',
+            type: _post,
+            support: "post",
+            url: 'api/operLive',
+            data: [{
+                id: 'operate',
+                desc: '操作类型',
+                default: 'create',
+                readonly: true,
+                required: true
+            }, {
+                id: 'live_uuid',
+                desc: '直播UUID,如果不传会自动生成唯一ID,也可以使用自己生成的唯一ID',
+                default: '',
+                readonly: false,
+                required: false
+            }, {
+                id: 'live_name',
+                desc: '直播名称',
+                default: '',
+                readonly: false,
+                required: true
+            }, {
+                id: 'live_intro',
+                desc: '直播介绍',
+                default: '',
+                readonly: false,
+                required: false
+            }, {
+                id: 'time_start',
+                desc: '有效开始时间',
+                default: '',
+                readonly: false,
+                required: false
+            }, {
+                id: 'time_end',
+                desc: '有效结束时间',
+                default: '',
+                readonly: false,
+                required: false
+            }],
+            desc: ""
+        }, {
+            title: '直播流编辑接口',
+            type: _post,
+            support: "post",
+            url: 'api/operLive',
+            data: [{
+                id: 'operate',
+                desc: '操作类型',
+                default: 'update',
+                readonly: true,
+                required: true
+            }, {
+                id: 'live_uuid',
+                desc: '直播流UUID',
+                default: '',
+                readonly: false,
+                required: true
+            }, {
+                id: 'live_name',
+                desc: '直播名称',
+                default: '',
+                readonly: false,
+                required: true
+            }, {
+                id: 'live_intro',
+                desc: '直播介绍',
+                default: '',
+                readonly: false,
+                required: false
+            }, {
+                id: 'time_start',
+                desc: '有效开始时间',
+                default: '',
+                readonly: false,
+                required: false
+            }, {
+                id: 'time_end',
+                desc: '有效结束时间',
+                default: '',
+                readonly: false,
+                required: false
+            }],
+            desc: ""
+        }, {
+            title: '直播流删除接口',
+            type: _post,
+            support: "post",
+            url: 'api/operLive',
+            data: [{
+                id: 'operate',
+                desc: '操作类型',
+                default: 'delete',
+                readonly: true,
+                required: true
+            }, {
+                id: 'id',
+                desc: '直播流UUID',
+                default: '',
+                readonly: false,
+                required: true
+            }],
+            desc: ""
+        }, {
+            title: '直播流禁用接口',
+            type: _post,
+            support: "post",
+            url: 'api/operLive',
+            data: [{
+                id: 'operate',
+                desc: '操作类型',
+                default: 'disable',
+                readonly: true,
+                required: true
+            }, {
+                id: 'id',
+                desc: '直播流UUID',
+                default: '',
+                readonly: false,
+                required: true
+            }],
+            desc: ""
+        }, {
+            title: '直播流激活接口',
+            type: _post,
+            support: "post",
+            url: 'api/operLive',
+            data: [{
+                id: 'operate',
+                desc: '操作类型',
+                default: 'active',
+                readonly: true,
+                required: true
+            }, {
+                id: 'id',
+                desc: '直播流UUID',
+                default: '',
+                readonly: false,
+                required: true
+            }],
+            desc: ""
+        }, {
+            title: '获取直播录像片段总时长接口',
+            type: _get,
+            support: "get",
+            url: 'api/getTotalDuration',
+            data: [{
+                id: 'record_url',
+                desc: '录像片段地址',
+                default: '',
+                readonly: false,
+                required: true
+            }],
+            desc: ""
+        }, {
+            title: '直播流封面获取接口',
+            type: "",
+            support: "get",
+            url: 'api/livecover/{live_uuid}.png',
+            data: [],
+            desc: "说明：{live_uuid} 替换成直播流UUID，即是封面图片地址。如果设置了封面就返回图片"
+        }, {
+            title: '直播页面分享接口',
+            type: "",
+            support: "get",
+            url: 'api/live_share/{live_uuid}',
+            data: [],
+            desc: "说明：{live_uuid} 替换成直播流UUID，即是分享的直播流地址页面"
+        }, {
+            title: '直播回看页面分享接口',
+            type: "",
+            support: "get",
+            url: 'html/easydss/playback.html?id={live_uuid}',
+            data: [],
+            desc: "说明：{live_uuid} 替换成直播流UUID，即是分享的直播回看播放页面"
+        }, {
+            title: '未鉴权推流URL规则',
+            type: "",
+            support: "rtmp",
+            url: 'rtmp://{ip}:{服务RTMP端口}/{推流类型}/{自定义ID}',
+            data: [],
+            desc: "说明：<br/>{ip} 替换成您服务部署的ip或是域名<br/>" +
+                "{服务RTMP端口} 替换成服务RTMP端口,可以在系统配置里查看<br/>" +
+                "{推流类型} 替换成 hls（输出rtmp和hls两种直播流） 或是 live （只输出rtmp直播流）<br/>" +
+                "{服务RTMP端口} 替换成服务RTMP端口,可以在系统配置里查看，默认是：10085<br/>" +
+                "{自定义ID} 替换成任意数字字母字符串，要保证唯一性<br/>" +
+                "<br/>示例  rtmp://localhost:10085/hls/test1",
+        }];
+    </script>

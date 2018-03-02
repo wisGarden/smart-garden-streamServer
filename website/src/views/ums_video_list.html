@@ -1,0 +1,125 @@
+<table id="dg" style="width:100%;height:368px;"></table>
+<div id="toolbar">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="CURD.showEditData(-1)">编辑</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="CURD.deleteData()">删除</a>
+</div>
+<div id="dlg" class="easyui-dialog" style="width:400px;" closed="true" buttons="#dlg-buttons">
+    <form id="fm" method="post" novalidate style="margin:0;padding:20px 50px">
+        <input id="operate" name="operate" hidden="true">
+        <input name="file_uuid" hidden="true">
+        <div style="margin-bottom:10px">
+            <input name="file_name" class="easyui-textbox" label="文件名称" style="width:100%">
+        </div>
+    </form>
+</div>
+<div id="dlg-buttons">
+    <a href="javascript:void(0)" class="easyui-linkbutton c6" iconCls="icon-ok" onclick="CURD.saveData()" style="width:90px">确定</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')" style="width:90px">取消</a>
+</div>
+
+<script type="text/javascript">
+    CURD.url = "operFile";
+    CURD.id = "file_uuid";
+    //数据表格分页查询
+    $('#dg').datagrid({
+        url: CURD.url,
+        queryParams: {
+            operate: 'retrieve'
+        },
+        rownumbers: true,
+        singleSelect: true,
+        pagination: true,
+        pagePosition: 'bottom',
+        pageList: [10, 20, 30, 40, 50],
+        fitColumns: true,
+        emptyMsg: "暂无数据",
+        columns: [
+            [{
+                field: CURD.id,
+                title: 'UUID',
+                width: 130,
+                // sortable: true
+                formatter: function(value, row, index) {
+                    return "<div title='" + value + "' class='easyui-tooltip'>" + value + "</div>"
+                }
+            }, {
+                field: 'file_name',
+                title: '视频名称',
+                width: 100,
+                // sortable: true
+                formatter: function(value, row, index) {
+                    return "<div title='" + value + "' class='easyui-tooltip'>" + value + "</div>"
+                }
+            }, {
+                field: 'file_path',
+                title: '视频目录',
+                width: 100,
+                // sortable: true
+                formatter: function(value, row, index) {
+                    return "<div title='" + value + "' class='easyui-tooltip'>" + value + "</div>"
+                }
+            }, {
+                field: 'file_type',
+                title: '视频类型',
+                width: 100,
+                // sortable: true
+            }, {
+                field: 'file_size',
+                title: '视频大小',
+                width: 100,
+                // sortable: true
+                formatter: function(value, row, index) {
+
+                    return ((value / 1024) / 1024).toFixed(2) + "M";
+                }
+            }, {
+                field: 'trans_path',
+                title: '切片目录',
+                width: 100,
+                // sortable: true
+                formatter: function(value, row, index) {
+                    return "<div title='" + value + "' class='easyui-tooltip'>" + value + "</div>"
+                }
+            }, {
+                field: 'createtime',
+                title: '添加时间',
+                width: 50,
+                // sortable: true
+                // ,formatter: function(value, row, index) {
+                //     return Common.StringDateFormatter(value);
+                // }
+            }, {
+                field: 'trans_log',
+                title: '切片日志',
+                hidden: true
+            }, {
+                field: 'trans_state',
+                title: '状态',
+                width: 50,
+                // sortable: true
+                formatter: function(value, row, index) {
+                    if (value == 0) {
+                        return "处理中";
+                    } else if (value == 1) {
+                        return "<div style='color:grey'>尚未开始</div>";
+                    } else if (value == 2) {
+                        //  onclick='play()' title='单击播放视频'
+                        return "<div style='color:green;cursor:pointer' class='easyui-tooltip'>已完成</div>";
+                    } else if (value == -1) {
+                        return "<div style='color:red;'>发生错误</div>";
+                    } else {
+                        return "未知状态";
+                    }
+                }
+            }]
+        ],
+        toolbar: "#toolbar",
+        onDblClickRow: function(index, row) {
+            CURD.showEditData(row);
+        }
+    });
+
+    function showError(error) {
+        $.messager.alert('日志', error, 'error');
+    }
+</script>

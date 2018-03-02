@@ -1,0 +1,52 @@
+<div class="row">
+    <div class="box box-default collapsed-box">
+        <div class="box-header with-border api_header">
+            <h3 class="box-title">{index}. {title}</h3>
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool"><i class="fa fa-plus"></i></button>
+            </div>
+            <!-- /.box-tools -->
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body " style="display: none;">
+
+            <form class="form-horizontal" style="margin:auto">
+                <div class="form-group">
+                    <label for="api_{index}" class="col-sm-2 control-label">接口地址</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="api_{index}" readonly="true" value="{url}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="post_{index}" class="col-sm-2 control-label">请求方式</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="post_{index}" readonly="true" value="{support}">
+                    </div>
+                </div>
+                <hr>
+                <div id="data_{index}">
+                    <div class="form-group">
+                        <label for="{data_id}_{data_index}" class="col-sm-2 control-label">{data_id}<span style="color:red">{data_prompt}</span></label>
+                        <div class="col-sm-10">
+                            <input type="text" value="{data_default}" class="form-control form_data_{index}" name="{data_id}" id="{data_id}_{data_index}" placeholder="{data_desc}" {data_readonly} {data_required}>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row pull-right">
+                        <button type="button" id="btn_api_{index}" class="btn btn-block btn-success btn-sm" style="width:100px;margin-right:30px;">发起请求</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row" style="margin-left:20px;margin-right:20px;overflow-x:auto;font-size:12px;">
+                        {desc}
+                    </div>
+                    <div class="row" id="result_{index}" style="margin-left:20px;margin-right:20px;overflow-x:auto;font-size:12px;">
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

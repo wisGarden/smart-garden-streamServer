@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Demo</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">	
+	<script src="./cyberplayer/cyberplayer.js"></script>
+
+	<style>
+		#dvplay {
+			margin: 0 auto;
+			width: 800px;
+			height: 500px;
+		}			
+	</style>
+</head>
+<body>
+<div id="dvplay"></div>
+<script>
+	var player = cyberplayer("dvplay").setup({
+		flashplayer: "./cyberplayer/cyberplayer.flash.swf",
+		stretching: "uniform",
+		file: "http://www.easydss.com:10080/EasyTrans/Data/demo/video.m3u8",
+		//image: $.cookie("snapUrl") || "",
+		width: 800,
+		height: 500,
+		autostart: true,
+		repeat: false,
+		volume: 100,
+		starttime: 0,
+		controls: true,
+		controlbar: {
+			barLogo: false
+		},
+		ak: '515d61b893134f40bd4297b75a03494b' // 公有云平台注册即可获得accessKey
+	});			
+</script>
+</body>
+
+</html>	

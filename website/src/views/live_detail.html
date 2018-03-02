@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>直播详情页面</title>
+    <% include header.html %>
+</head>
+<style>
+    .live_video {
+        display: none;
+        margin: auto;
+        width: 80%;
+        height: 403px;
+        background-color: #333;
+        text-align: center;
+        color: white;
+        line-height: 403px;
+    }
+    
+    .img_div {
+        margin: auto;
+        width: 80%;
+        height: 403px;
+        text-align: center;
+        color: white;
+        line-height: 403px;
+    }
+    
+    .live_img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .player-wrapper {
+        margin: auto;
+        width: 80%;
+        height: 100%;
+    }
+</style>
+
+<body class="hold-transition skin-blue-light">
+    <div class="wrapper" style="padding:20px;">
+        <!-- add page content start -->
+        <div class="row">
+            <div class="col-sm-7">
+                <div class="row">
+                    <div class="box box-default">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">直播窗口</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                            </div>
+                            <!-- /.box-tools -->
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body " style="display: block;">
+                            <form class="form-horizontal" style="margin:auto">
+                                <div class="form-group">
+                                    <div class="live_video">尚未直播</div>
+                                    <div class="img_div"><img id="live_img" class="live_img" onerror="javascript:hideImg();"></div>
+                                    <div class="player-wrapper"></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="box box-default">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">实时数据</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                            </div>
+                            <!-- /.box-tools -->
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body " style="display: block;">
+                            <form class="form-horizontal" style="margin:auto">
+                                <div class="form-group">
+                                    <label for="Application" class="col-sm-4 control-label">直播类型</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="Application" placeholder="直播类型">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Bitrate" class="col-sm-4 control-label">码率</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="Bitrate" value="" placeholder="码率">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="NumOutputs" class="col-sm-4 control-label">在线人数</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="NumOutputs" value="" placeholder="在线人数">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Time" class="col-sm-4 control-label">直播时长</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="Time" value="" placeholder="直播时长">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="row">
+                    <div class="box box-default" style="margin-left:10px;">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">直播分享</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                            </div>
+                            <!-- /.box-tools -->
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body " style="display: block;">
+                            <form class="form-horizontal" style="margin:auto">
+                                <div class="form-group">
+                                    <label for="live_share_url" class="col-sm-2 control-label">页面分享</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="live_share_url" placeholder="页面分享">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="live_share_code" class="col-sm-2 control-label">直播嵌入</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="live_share_code" value="" placeholder="直播嵌入">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="qrcode_share" class="col-sm-2 control-label">扫码观看</label>
+                                    <div class="col-sm-10">
+                                        <div id="qrcode_share"></div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="box box-default" style="margin-left:10px;">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">直播信息</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                            </div>
+                            <!-- /.box-tools -->
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body " style="display: block;">
+
+                            <form class="form-horizontal" style="margin:auto">
+                                <div class="form-group">
+                                    <label for="live_name" class="col-sm-2 control-label">直播名称</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="live_name">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="time_start" class="col-sm-2 control-label">有效开始时间</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="time_start" placeholder="有效开始时间">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="time_end" class="col-sm-2 control-label">有效结束时间</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="time_end" placeholder="有效结束时间">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="live_intro" class="col-sm-2 control-label">直播描述</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="live_intro" placeholder="直播描述">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="live_url" class="col-sm-2 control-label">推流地址</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="live_url" placeholder="推流地址">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="qrcode" class="col-sm-2 control-label">扫码推流</label>
+                                    <div class="col-sm-10">
+                                        <div id="qrcode"></div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- add page content end -->
+    </div>
+</body>
+
+</html>
+<% include footer.html %>
+
+    <link rel="stylesheet" href="../../plugins/video-js-5.19.2/video-js.css" />
+    <script src="../../plugins/video-js-5.19.2/video.js"></script>
+    <script src="../../plugins/video-js-5.19.2/videojs-contrib-hls4.js"></script>
+    <script type="text/javascript" src="../js/jquery.qrcode.js"></script>
+    <script>
+        function showImg() {
+            if (!hasShowImg) {
+                hasShowImg = true;
+                $(".live_video").hide();
+                $(".img_div").show();
+                var img = "http://" + location.host.split(":")[0] + ":<%- HTTPWanPort%>/hls/<%-live_uuid %>.png" + "?random=" + Math.random();
+                $("#live_img").attr("src", img);
+            }
+        }
+
+        function hideImg() {
+            $(".img_div").hide();
+            $(".live_video").show();
+        }
+        $.ajax({
+            url: 'live_detail',
+            type: 'post',
+            data: {
+                id: "<%-live_uuid %>"
+            },
+            success: function(data) {
+                var rtmpServer = "rtmp://" + location.host.split(":")[0] + ":<%-RTMPWanPort %>";
+                var rtmpUrl = rtmpServer + "/hls/" + data.msg.live_url;
+                $("#live_name").val(data.msg.live_name);
+                $("#time_start").val(data.msg.time_start);
+                $("#time_end").val(data.msg.time_end);
+                $("#live_intro").val(data.msg.live_intro);
+                $("#live_url").val(rtmpUrl);
+                $('#qrcode').empty();
+                $('#qrcode').qrcode({
+                    width: 300,
+                    height: 300,
+                    text: rtmpUrl
+                });
+                var live_share_url = "http://" + location.host + "/api/live_share/" + data.msg.live_uuid;
+                $("#live_share_url").val(live_share_url);
+                $('#qrcode_share').qrcode({
+                    width: 300,
+                    height: 300,
+                    text: live_share_url
+                });
+
+                $("#live_share_code").val("<iframe width='400' height='300' src='http://" + location.host + "/api/live_share/" + data.msg.live_uuid + "' frameborder='0' allowfullscreen></iframe>");
+            }
+        });
+
+        function isPC() {
+            var ua = navigator.userAgent.toLowerCase();
+            var agents = ["android", "iphone",
+                "symbianos", "windows phone",
+                "ipad", "ipod"
+            ];
+            var flag = true;
+            for (var v in agents) {
+                if (ua.indexOf(agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        var host = "http://" + location.host.split(":")[0] + ":<%- HTTPWanPort%>";
+        videojs.options.flash.swf = '../../plugins/video-js-5.19.2/video-js.swf';
+        var player = null;
+
+        loadVideoData();
+        var interval = self.setInterval(function() {
+            loadVideoData();
+        }, 3000)
+        var hasPlay = false;
+        var hasShowImg = false;
+
+        function loadVideoData() {
+            $.ajax("../../api/getlivesessions?id=<%-live_uuid%>", {
+                dataType: 'json',
+                cache: false
+            }).then(function(data) {
+                try {
+                    var video = data.EasyDarwin.Body;
+                    if (video != null && video != {}) {
+                        hasShowImg = false;
+                        $(".live_video").hide();
+                        $(".img_div").hide();
+                        $(".player-wrapper").show();
+                        if (!hasPlay) {
+                            hasPlay = true;
+                            play(isPC() ? video.RTMP : host + video.HLS);
+                        }
+
+                        $("#Application").val(video.Application);
+                        $("#Bitrate").val(video.Bitrate);
+                        $("#NumOutputs").val(video.NumOutputs);
+                        $("#Time").val(video.Time);
+                    } else {
+                        hasPlay = false;
+                        if (player) {
+                            player.dispose();
+                            player = null;
+                        }
+                        $(".player-wrapper").hide();
+                        showImg();
+                    }
+                } catch (e) {
+                    return $.Deferred().reject(e);
+                }
+            }).fail(function(e, ts, xhr) {
+                console.log(e);
+            })
+        }
+
+
+
+        function play(src) {
+            var $this = $(this);
+            var type = "application/x-mpegURL";
+            var techOrder = ["html5", "flash"];
+            if (src.indexOf("rtmp") === 0) {
+                type = "rtmp/mp4";
+                techOrder = ["flash"];
+            }
+            $.get("../../html/easydss/template/videojs-template.html").then(function(html) {
+                var $html = $(html);
+                $html.find("video").attr("id", "<%-live_uuid%>").attr("poster", "");
+                $html.find("source").attr("src", src).attr("type", type);
+                $(".player-wrapper").empty();
+                $(".player-wrapper").append($html);
+                player = videojs("<%-live_uuid%>", {
+                    autoplay: true,
+                    techOrder: techOrder
+                }, function() {
+                    this.on('error', function(event) {
+                        var time = this.currentTime();
+                        if (this.error().code === 2) {
+                            this.error(null).pause().load().currentTime(time).play();
+                        }
+                    });
+                });
+            })
+        }
+    </script>

@@ -1,0 +1,281 @@
+<table id="dg" style="width:100%;height:368px;"></table>
+<div id="toolbar">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="showAddData()">创建虚拟直播</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="showEditData(-1)">虚拟直播编辑</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="CURD.deleteData()">删除虚拟直播</a>
+</div>
+<div id="dlg" class="easyui-dialog" style="width:400px;" closed="true" buttons="#dlg-buttons">
+    <form id="fm" method="post" novalidate style="margin:0;padding:20px 50px">
+        <input id="operate" name="operate" hidden="true">
+        <div style="margin-bottom:10px" id="live_path">
+            <input name="live_path" class="easyui-textbox" label="源地址" style="width:100%;" required>
+        </div>
+        <div style="margin-bottom:10px" id="live_path_type">
+            <select class="easyui-combobox" label="源地址类型" name="live_path_type" style="width:100%;">
+                <option value="1">点播文件UUID</option>
+                <option value="2">文件路径</option>
+                <option value="3">在线资源</option>
+            </select>
+        </div>
+
+        <div style="margin-bottom:10px" id="live_uuid">
+            <input name="live_uuid" class="easyui-textbox" label="直播ID" style="width:100%;">
+        </div>
+        <div style="margin-bottom:10px">
+            <input name="live_name" class="easyui-textbox" label="直播名称" style="width:100%">
+        </div>
+        <div style="margin-bottom:10px" id="ts_time">
+            <input name="ts_time" class="easyui-textbox" label="切片时长(秒)" style="width:100%;">
+        </div>
+        <div style="margin-bottom:10px">
+            <input name="live_intro" class="easyui-textbox" label="直播描述" style="width:100%;height:80px;" data-options="multiline:true">
+        </div>
+    </form>
+</div>
+<div id="dlg-buttons">
+    <a href="javascript:void(0)" class="easyui-linkbutton c6" iconCls="icon-ok" onclick="saveData()" style="width:90px">确定</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')" style="width:90px">取消</a>
+</div>
+<div id="dlg-info" class="easyui-dialog" style="width:550px;max-height:410px;" closed="true" buttons="#dlg-info-buttons">
+    <form id="fm-info" method="post" novalidate style="margin:0;padding:20px 50px">
+        <input name="live_uuid" hidden="true">
+        <div style="margin-bottom:10px">
+            <input name="live_name" class="easyui-textbox" label="直播名称" style="width:100%;ready-only:true" readonly="true">
+        </div>
+        <div style="margin-bottom:10px">
+            <input name="live_intro" class="easyui-textbox" label="直播描述" style="width:100%;height:80px;" data-options="multiline:true" readonly="true">
+        </div>
+        <div style="margin-bottom:1px;">
+            <div id="qrcode" style="margin:auto;text-align:center"></div>
+        </div>
+    </form>
+</div>
+<div id="dlg-info-buttons">
+    <a href="javascript:void(0)" class="easyui-linkbutton c4" onclick="showData(-1)" style="width:90px">观看直播</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="javascript:$('#dlg-info').dialog('close')" style="width:90px">关闭</a>
+</div>
+<script type="text/javascript" src="../js/jquery.qrcode.js"></script>
+<script type="text/javascript" src="../js/jquery.cropit.js"></script>
+<style>
+    .cropit-preview {
+        width: 300px;
+        height: 168px;
+        background: lightgray;
+        cursor: move;
+    }
+</style>
+<script type="text/javascript">
+    function showAddData() {
+        $("#image-cropper").remove();
+        $("#live_path").show();
+        $("#live_uuid").show();
+        $("#ts_time").show();
+        $("#live_path_type").show();
+        CURD.showAddData();
+    }
+
+    function showEditData(row) {
+        $("#live_path").hide();
+        $("#live_uuid").hide();
+        $("#ts_time").hide();
+        $("#live_path_type").hide();
+        var host = "http://" + location.host.split(":")[0] + ":<%- HTTPWanPort%>/hlsv/";
+        if (row == -1) {
+            row = $('#dg').datagrid('getSelected');
+        }
+        if (row != -1 && row) {
+            $('#dlg').dialog('open').dialog('center').dialog('setTitle', '虚拟直播编辑');
+            $('#operate').val('update');
+            CURD.initData();
+            $('#fm').form('load', row);
+        } else {
+            alertInfo();
+        }
+    }
+
+    function saveData() {
+        CURD.saveData();
+    }
+
+    CURD.url = "../api/operLiveVirtual";
+    CURD.id = "live_uuid";
+    //数据表格分页查询
+    $('#dg').datagrid({
+        url: CURD.url,
+        queryParams: {
+            operate: 'retrieve'
+        },
+        rownumbers: true,
+        singleSelect: true,
+        pagination: true,
+        pagePosition: 'bottom',
+        pageList: [10, 20, 30, 40, 50],
+        fitColumns: true,
+        emptyMsg: "暂无数据",
+        columns: [
+            [{
+                field: CURD.id,
+                title: '直播流ID',
+                width: 130,
+                // sortable: true
+                formatter: function(value, row, index) {
+                    return "<div title='" + value + "' class='easyui-tooltip'>" + value + "</div>"
+                }
+            }, {
+                field: 'live_name',
+                title: '直播名称',
+                width: 100,
+                // sortable: true
+                formatter: function(value, row, index) {
+                    return "<div title='" + value + "' class='easyui-tooltip'>" + value + "</div>"
+                }
+            }, {
+                field: 'live_intro',
+                title: '直播描述',
+                width: 100,
+                // sortable: true
+                formatter: function(value, row, index) {
+                    return "<div title='" + value + "' class='easyui-tooltip'>" + value + "</div>"
+                }
+            }, {
+                field: 'live_path',
+                title: '播放源地址',
+                width: 250,
+                // sortable: true
+                formatter: function(value, row, index) {
+                    return "<div title='" + value + "' class='easyui-tooltip'>" + value + "</div>"
+                }
+            }, {
+                field: 'live_path_type',
+                title: '源地址类型',
+                width: 100,
+                // sortable: true
+                formatter: function(value, row, index) {
+                    if (value == 1) {
+                        return "<div title='点播文件UUID' class='easyui-tooltip'>点播文件UUID</div>";
+                    } else if (value == 2) {
+                        return "<div title=' 文件路径' class='easyui-tooltip'>文件路径</div>";
+                    } else if (value == 3) {
+                        return "<div title='线上资源' class='easyui-tooltip'>线上资源</div>";
+                    } else {
+                        return "";
+                    }
+                }
+            }, {
+                field: 'live_trans',
+                title: '切片目录',
+                width: 150,
+                // sortable: true
+                formatter: function(value, row, index) {
+                    return "<div title='" + value + "' class='easyui-tooltip'>" + value + "</div>"
+                }
+            }, {
+                field: 'ts_time',
+                title: '切片时长',
+                width: 50,
+                // sortable: true
+                formatter: function(value, row, index) {
+                    return "<div title='" + value + "' class='easyui-tooltip'>" + value + "</div>"
+                }
+            }, {
+                field: 'live_state',
+                title: '直播状态',
+                width: 50,
+                // sortable: true
+                formatter: function(value, row, index) {
+                    if (value == 0) {
+                        return "已停止";
+                    } else if (value == 1) {
+                        return "直播中";
+                    } else if (value == -1) {
+                        return "发生中断";
+                    }
+                }
+            }, {
+                field: 'createtime',
+                title: '添加时间',
+                width: 50,
+                formatter: function(value, row, index) {
+                    return "<div title='" + value + "' class='easyui-tooltip'>" + value + "</div>"
+                }
+            }, {
+                field: 'altertime',
+                title: '更新时间',
+                width: 50,
+                formatter: function(value, row, index) {
+                    return "<div title='" + value + "' class='easyui-tooltip'>" + value + "</div>"
+                }
+            }, {
+                field: 'live_pid',
+                title: '进程PID',
+                width: 50,
+                formatter: function(value, row, index) {
+                    return "<div title='" + value + "' class='easyui-tooltip'>" + value + "</div>"
+                }
+            }, {
+                field: 'operate',
+                title: '操作',
+                width: 100,
+                // sortable: true
+                formatter: function(value, row, index) {
+                    var operate = "";
+                    if (row.live_state == 0 || row.live_state == -1) {
+                        if (row.live_state == -1) {
+                            operate = '<a href="javascript:void(0)" style="color:darkgray;font-weight:900;" onclick="disableData(\'' + row.live_uuid + '\')">禁用</a>';
+                        }
+                        operate += '<a href="javascript:void(0)" style="color:darkgreen;font-weight:900;" onclick="activeData(\'' + row.live_uuid + '\')">激活</a>';
+                    } else if (row.live_state == 1) {
+                        operate = '<a href="javascript:void(0)" style="color:darkgray;font-weight:900;" onclick="disableData(\'' + row.live_uuid + '\')">禁用</a>';
+                        operate += '<a href="javascript:void(0)" style="color:darkgreen;font-weight:900;" onclick="play(\'' + row.live_uuid + '\')">播放</a>';
+                    }
+                    return operate;
+                }
+            }]
+        ],
+        toolbar: "#toolbar",
+        onDblClickRow: function(index, row) {
+            showEditData(row);
+        }
+    });
+
+    function play(live_uuid) {
+        window.open("../api/live_share_v/" + live_uuid);
+    }
+
+    function showError(error) {
+        $.messager.alert('日志', error, 'error');
+    }
+
+    function disableData(uuid) {
+        $.post(CURD.url, {
+            id: uuid,
+            operate: "disable",
+        }, function(data) {
+            if (data.result == 1) {
+                showSuccess(data.msg);
+                $('#dg').datagrid('reload');
+            } else {
+                showError(data.msg);
+            }
+        }, 'json');
+    }
+
+    function activeData(uuid) {
+        $.post(CURD.url, {
+            id: uuid,
+            operate: "active",
+        }, function(data) {
+            if (data.result == 1) {
+                showSuccess(data.msg);
+                $('#dg').datagrid('reload');
+            } else {
+                showError(data.msg);
+            }
+        }, 'json');
+    }
+
+    setInterval(function() {
+        console.log("reload");
+        $('#dg').datagrid('reload');
+    }, 10000);
+</script>

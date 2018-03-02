@@ -1,0 +1,9 @@
+{
+    "NODE": {
+        "SERVER_PORT": 10080,
+        "RECORD_PATH":[
+            "www/hls"
+        ]
+    },
+    "VERSION": "1.1.171219"
+}
