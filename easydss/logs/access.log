@@ -1,6 +1,0 @@
-10.211.55.2 [09/Jan/2018:15:10:58 +0800] NONE "hls" "" "" - 362 292 "" "FMLE/3.0 (compatible; FMSc/1.0)" (0s)
-10.211.55.2 [09/Jan/2018:15:12:47 +0800] NONE "hls" "" "" - 340 292 "" "FMLE/3.0 (compatible; FMSc/1.0)" (0s)
-10.211.55.2 [09/Jan/2018:15:12:55 +0800] NONE "hls" "" "" - 340 292 "" "FMLE/3.0 (compatible; FMSc/1.0)" (0s)
-10.211.55.2 [09/Jan/2018:15:13:49 +0800] NONE "hls" "" "" - 340 292 "" "FMLE/3.0 (compatible; FMSc/1.0)" (0s)
-10.211.55.2 [09/Jan/2018:15:16:51 +0800] PUBLISH "hls" "88888" "sign=153294ea652d79fdde544c5e26ae773f3daf2b31194a&tm=2018010914545049" - 47360366 529 "" "FMLE/3.0 (compatible; FMSc/1.0)" (2m 23s)
-10.211.55.2 [09/Jan/2018:15:19:37 +0800] PUBLISH "hls" "88888" "sign=153294ea652d79fdde544c5e26ae773f3daf2b31194a&tm=2018010914545049" - 54589859 529 "" "FMLE/3.0 (compatible; FMSc/1.0)" (2m 45s)

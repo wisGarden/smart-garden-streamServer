@@ -14,6 +14,6 @@ chmod 777 -R ./easydss/trans
 ./node/node easydss.js >> ./node/logs/nodejs.log 2>&1 &
 
 cd ./easydss/
-chmod 777 ./startdss.sh
-./startdss.sh
+chmod 777 ./start.sh
+./start.sh
 
